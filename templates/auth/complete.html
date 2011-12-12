@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+    <h3>{% trans 'Registration' %}</h3>
+    {% trans 'Registration is completed.' %}
+    <ul>
+        <li><a href="{% url auth_login %}">{% trans 'Login' %}</a></li>
+    </ul>
+
+{% endblock %}

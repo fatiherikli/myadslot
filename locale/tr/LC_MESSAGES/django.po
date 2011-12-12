@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-11 03:58+0200\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\adserver\models.py:28 .\adserver\models.py:37
+msgid "User"
+msgstr ""
+
+#: .\adserver\models.py:29 .\adserver\models.py:39
+msgid "Title"
+msgstr "Başlık"
+
+#: .\adserver\models.py:30
+msgid "Slot"
+msgstr "Reklam Slotu"
+
+#: .\adserver\models.py:31
+msgid "Sizes"
+msgstr "Reklam Boyutları"
+
+#: .\adserver\models.py:38
+msgid "Ad Slot"
+msgstr "Reklam Slotu"
+
+#: .\adserver\models.py:40
+msgid "Active"
+msgstr "Aktif"
+
+#: .\adserver\models.py:41
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"
+
+#: .\adserver\models.py:42
+msgid "Finish Date"
+msgstr "Bitiş Tarihi"
+
+#: .\adserver\models.py:43 .\adserver\models.py:58
+msgid "View Count"
+msgstr "Gösterim sayısı"
+
+#: .\adserver\models.py:56
+msgid "IP Address"
+msgstr "Ip adresi"
+
+#: .\adserver\models.py:57
+msgid "Visitor Informations"
+msgstr "Tarayıcı bilgileri"
+
+#: .\adserver\models.py:59
+msgid "Visited Page Url"
+msgstr "Ziyaret edilen sayfa"
+
+#: .\adserver\models.py:60
+msgid "Last Visit Date"
+msgstr "Son ziyaret tarihi"

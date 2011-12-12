@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h3>{% trans 'Dashboard' %}</h3>
+
+    <h4>{% trans 'My Ad Slots' %}</h4>
+
+    <ul>
+        <li><a href="{% url adserver_add_slot %}">{% trans 'Add a slot' %}</a></li>
+    </ul>
+
+    {% if slots %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Slot</th>
+                    <th>Sizes</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for slot in slots %}
+                <tr>
+                    <td><a href="{{ slot.get_absolute_url }}">{{ slot.title }}</a></td>
+                    <td>{{ slot.slot }}</td>
+                    <td>{{ slot.sizes }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        {% trans 'Not added any slot...' %}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h3>{% trans 'Slot Preview' %}</h3>
+
+    <h4>
+        <a href="{% url dashboard %}">{% trans 'My slots' %}</a> /
+        <a href="{% url adserver_ads slot.slot %}">{{ slot.title }}</a> /
+        {% trans 'Preview' %}
+    </h4>
+
+    <div class="preview_slot">{{ slot.get_snippet|safe }}</div>
+
+
+{% endblock %}

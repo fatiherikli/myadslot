@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <h3>{% trans 'Advertisements' %}</h3>
+
+    <h4><a href="{% url dashboard %}">{% trans 'My slots' %}</a> / {{ slot.title }}</h4>
+
+    <ul>
+        <li><a href="{% url adserver_add_advertisement slot.slot %}">{% trans 'Add an advertisement' %}</a></li>
+        <li><a href="{% url adserver_get_snippet slot.slot %}">{% trans 'Get snippet for this slot' %}</a></li>
+        <li><a href="{% url adserver_preview_slot slot.slot %}">{% trans 'Preview this slot' %}</a></li>
+    </ul>
+
+    {% if slot.advertisement_set.all %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Is Active</th>
+                    <th>Start Date</th>
+                    <th>Finish Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for advertisement in slot.advertisement_set.all %}
+                <tr>
+                    <td><a href="{{ advertisement.get_absolute_url }}">{{ advertisement.title }}</a></td>
+                    <td>{{ advertisement.is_active }}</td>
+                    <td>{{ advertisement.get_start_date }}</td>
+                    <td>{{ advertisement.get_end_date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        {% trans 'Not added any advertisement...' %}
+    {% endif %}
+
+{% endblock %}
