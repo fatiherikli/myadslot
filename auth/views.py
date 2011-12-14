@@ -4,6 +4,11 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from auth.forms import RegistrationForm, LoginForm
+from django.contrib.auth import logout as _logout
+
+def logout(request):
+    _logout(request)
+    return HttpResponseRedirect("/")
 
 
 def login(request, template="auth/login.html"):

@@ -1,24 +1,29 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block content %}
-    <h3>{% trans 'Dashboard' %}</h3>
 
-    <h4><a href="{% url dashboard %}">{% trans 'My slots' %}</a> / {% trans 'Add a slot' %}</h4>
+{% block heading %}
+    {% trans 'Add a slot' %}
+{% endblock %}
+
+{% block content %}
 
     {% if form.is_valid %}
-        {% trans 'Congratulations. Slot was added successfully.' %}
-        <br />
+        <div class="alert-message success">{% trans 'Congratulations. Slot was added successfully.' %}</div>
+
         <strong>{% trans 'Code snippet for added item' %}</strong>
         <pre>{{ form.instance.get_snippet }}</pre>
-        <ul>
-            <li><a href="{% url dashboard %}">{% trans 'My slots' %}</a></li>
-        </ul>
+
+            <a class="btn" href="{% url dashboard %}">{% trans 'Back to my slots' %}</a>
+
     {% else %}
-    <form action="" method="post">
+    <form action="" method="post" class="form-stacked">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="{% trans "Save" %}" />
+        <div class="actions">
+            <input type="submit" class="btn primary" value="{% trans "Save" %}">&nbsp;<a href="{% url dashboard %}" class="btn">Cancel</a>
+        </div>
+
     </form>
     {% endif %}
 

@@ -1,19 +1,29 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
+{% block heading %}
+    {% trans 'Advertisements' %}
+{% endblock %}
+
 {% block content %}
-    <h3>{% trans 'Advertisements' %}</h3>
 
-    <h4><a href="{% url dashboard %}">{% trans 'My slots' %}</a> / {{ slot.title }}</h4>
 
-    <ul>
-        <li><a href="{% url adserver_add_advertisement slot.slot %}">{% trans 'Add an advertisement' %}</a></li>
-        <li><a href="{% url adserver_get_snippet slot.slot %}">{% trans 'Get snippet for this slot' %}</a></li>
-        <li><a href="{% url adserver_preview_slot slot.slot %}">{% trans 'Preview this slot' %}</a></li>
+    <ul class="breadcrumb">
+        <li><a href="{% url dashboard %}">{% trans 'My slots' %}</a>  <span class="divider">/</span></li>
+
+        <li class="active">{{ slot.title }}</li>
     </ul>
 
+
+    <p>
+
+     <a class="btn success" href="{% url adserver_add_advertisement slot.slot %}">{% trans 'Add an advertisement' %}</a>
+        <a  class="btn " href="{% url adserver_get_snippet slot.slot %}">{% trans 'Get snippet for this slot' %}</a>
+        <a  class="btn " href="{% url adserver_preview_slot slot.slot %}">{% trans 'Preview this slot' %}</a>
+    </p>
+
     {% if slot.advertisement_set.all %}
-        <table>
+        <table class="zebra-striped bordered-table">
             <thead>
                 <tr>
                     <th>Title</th>
