@@ -17,9 +17,12 @@
             <a class="btn" href="{% url dashboard %}">{% trans 'Back to my slots' %}</a>
 
     {% else %}
-    <form action="" method="post" class="form-stacked">
+    <form action="" method="post" class="">
+    {{ form.render_errors }}
         {% csrf_token %}
-        {{ form.as_p }}
+        <fieldset>
+        {{ form.as_div }}
+        </fieldset>
         <div class="actions">
             <input type="submit" class="btn primary" value="{% trans "Save" %}">&nbsp;<a href="{% url dashboard %}" class="btn">Cancel</a>
         </div>

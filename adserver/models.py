@@ -36,11 +36,15 @@ class AdSlotManager(models.Manager):
 
 class AdSlot(models.Model):
     user = models.ForeignKey(User, verbose_name=_("User"))
-    title = models.CharField(_("Title"), max_length=100)
-    slot = models.SlugField(_("Slot"), max_length=100)
-    sizes = models.CharField(_("Sizes"), max_length=25, choices=ADSLOT_SIZE_CHOICES, blank=True, null=True)
+    title = models.CharField(_("Title"), max_length=100, help_text=_("For example My Banners"))
+    slot = models.SlugField(_("Slot"), max_length=100, help_text=_("For example my-banners, top-banner"))
+    sizes = models.CharField(_("Sizes"), max_length=25, choices=ADSLOT_SIZE_CHOICES, blank=True, null=True,
+                                help_text=_("This field is optional"))
 
     objects = AdSlotManager()
+
+    class Meta:
+        unique_together = ("user", "slot")
 
     def get_absolute_url(self):
         return reverse('adserver_ads', args=[self.slot, ])
@@ -70,17 +74,21 @@ class AdvertisementManager(models.Manager):
         now = datetime.now()
         return self.get_query_set().filter(start_date__lte=now, is_active=True).order_by("?") # random
 
+
+
 class Advertisement(models.Model):
     user = models.ForeignKey(User, verbose_name=_("User"))
     adslot = models.ForeignKey(AdSlot, verbose_name=_("Ad Slot"))
-    title = models.CharField(_("Title"), max_length=100)
-    is_active = models.BooleanField(_("Active"), default=True)
-    start_date = models.DateTimeField(_("Start Date"), blank=True, null=True)
-    end_date = models.DateTimeField(_("Finish Date"), blank=True, null=True) # if it is None, infinite ads
-    view_count = models.IntegerField(_("View Count"), default=0)
-    code = models.TextField(_("Ads Code"))
+    title = models.CharField(_("Title"), max_length=100, help_text=_("For example My Adfoo Ads"))
+    is_active = models.BooleanField(_("Active"), default=True, help_text=_("Is active or inactive"))
+    start_date = models.DateTimeField(_("Start Date"), blank=True, null=True,  help_text=_("The ad start date"))
+    end_date = models.DateTimeField(_("Finish Date"), blank=True, null=True,
+        help_text=_("The ad start date, if it is blank ads is infinite."))
+    view_count = models.IntegerField(_("View Count"), help_text=_("Total ad impressions"), default=0)
+    code = models.TextField(_("Ads Code"), help_text="Advertising code here...")
 
     objects = AdvertisementManager()
+
 
     def __unicode__(self):
         return self.title

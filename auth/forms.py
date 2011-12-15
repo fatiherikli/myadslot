@@ -3,8 +3,9 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
+from core.forms import CustomForm
 
-class RegistrationForm(forms.Form):
+class RegistrationForm(forms.Form, CustomForm):
     username = forms.CharField(label=_("Username"))
     first_name = forms.CharField(label=_("First Name"))
     last_name = forms.CharField(label=_("Last Name"))
@@ -35,7 +36,7 @@ class RegistrationForm(forms.Form):
         user.save()
 
 
-class LoginForm(forms.Form):
+class LoginForm(forms.Form, CustomForm):
     username = forms.CharField(label=_("Username"))
     password = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
 

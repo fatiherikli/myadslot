@@ -11,9 +11,10 @@
         <li class="active"> {{ form.instance.title }} </li>
     </ul>
 
-    <form action="" method="post" class="form-stacked">
+    <form action="" method="post">
+        {{ form.render_errors }}
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_div }}
         <div class="actions">
             <input type="submit" class="btn primary" value="{% trans "Save" %}">&nbsp;<a href="{% url dashboard %}" class="btn">Cancel</a>
         </div>

@@ -1,12 +1,13 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
+
 def build_snippet(slot):
     snippet = """
         <script type="text/javascript">
           (function() {
             /* %(slot_title)s */
             var protocol = ('https:' == document.location.protocol ? 'https://ssl' : 'http://')
-            var adserver_js = protocol + '%(domain)s/%(adserver_track_js)s';
+            var adserver_js = protocol + '%(domain)s%(adserver_track_js)s';
             document.write('<scr' + 'ipt type="text/javascript" src="' + adserver_js + '"></scr' + 'ipt>');
           })();
 

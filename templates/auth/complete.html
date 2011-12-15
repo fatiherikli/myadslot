@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% block heading %}
+    {% trans 'Registration' %}
+{% endblock %}
 {% block content %}
 
-    <h3>{% trans 'Registration' %}</h3>
-    {% trans 'Registration is completed.' %}
-    <ul>
-        <li><a href="{% url auth_login %}">{% trans 'Login' %}</a></li>
-    </ul>
+
+    <p>{% trans 'Registration is completed.' %}</p>
+
+    <p>
+        <a class="btn primary" href="{% url auth_login %}">{% trans 'Login' %}</a>
+    </p>
+
 
 {% endblock %}

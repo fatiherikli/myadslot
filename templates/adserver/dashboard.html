@@ -25,7 +25,7 @@
                 <tr>
                     <td><a href="{{ slot.get_absolute_url }}">{{ slot.title }}</a></td>
                     <td>{{ slot.slot }}</td>
-                    <td>{{ slot.sizes }}</td>
+                    <td>{{ slot.get_sizes_display }}</td>
                 </tr>
             {% endfor %}
             </tbody>

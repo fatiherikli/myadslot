@@ -16,5 +16,15 @@ window.log = function(){
 {console.log();return window.console;}catch(err){return window.console={};}})());
 
 
-// place any jQuery/helper plugins in here, instead of separate, slower script files.
 
+// http://djangosnippets.org/snippets/1488/
+(function ($) {
+    $.fn.slugify = function(obj) {
+        $(this).data('obj', jQuery(obj));
+        $(this).keyup(function() {
+            var obj = jQuery(this).data('obj');
+            var slug = jQuery(this).val().replace(/\s+/g,'-').replace(/[^a-zA-Z0-9\-]/g,'').toLowerCase();
+            obj.val(slug);
+        });
+    }
+})(jQuery)

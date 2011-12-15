@@ -252,7 +252,8 @@ td { vertical-align: top; }
 
 }
 
-
+a { color: #0066ee; }
+a:visited { color: #0066ee;  }
 
 /* ==|== print styles =======================================================
    Print styles.

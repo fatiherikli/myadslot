@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
+{% block heading %}
+    {% trans 'Registration' %}
+{% endblock %}
+
 {% block content %}
-    <h3>{% trans 'Registration' %}</h3>
     <form action="" method="post">
+        {{ form.render_errors }}
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="{% trans "Create an account" %}" />
+        {{ form.as_div }}
+         <div class="actions">
+            <input type="submit" class="btn primary" value="{% trans "Create an account" %}">
+        </div>
     </form>
-    <ul>
-        <li><a href="{% url auth_login %}">{% trans 'Login' %}</a></li>
-    </ul>
+
 {% endblock %}
