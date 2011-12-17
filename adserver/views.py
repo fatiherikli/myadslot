@@ -6,13 +6,13 @@ from adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementFo
 from adserver.models import Advertisement
 from myads.adserver.models import AdSlot
 from myads.auth.decorators import login_required
+from myads.adserver.utils import render_ads
 from django.core.urlresolvers import reverse
 
 def track(request, username, slot):
     user = get_object_or_404(User, username=username)
     slot = get_object_or_404(AdSlot, user=user, slot=slot)
-    ads = slot.get_ads_code()
-    return HttpResponse(ads)
+    return HttpResponse(render_ads(slot))
 
 @login_required
 def dashboard(request, template="adserver/dashboard.html"):

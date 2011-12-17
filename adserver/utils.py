@@ -20,9 +20,33 @@ def build_snippet(slot):
     return snippet
 
 def build_blank_ads(slot):
+    """
+    type(slot) => myads.adserver.models.AdSlot
+    """
     snippet = """
         <div>%(size)s</div>
         """ % {
             "size" : slot.sizes
         }
     return snippet
+
+def escape_js(code):
+    import re
+    pattern = re.compile(re.escape("script"), re.I)
+    _code = re.sub(pattern,"scr' + 'ipt", code)
+    return _code.\
+           replace("\n","\\n").\
+           replace("\r","\\r")
+
+
+def render_ads(slot):
+    code = slot.get_ads_code()
+    ads_template = """document.write('%(code)s');""" % {
+        "code" : escape_js(code)
+        }
+    return ads_template
+
+
+
+
+

@@ -1,4 +1,5 @@
 # Django settings for myads project.
+from utils import here
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -88,7 +89,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'myads.urls'
 
-TEMPLATE_DIRS = ('C:/django/myads/templates',)
+TEMPLATE_DIRS = (here('templates'), )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
