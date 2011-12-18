@@ -22,8 +22,8 @@ class LocaleMiddleware(object):
             translation.activate(LANGUAGE_DOMAIN_PREFIX[domain_prefix])
             request.LANGUAGE_CODE = LANGUAGE_DOMAIN_PREFIX[domain_prefix]
         else:
-            translation.activate(LANGUAGE_DOMAIN_PREFIX["en"])
-            request.LANGUAGE_CODE = LANGUAGE_DOMAIN_PREFIX["en"]
+            translation.activate(translation.get_language_from_request(request))
+            request.LANGUAGE_CODE = LANGUAGE_DOMAIN_PREFIX[translation.get_language_from_request(request)]
 
     def process_response(self, request, response):
         patch_vary_headers(response, ('Accept-Language',))
