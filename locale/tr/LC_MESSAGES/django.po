@@ -1,59 +1,333 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-11 03:58+0200\n"
+"POT-Creation-Date: 2011-12-18 05:47+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\adserver\models.py:28 .\adserver\models.py:37
+#: .\adserver\forms.py:13
+msgid "This slot already exists."
+msgstr ""
+
+#: .\adserver\models.py:38 .\adserver\models.py:80
 msgid "User"
 msgstr ""
 
-#: .\adserver\models.py:29 .\adserver\models.py:39
+#: .\adserver\models.py:39 .\adserver\models.py:82
 msgid "Title"
 msgstr "Başlık"
 
-#: .\adserver\models.py:30
+#: .\adserver\models.py:39
+msgid "For example My Banners"
+msgstr "Örneğin Oyun Öncesi Reklamlarım"
+
+#: .\adserver\models.py:40
 msgid "Slot"
 msgstr "Reklam Slotu"
 
-#: .\adserver\models.py:31
+#: .\adserver\models.py:40
+msgid "For example my-banners, top-banner"
+msgstr "Örneğin oyun-oncesi-reklamlarim"
+
+#: .\adserver\models.py:41
 msgid "Sizes"
 msgstr "Reklam Boyutları"
 
-#: .\adserver\models.py:38
+#: .\adserver\models.py:42
+msgid "This field is optional"
+msgstr "Bu alan opsiyoneldir."
+
+#: .\adserver\models.py:81
 msgid "Ad Slot"
 msgstr "Reklam Slotu"
 
-#: .\adserver\models.py:40
+#: .\adserver\models.py:82
+msgid "For example My Adfoo Ads"
+msgstr "Örneğin Adsense Reklamlarım"
+
+#: .\adserver\models.py:83
 msgid "Active"
 msgstr "Aktif"
 
-#: .\adserver\models.py:41
+#: .\adserver\models.py:83
+msgid "Is active or inactive"
+msgstr "Reklamın yayın durumu."
+
+#: .\adserver\models.py:84
 msgid "Start Date"
 msgstr "Başlangıç Tarihi"
 
-#: .\adserver\models.py:42
+#: .\adserver\models.py:84
+msgid "The ad start date"
+msgstr "Reklamın gösteriminin başlangıç tarihi"
+
+#: .\adserver\models.py:85
 msgid "Finish Date"
 msgstr "Bitiş Tarihi"
 
-#: .\adserver\models.py:43 .\adserver\models.py:58
+#: .\adserver\models.py:86
+msgid "The ad end date, if it is blank ads is infinite."
+msgstr "Reklamın gösteriminin sona erdiği tarih. Eğer boş bırakırsanız reklamı pasif yapmadıkça sonsuza kadar görüntülenir."
+
+#: .\adserver\models.py:87 .\adserver\models.py:119
 msgid "View Count"
 msgstr "Gösterim sayısı"
 
-#: .\adserver\models.py:56
+#: .\adserver\models.py:87
+msgid "Total ad impressions"
+msgstr ""
+
+#: .\adserver\models.py:88
+msgid "Ads Code"
+msgstr ""
+
+#: .\adserver\models.py:108
+msgid "Infinite"
+msgstr ""
+
+#: .\adserver\models.py:117
 msgid "IP Address"
 msgstr "Ip adresi"
 
-#: .\adserver\models.py:57
+#: .\adserver\models.py:118
 msgid "Visitor Informations"
 msgstr "Tarayıcı bilgileri"
 
-#: .\adserver\models.py:59
+#: .\adserver\models.py:120
 msgid "Visited Page Url"
 msgstr "Ziyaret edilen sayfa"
 
-#: .\adserver\models.py:60
+#: .\adserver\models.py:121
 msgid "Last Visit Date"
 msgstr "Son ziyaret tarihi"
+
+#: .\auth\forms.py:9 .\auth\forms.py:40
+msgid "Username"
+msgstr ""
+
+#: .\auth\forms.py:10
+msgid "First Name"
+msgstr ""
+
+#: .\auth\forms.py:11
+msgid "Last Name"
+msgstr ""
+
+#: .\auth\forms.py:13 .\auth\forms.py:41
+msgid "Password"
+msgstr ""
+
+#: .\auth\forms.py:24
+msgid "This email is already in use"
+msgstr ""
+
+#: .\core\forms.py:22
+msgid "You got an error!"
+msgstr ""
+
+#: .\templates\base.html.py:37
+msgid "Home"
+msgstr ""
+
+#: .\templates\base.html.py:38
+msgid "Plans & Pricing"
+msgstr ""
+
+#: .\templates\base.html.py:39 .\templates\auth\complete.html.py:12
+#: .\templates\auth\login.html.py:5 .\templates\auth\login.html.py:14
+msgid "Login"
+msgstr ""
+
+#: .\templates\base.html.py:41 .\templates\adserver\dashboard.html.py:5
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\base.html.py:42
+msgid "Adserver Stats"
+msgstr ""
+
+#: .\templates\base.html.py:57
+msgid "Change Password"
+msgstr ""
+
+#: .\templates\base.html.py:58
+msgid "My Profile"
+msgstr ""
+
+#: .\templates\base.html.py:60
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base.html.py:91
+msgid "All rights reserved."
+msgstr ""
+
+#: .\templates\index.html.py:9
+msgid ""
+"MyAdSlot web service helps you manage your advertisements from a single user "
+"friendly interface.\n"
+"            MyAdSlot maintains all of your advertisement accounts.  In other "
+"words, your private advertising manager."
+msgstr ""
+
+#: .\templates\index.html.py:15
+msgid "Signup for free"
+msgstr ""
+
+#: .\templates\index.html.py:16
+msgid "or View plans & pricing"
+msgstr ""
+
+#: .\templates\index.html.py:24
+msgid "All the ads in one place !"
+msgstr ""
+
+#: .\templates\index.html.py:26
+msgid "Enable or disable any one of your advertisements."
+msgstr ""
+
+#: .\templates\index.html.py:27
+msgid "Choose start date or end date for your advertisements."
+msgstr ""
+
+#: .\templates\index.html.py:28
+msgid "Analyze your advertisements."
+msgstr ""
+
+#: .\templates\index.html.py:29
+msgid "With simplistic and clean user interface."
+msgstr ""
+
+#: .\templates\index.html.py:30
+msgid "All for free !"
+msgstr ""
+
+#: .\templates\index.html.py:37
+msgid "What they say about MyAdSlot"
+msgstr ""
+
+#: .\templates\pricing.html.py:5
+msgid "Select which plan is right for you"
+msgstr ""
+
+#: .\templates\pricing.html.py:13
+msgid "Free plan"
+msgstr ""
+
+#: .\templates\pricing.html.py:14
+msgid "Business plan"
+msgstr ""
+
+#: .\templates\pricing.html.py:15
+msgid "Advanced plan"
+msgstr ""
+
+#: .\templates\pricing.html.py:19
+msgid "Pricing"
+msgstr ""
+
+#: .\templates\pricing.html.py:26
+msgid "Slot Limit"
+msgstr ""
+
+#: .\templates\pricing.html.py:33
+msgid "Ads Limit"
+msgstr ""
+
+#: .\templates\pricing.html.py:40
+msgid "Statics"
+msgstr ""
+
+#: .\templates\adserver\add_advertisement.html.py:10
+#: .\templates\adserver\advertisements.html.py:12
+#: .\templates\adserver\edit_advertisement.html.py:9
+#: .\templates\adserver\get_slot_snippet.html.py:7
+#: .\templates\adserver\preview_slot.html.py:6
+msgid "My slots"
+msgstr ""
+
+#: .\templates\adserver\add_advertisement.html.py:12
+#: .\templates\adserver\advertisements.html.py:20
+msgid "Add an advertisement"
+msgstr ""
+
+#: .\templates\adserver\add_advertisement.html.py:22
+#: .\templates\adserver\add_slot.html.py:27
+#: .\templates\adserver\edit_advertisement.html.py:19
+msgid "Save"
+msgstr ""
+
+#: .\templates\adserver\add_slot.html.py:6
+#: .\templates\adserver\dashboard.html.py:11
+#, fuzzy
+msgid "Add a slot"
+msgstr "Reklam Slotu"
+
+#: .\templates\adserver\add_slot.html.py:12
+msgid "Congratulations. Slot was added successfully."
+msgstr ""
+
+#: .\templates\adserver\add_slot.html.py:14
+msgid "Code snippet for added item"
+msgstr ""
+
+#: .\templates\adserver\add_slot.html.py:17
+msgid "Back to my slots"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:5
+msgid "Advertisements"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:21
+msgid "Get snippet for this slot"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:22
+msgid "Preview this slot"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:47
+msgid "Not added any advertisement..."
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:5
+msgid "Everything is under control !"
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:34
+msgid "Not added any slot..."
+msgstr ""
+
+#: .\templates\adserver\edit_advertisement.html.py:4
+msgid "Edit Advertisement"
+msgstr ""
+
+#: .\templates\adserver\get_slot_snippet.html.py:10
+msgid "Get Snippet"
+msgstr ""
+
+#: .\templates\adserver\get_slot_snippet.html.py:12
+msgid "Get Slot Snippet"
+msgstr ""
+
+#: .\templates\adserver\preview_slot.html.py:9
+msgid "Preview"
+msgstr ""
+
+#: .\templates\adserver\preview_slot.html.py:12
+msgid "Slot Preview"
+msgstr ""
+
+#: .\templates\auth\complete.html.py:4 .\templates\auth\register.html.py:5
+msgid "Registration"
+msgstr ""
+
+#: .\templates\auth\complete.html.py:9
+msgid "Registration is completed."
+msgstr ""
+
+#: .\templates\auth\register.html.py:14
+msgid "Create an account"
+msgstr ""

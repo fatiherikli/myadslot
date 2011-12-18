@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block heading %}
+    {% trans 'Select which plan is right for you' %}
+{% endblock %}
+
+{% block content %}
+
+    <table class="zebra-striped bordered-table">
+        <thead>
+            <th></th>
+            <th>{% trans 'Free plan' %}</th>
+            <th>{% trans 'Business plan' %}</th>
+            <th>{% trans 'Advanced plan' %}</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{% trans 'Pricing' %}</th>
+                <td class="pricing">Free !</td>
+                <td class="pricing">5$ / Month</td>
+                <td class="pricing">10$ / Month</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Slot Limit' %}</th>
+                <td>10</td>
+                <td>100</td>
+                <td>Unlimited !</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Ads Limit' %}</th>
+                <td>100</td>
+                <td>Unlimited !</td>
+                <td>Unlimited !</td>
+            </tr>
+
+            <tr>
+                <th>{% trans 'Statics' %}</th>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes <span class="label warning">ADVENCED</span></td>
+            </tr>
+
+            <tr>
+                <th></th>
+                <td><a href="{% url auth_register %}" class="btn info">Signup !</a></td>
+                <td><a href="{% url auth_register %}" class="btn info">Signup !</a></td>
+                <td><a href="{% url auth_register %}" class="btn info">Signup !</a></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+{% endblock %}

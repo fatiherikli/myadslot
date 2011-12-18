@@ -1,25 +1,49 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block container %}
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
         <h1>My ad slots</h1>
-        <p>Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-        <p><a class="btn primary large">Learn more &raquo;</a></p>
+        <p>{% blocktrans %}MyAdSlot web service helps you manage your advertisements from a single user friendly interface.
+            MyAdSlot maintains all of your advertisement accounts.  In other words, your private advertising manager.{% endblocktrans %}</p>
+        <p>
+
+
+
+            <a href="{% url auth_register %}" class="btn primary large">{% trans 'Signup for free' %}&raquo;</a>
+            <a href="{% url auth_pricing %}" class="btn default large">{% trans 'or View plans & pricing' %}</a>
+
+        </p>
     </div>
 
     <!-- Example row of columns -->
     <div class="row">
-        <div class="span9">
-            <h2>All the ads in one place !</h2>
-            <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+        <div class="span7">
+            <h3>{%  trans 'All the ads in one place !' %}</h3>
+            <ul>
+                <li>{% trans 'Enable or disable any one of your advertisements.' %}</li>
+                <li>{% trans 'Choose start date or end date for your advertisements.' %}</li>
+                <li>{% trans 'Analyze your advertisements.' %}</li>
+                <li>{% trans 'With simplistic and clean user interface.' %}</li>
+                 <li>{% trans 'All for free !' %}</li>
+            </ul>
             <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
-        <div class="span5">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+
+
+        <div class="span7">
+            <h3>{% trans 'What they say about MyAdSlot' %}</h3>
+            <blockquote>
+                <p>If you have too many sites and if you are interested in internet advertising you should try it.</p>
+                <small>Ramazan Erikli</small>
+            </blockquote>
+
+            <blockquote>
+                <p>MyAdSlot is useful for manage internet advertisements. Thank you very much myadslot.com :)</p>
+                <small>Yaşar İçli</small>
+            </blockquote>
         </div>
 
     </div>

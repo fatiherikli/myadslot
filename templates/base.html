@@ -32,11 +32,11 @@
     <div class="fill">
         <div class="container">
             <a class="brand" href="/">My Ad Slots</a>
-            <ul class="nav"">
+            <ul class="nav">
                 {% if user.is_anonymous %}
                 <li><a href="/">{% trans 'Home' %}</a></li>
+                <li><a href="{% url auth_pricing %}">{% trans 'Plans & Pricing' %}</a></li>
                 <li><a href="{% url auth_login %}">{% trans 'Login' %}</a></li>
-                <li><a href="{% url auth_register %}">{% trans 'Register' %}</a></li>
                 {% else %}
                 <li><a href="{% url dashboard %}">{% trans 'Dashboard' %}</a></li>
                 <li><a href="#">{% trans 'Adserver Stats' %}</a></li>
@@ -87,7 +87,10 @@
       </div>
 {% endblock %}
       <footer>
-        <p>&copy; Company 2011</p>
+
+       <p> <small>  MyAdSlot &copy; 2011 - {% trans 'All rights reserved.' %}</small></p>
+
+
       </footer>
 
     </div> <!-- /container -->

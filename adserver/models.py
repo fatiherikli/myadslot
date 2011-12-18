@@ -83,7 +83,7 @@ class Advertisement(models.Model):
     is_active = models.BooleanField(_("Active"), default=True, help_text=_("Is active or inactive"))
     start_date = models.DateTimeField(_("Start Date"), blank=True, null=True,  help_text=_("The ad start date"))
     end_date = models.DateTimeField(_("Finish Date"), blank=True, null=True,
-        help_text=_("The ad start date, if it is blank ads is infinite."))
+        help_text=_("The ad end date, if it is blank ads is infinite."))
     view_count = models.IntegerField(_("View Count"), help_text=_("Total ad impressions"), default=0)
     code = models.TextField(_("Ads Code"), help_text="Advertising code here...")
 
