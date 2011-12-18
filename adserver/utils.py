@@ -32,7 +32,7 @@ def build_blank_ads(slot):
 
 def escape_js(code):
     import re
-    pattern = re.compile(re.escape("script"), re.IGNORECASING)
+    pattern = re.compile(re.escape("script"), re.IGNORECASE)
     _code = re.sub(pattern,"scr' + 'ipt", code)
     return _code.\
            replace("\n","\\n").\
