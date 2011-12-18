@@ -12,7 +12,6 @@
     </ul>
 
     <form action="" method="post">
-        {{ form.render_errors }}
         {% csrf_token %}
         {{ form.as_div }}
         <div class="actions">

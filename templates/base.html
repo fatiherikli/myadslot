@@ -86,15 +86,31 @@
         </div>
       </div>
 {% endblock %}
-      <footer>
+<!-- confirm modal content -->
 
-       <p> <small>  MyAdSlot &copy; 2011 - {% trans 'All rights reserved.' %}</small></p>
+      <footer><p> <small>  MyAdSlot &copy; 2011 - {% trans 'All rights reserved.' %}</small></p>
 
 
       </footer>
 
     </div> <!-- /container -->
 
+
+    <!-- confirmation plugin -->
+    <div id="confirm-modal" class="modal hide fade">
+            <div class="modal-header">
+                <a href="#" class="close">&times;</a>
+                <h3>{% trans 'Are you sure ?' %}</h3>
+            </div>
+            <div class="modal-body">
+                <p class="message-text"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn primary cancel">{% trans 'Cancel' %}</a>
+                <a href="#" class="btn secondary okey">{% trans 'Yes' %}</a>
+            </div>
+     </div>
+     <!-- /confirmation -->
 
 
 <!-- JavaScript at the bottom for fast page loading -->
@@ -109,6 +125,9 @@
 <script defer src="{{ MEDIA_URL }}js/plugins.js"></script>
 <script defer src="{{ MEDIA_URL }}js/script.js"></script>
 <script src="{{ MEDIA_URL }}js/libs/bootstrap/bootstrap-dropdown.js"></script>
+<script src="{{ MEDIA_URL }}js/libs/bootstrap/bootstrap-modal.js"></script>
+{% block ajavascripts %}
+{% endblock %}
 
 <!-- end scripts-->
 

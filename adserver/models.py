@@ -119,6 +119,9 @@ class Advertisement(models.Model):
     def get_start_date(self):
         return self.start_date
 
+    def get_state(self):
+        return _("Published") if self.is_active else _('Not Published')
+
     def get_end_date(self):
         return self.end_date or _("Infinite")
 

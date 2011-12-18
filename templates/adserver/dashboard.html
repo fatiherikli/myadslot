@@ -5,19 +5,23 @@
     {% trans 'Dashboard' %} <small>{% trans 'Everything is under control !' %}</small>
 {% endblock %}
 
-{% block content %}
 
+
+{% block content %}
     <p>
       <a class="btn success large" href="{% url adserver_add_slot %}">{% trans 'New Slot' %}</a>
     </p>
+
+
 
     {% if slots %}
         <table class="zebra-striped bordered-table">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Slot</th>
-                    <th>Sizes</th>
+                    <th>{% trans 'Title' %}</th>
+                    <th>{% trans 'Slot' %}</th>
+                    <th>{% trans 'Sizes' %}</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +30,10 @@
                     <td><a href="{{ slot.get_absolute_url }}">{{ slot.title }}</a></td>
                     <td>{{ slot.slot }}</td>
                     <td>{% if slot.sizes %}{{ slot.get_sizes_display }}{% else %}{% trans 'Undefined' %}{% endif %}</td>
+                    <td width="200">
+                        <a style="margin-top:-5px; margin-bottom:-5px;" class="btn default" href="{% url adserver_edit_slot slot.slot %}">{% trans 'Edit' %}</a>
+                        <a style="margin-top:-5px; margin-bottom:-5px;" class="btn error confirm" title="{% trans 'This slot will be removed, are you sure?' %}"  href="{% url adserver_delete_slot slot.slot %}">{% trans 'Delete !' %}</a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

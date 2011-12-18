@@ -9,7 +9,7 @@
 {% block content %}
 
     {% if form.is_valid %}
-        <div class="alert-message success">{% trans 'Congratulations. Slot was added successfully.' %}</div>
+        <div class="alert-message success">{% trans 'Congratulations. Slot was saved successfully.' %}</div>
 
         <strong>{% trans 'Code snippet for added item' %}</strong>
         <pre>{{ form.instance.get_snippet }}</pre>
@@ -18,8 +18,7 @@
 
     {% else %}
     <form action="" method="post" class="">
-    {{ form.render_errors }}
-        {% csrf_token %}
+         {% csrf_token %}
         <fieldset>
         {{ form.as_div }}
         </fieldset>

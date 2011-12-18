@@ -34,6 +34,7 @@ class CustomForm(object):
                 %(label)s
                 <div class="input">
                     %(field)s
+                    %(field_error)s
                     <span class="help-block">%(help_text)s </span>
                 </div>
             </div>
@@ -41,14 +42,16 @@ class CustomForm(object):
             row_dict = {
                 "div_class" : "",
                 "required_label" : "",
+                "field_error" : "",
                 "field" : boundfield.as_widget(),
                 "label" : boundfield.label_tag(),
                 "help_text" : boundfield.help_text,
             }
 
             if boundfield.errors:
-                row_dict["div_class"] = "error"
+                row_dict["div_class"] = "alert-message block-message error"
                 boundfield.field.widget.attrs["class"]="error"
+                row_dict["field_error"] = '<span class="help-inline"><strong>%s</strong></span>' % boundfield.errors[0]
 
             output.append(row_template % row_dict)
         return mark_safe(u'\n'.join(output))

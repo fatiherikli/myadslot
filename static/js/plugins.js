@@ -28,3 +28,16 @@ window.log = function(){
         });
     }
 })(jQuery)
+
+
+
+$(function () {
+    $(".confirm").click(function () {
+        var base = $(this)
+        var modal = $("#confirm-modal").modal({'backdrop':true, show:true});
+        $("#confirm-modal .message-text").html(base.attr("title"))
+        $("#confirm-modal .cancel").click(function () {modal.modal('hide'); return false;})
+        $("#confirm-modal .okey").click(function () { window.location.href = base.attr("href"); return false })
+        return false;
+    })
+})

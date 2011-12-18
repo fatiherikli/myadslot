@@ -31,6 +31,14 @@ def advertisements(request, slot, template="adserver/advertisements.html"):
     }
     return render_to_response(template, context_instance=RequestContext(request, ctx))
 
+
+@login_required()
+def delete_slot(request, slot):
+    slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
+    slot.delete()
+    return HttpResponseRedirect(reverse('dashboard'))
+
+
 @login_required()
 def preview_slot(request, slot, template="adserver/preview_slot.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
@@ -89,6 +97,21 @@ def add_slot(request, template="adserver/add_slot.html"):
     form = AdSlotForm()
     if request.method == "POST":
         form = AdSlotForm(request.POST)
+        if form.is_valid():
+            form.instance.user = request.user
+            form.save()
+    ctx = {
+        "form" : form
+    }
+    return render_to_response(template, context_instance=RequestContext(request, ctx))
+
+
+@login_required
+def edit_slot(request, slot, template="adserver/edit_slot.html"):
+    slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
+    form = AdSlotForm(instance=slot)
+    if request.method == "POST":
+        form = AdSlotForm(request.POST, instance=slot)
         if form.is_valid():
             form.instance.user = request.user
             form.save()

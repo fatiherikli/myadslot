@@ -26,17 +26,17 @@
         <table class="zebra-striped bordered-table">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Is Active</th>
-                    <th>Start Date</th>
-                    <th>Finish Date</th>
+                    <th>{% trans 'Title' %}</th>
+                    <th>{% trans 'Publish State' %}</th>
+                    <th>{% trans 'Start Date' %}</th>
+                    <th>{% trans 'Finish Date' %}</th>
                 </tr>
             </thead>
             <tbody>
             {% for advertisement in slot.advertisement_set.all %}
                 <tr>
                     <td><a href="{{ advertisement.get_absolute_url }}">{{ advertisement.title }}</a></td>
-                    <td>{{ advertisement.is_active }}</td>
+                    <td><span class='label {{  advertisement.is_active|yesno:'success,warning' }}'>{{ advertisement.get_state }}</span></td>
                     <td>{{ advertisement.get_start_date }}</td>
                     <td>{{ advertisement.get_end_date }}</td>
                 </tr>
