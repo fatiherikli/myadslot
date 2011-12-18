@@ -65,6 +65,21 @@ class AdSlot(models.Model):
     def get_snippet(self):
         return build_snippet(self)
 
+    @property
+    def get_width(self):
+        if not self.sizes:
+            return None
+        width, height = self.sizes.split("x")
+        return int(width)
+
+    @property
+    def get_height(self):
+        if not self.sizes:
+            return None
+        width, height = self.sizes.split("x")
+        return int(height)
+
+
     def __unicode__(self):
         return self.title
 
