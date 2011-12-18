@@ -47,13 +47,18 @@ class LoginForm(forms.Form, CustomForm):
         user = _authenticate(username=email, password=password)
         _login(request, user)
 
+    def auth_error(self):
+        return self.errors.get("__all__")
+
     def clean(self):
         username = self.cleaned_data.get("username")
         password = self.cleaned_data.get("password")
         user = authenticate(username=username, password=password)
         if not user:
-            raise forms.ValidationError("Email or Password is incorrect.")
+            raise forms.ValidationError(_("Username or Password is incorrect."))
 
         if not user.is_active:
-            raise forms.ValidationError("Your membership is not active.")
+            raise forms.ValidationError(_("Your membership is not active."))
+
+        return password
 

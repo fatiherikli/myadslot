@@ -45,9 +45,9 @@
             {% if user.is_anonymous %}
             <form action="{% url auth_login %}" method="post" class="pull-right">
                 {% csrf_token %}
-                <input class="input-small" name="username" type="text" placeholder="Username">
-                <input class="input-small" name="password" type="password" placeholder="Password">
-                <button class="btn" type="submit">Sign in</button>
+                <input class="input-small" name="username" type="text" placeholder="{% trans 'Username' %}">
+                <input class="input-small" name="password" type="password" placeholder="{% trans 'Password' %}">
+                <button class="btn" type="submit">{% trans 'Login' %}</button>
             </form>
             {% else %}
             <ul class="nav secondary-nav" data-dropdown="dropdown">

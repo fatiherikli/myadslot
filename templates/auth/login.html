@@ -8,7 +8,12 @@
 {% block content %}
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_div }}
+        {% if form.auth_error %}
+            <div class="block-message alert-message error">
+                {{ form.auth_error }}
+            </div>
+        {% endif %}
+         {{ form.as_div }}
         <div class="actions">
             <input type="submit" class="btn primary" value="{% trans "Login" %}">
         </div>

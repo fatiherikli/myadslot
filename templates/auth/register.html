@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-    {{ form.render_errors }}
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_div }}

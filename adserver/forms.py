@@ -27,5 +27,5 @@ class EditAdvertisementForm(forms.ModelForm, CustomForm):
 
     class Meta:
         model = Advertisement
-        exclude = ('user', 'adslot')
+        exclude = ('user', 'adslot', 'view_count')
 

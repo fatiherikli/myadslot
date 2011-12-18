@@ -100,6 +100,7 @@ class Advertisement(models.Model):
     end_date = models.DateTimeField(_("Finish Date"), blank=True, null=True,
         help_text=_("The ad end date, if it is blank ads is infinite."))
     view_count = models.IntegerField(_("View Count"), help_text=_("Total ad impressions"), default=0)
+    # view count denormalized by track_visitor method
     code = models.TextField(_("Ads Code"), help_text="Advertising code here...")
 
     objects = AdvertisementManager()
@@ -120,10 +121,24 @@ class Advertisement(models.Model):
         return self.start_date
 
     def get_state(self):
-        return _("Published") if self.is_active else _('Not Published')
+        return _('Published') if self.is_active else _('Not Published')
 
     def get_end_date(self):
         return self.end_date or _("Infinite")
+
+    def track_visitor(self, request):
+        ip_address = request.META.get("REMOTE_ADDR")
+        user_agent = request.META.get("HTTP_USER_AGENT")
+        visitor, created = self.visitor_set.get_or_create(ip_address=ip_address, user_agent=user_agent)
+
+        visitor.last_visit_url = request.META.get("HTTP_REFERER", "")
+        visitor.last_visit_date = datetime.now()
+        visitor.visit_count += 1
+        visitor.save()
+
+        # denormalize view count field
+        self.view_count += 1
+        self.save()
 
 class VisitorManager(models.Manager):
     def active(self, timeout=10):
@@ -132,6 +147,7 @@ class VisitorManager(models.Manager):
         return self.get_query_set().filter(last_visit_date__gte=tolerance)
 
 class Visitor(models.Model):
+    advertisement = models.ForeignKey(Advertisement)
     ip_address = models.IPAddressField(_("IP Address"))
     user_agent = models.CharField(_("Visitor Informations"), max_length=255)
     visit_count = models.IntegerField(_("View Count"), default=1)
@@ -139,6 +155,10 @@ class Visitor(models.Model):
     last_visit_date = models.DateTimeField(_("Last Visit Date"), auto_now_add=True, auto_now=True)
 
     objects = VisitorManager()
+
+    def save(self, **kwargs):
+        super(Visitor, self).save(**kwargs)
+
 
     def __unicode__(self):
         return self.ip_address

@@ -46,7 +46,7 @@ def escape_js(code):
     replace("\r","\\r")
 
 
-def render_ads(slot):
+def render_slot(slot):
     code = slot.get_ads_code()
     ads_template = """document.write('%(code)s');""" % {
         "code" : escape_js(code)

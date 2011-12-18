@@ -30,6 +30,7 @@
                     <th>{% trans 'Publish State' %}</th>
                     <th>{% trans 'Start Date' %}</th>
                     <th>{% trans 'Finish Date' %}</th>
+                    <th>{% trans 'View Count' %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,7 @@
                     <td><span class='label {{  advertisement.is_active|yesno:'success,warning' }}'>{{ advertisement.get_state }}</span></td>
                     <td>{{ advertisement.get_start_date }}</td>
                     <td>{{ advertisement.get_end_date }}</td>
+                    <td>{{ advertisement.view_count }}</td>
                 </tr>
             {% endfor %}
             </tbody>
