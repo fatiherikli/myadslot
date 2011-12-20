@@ -1,13 +1,14 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render_to_response, get_object_or_404
-from django.template.context import RequestContext
+from django.shortcuts import get_object_or_404
 from adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementForm
 from adserver.models import Advertisement
+from core.decorators import render_template
 from myads.adserver.models import AdSlot
 from myads.auth.decorators import login_required
 from myads.adserver.utils import render_slot
 from django.core.urlresolvers import reverse
+
 
 def track(request, username, slot):
     user = get_object_or_404(User, username=username)
@@ -17,23 +18,24 @@ def track(request, username, slot):
         ads.track_visitor(request)
     return HttpResponse(render_slot(slot))
 
+
 @login_required()
+@render_template
 def dashboard(request, template="adserver/dashboard.html"):
     slots = AdSlot.objects.from_request(request)
     ctx = {
         "slots" : slots
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
-
+    return template, ctx
 
 @login_required()
+@render_template
 def advertisements(request, slot, template="adserver/advertisements.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     ctx = {
         "slot" : slot
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
-
+    return template, ctx
 
 @login_required()
 def delete_slot(request, slot):
@@ -43,23 +45,26 @@ def delete_slot(request, slot):
 
 
 @login_required()
+@render_template
 def preview_slot(request, slot, template="adserver/preview_slot.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     ctx = {
         "slot" : slot
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
+    return template, ctx
 
 @login_required()
+@render_template
 def get_slot_snippet(request, slot, template="adserver/get_slot_snippet.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     ctx = {
         "slot" : slot
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
+    return template, ctx
 
 
 @login_required()
+@render_template
 def add_advertisement(request, slot, template="adserver/add_advertisement.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     form = AddAdvertisementForm()
@@ -74,9 +79,10 @@ def add_advertisement(request, slot, template="adserver/add_advertisement.html")
         "slot" : slot,
         "form" : form
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
+    return template, ctx
 
 @login_required()
+@render_template
 def edit_advertisement(request, slot, ads_id, template="adserver/edit_advertisement.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
@@ -92,10 +98,11 @@ def edit_advertisement(request, slot, ads_id, template="adserver/edit_advertisem
         "slot" : slot,
         "form" : form
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
+    return template, ctx
 
 
 @login_required
+@render_template
 def add_slot(request, template="adserver/add_slot.html"):
     form = AdSlotForm()
     if request.method == "POST":
@@ -106,10 +113,11 @@ def add_slot(request, template="adserver/add_slot.html"):
     ctx = {
         "form" : form
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
+    return template, ctx
 
 
 @login_required
+@render_template
 def edit_slot(request, slot, template="adserver/edit_slot.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     form = AdSlotForm(instance=slot)
@@ -121,6 +129,5 @@ def edit_slot(request, slot, template="adserver/edit_slot.html"):
     ctx = {
         "form" : form
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
-
+    return template, ctx
 

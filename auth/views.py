@@ -5,12 +5,13 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from auth.forms import RegistrationForm, LoginForm
 from django.contrib.auth import logout as _logout
+from core.decorators import render_template
 
 def logout(request):
     _logout(request)
     return HttpResponseRedirect("/")
 
-
+@render_template
 def login(request, template="auth/login.html"):
     if request.user.is_authenticated():
         return HttpResponseRedirect(reverse("dashboard"))
@@ -30,8 +31,9 @@ def login(request, template="auth/login.html"):
     ctx = {
         "form" : form
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
+    return template, ctx
 
+@render_template
 def register(request, template="auth/register.html"):
     form = RegistrationForm()
     if request.method == "POST":
@@ -43,7 +45,8 @@ def register(request, template="auth/register.html"):
     ctx = {
         "form" : form
     }
-    return render_to_response(template, context_instance=RequestContext(request, ctx))
+    return template, ctx
 
+@render_template
 def complete(request, template="auth/complete.html"):
-    return render_to_response(template, context_instance=RequestContext(request))
+    return template

@@ -99,6 +99,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'myads.core.middleware.LocaleMiddleware',
+    'myads.core.middleware.MobileDomainMiddleware',
+    'myads.core.middleware.MobileDetectionMiddleware',
 )
 
 ROOT_URLCONF = 'myads.urls'
