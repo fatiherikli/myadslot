@@ -5,14 +5,10 @@
     {% trans 'Dashboard' %} <small>{% trans 'Everything is under control !' %}</small>
 {% endblock %}
 
-
-
 {% block content %}
     <p>
       <a class="btn success large" href="{% url adserver_add_slot %}">{% trans 'New Slot' %}</a>
     </p>
-
-
 
     {% if slots %}
         <table class="zebra-striped bordered-table">

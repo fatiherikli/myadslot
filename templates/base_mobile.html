@@ -1,17 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyAdSlot mobile !</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</head>
+<body>
 
-{% block container %}
-      <div class="content">
-        <div class="page-header">
-          <h1>{% block heading %}Myadslot <span>!</span> {% endblock %}</h1>
-        </div>
-        <div class="row">
+<div data-role="page">
+    {% block container %}
+    <div data-role="header">
+        <a data-rel="back">Back</a>
+        <h1>{% block heading %}Myadslot <span>!</span> {% endblock %}</h1>
+        {% block topright %}
+        {% endblock %}
+    </div><!-- /header -->
 
-          <div class="span14">
-           {% block content %}
+
+    <div data-role="content">
+
+        {% block content %}
             <h3>content</h3>
-           {% endblock %}
-          </div>
+        {% endblock %}
 
-        </div>
-      </div>
-{% endblock %}
+    </div><!-- /content -->
+
+    {% endblock %}
+</div><!-- /page -->
+
+</body>
+</html>

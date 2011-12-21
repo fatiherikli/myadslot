@@ -1,10 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-is mobile
-</body>
-</html>
+{% extends 'base_mobile.html' %}
+{% load i18n %}
+{% block content %}
+    {% if user.is_anonymous %}
+    <form method="post" action="{% url auth_login %}">
+        {{ login_form }}
+        <input type="submit" data-inline="true" value="{% trans 'Login' %}">
+    </form>
+    {% else %}
+    <a href="{% url dashboard %}">{% trans 'click here for dashboard' %}</a> or
+        <a href="{% url auth_logout %}">{% trans 'logout' %}</a>
+
+    {% endif %}
+{% endblock %}

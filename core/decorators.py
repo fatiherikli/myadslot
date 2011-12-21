@@ -22,4 +22,8 @@ def render_template(func, *args, **kwargs):
         template, context = _call
     else:
         template, context = _call, {}
+
+    if request.is_mobile:
+        template = ["mobile/%s" % template, template]
+
     return render_to_response(template, context_instance=RequestContext(request, context))

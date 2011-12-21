@@ -1,0 +1,16 @@
+{% extends 'adserver/dashboard.html' %}
+{% load i18n %}
+{% block topright %}
+    <a href="{% url adserver_add_slot %}" data-icon="plus" data-theme="a">{% trans 'New Slot' %}</a>
+{% endblock %}
+{% block content %}
+     {% if slots %}
+    <ul data-role="listview" data-inset="true" data-filter="true">
+        {% for slot in slots %}
+        <li><a href="{{ slot.get_absolute_url }}">{{ slot.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    {% trans 'Not added any slot...' %}
+    {% endif %}
+{% endblock %}
