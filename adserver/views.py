@@ -22,19 +22,17 @@ def track(request, username, slot):
 @render_template
 def dashboard(request, template="adserver/dashboard.html"):
     slots = AdSlot.objects.from_request(request)
-    ctx = {
+    return template, {
         "slots" : slots
     }
-    return template, ctx
 
 @login_required
 @render_template
 def advertisements(request, slot, template="adserver/advertisements.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
-    ctx = {
+    return template, {
         "slot" : slot
     }
-    return template, ctx
 
 @login_required
 def delete_slot(request, slot):
@@ -47,19 +45,17 @@ def delete_slot(request, slot):
 @render_template
 def preview_slot(request, slot, template="adserver/preview_slot.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
-    ctx = {
+    return template, {
         "slot" : slot
     }
-    return template, ctx
 
 @login_required
 @render_template
 def get_slot_snippet(request, slot, template="adserver/get_slot_snippet.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
-    ctx = {
+    return template, {
         "slot" : slot
     }
-    return template, ctx
 
 
 @login_required
@@ -74,11 +70,21 @@ def add_advertisement(request, slot, template="adserver/add_advertisement.html")
             form.instance.adslot = slot
             form.save()
             return HttpResponseRedirect(reverse("adserver_ads", args=[slot.slot]))
-    ctx = {
+
+    return template, {
         "slot" : slot,
         "form" : form
     }
-    return template, ctx
+
+
+@login_required
+@render_template
+def stats_advertisement(request, slot, ads_id, template="adserver/stats_advertisement.html"):
+    slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
+    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
+    return template, {
+        "advertisement" : advertisement
+    }
 
 @login_required
 @render_template
@@ -93,11 +99,11 @@ def edit_advertisement(request, slot, ads_id, template="adserver/edit_advertisem
             form.instance.adslot = slot
             form.save()
             return HttpResponseRedirect(reverse("adserver_ads", args=[slot.slot]))
-    ctx = {
+
+    return template, {
         "slot" : slot,
         "form" : form
     }
-    return template, ctx
 
 
 @login_required
@@ -109,10 +115,10 @@ def add_slot(request, template="adserver/add_slot.html"):
         if form.is_valid():
             form.instance.user = request.user
             form.save()
-    ctx = {
+
+    return template, {
         "form" : form
     }
-    return template, ctx
 
 
 @login_required
@@ -125,8 +131,8 @@ def edit_slot(request, slot, template="adserver/edit_slot.html"):
         if form.is_valid():
             form.instance.user = request.user
             form.save()
-    ctx = {
+
+    return template, {
         "form" : form
     }
-    return template, ctx
 

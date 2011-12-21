@@ -1,0 +1,20 @@
+<table class="zebra-striped bordered-table">
+    <tr>
+        <thead>
+        {% for field in fields %}
+            <th>{{ field.verbose_name }}</th>
+        {% endfor %}
+        </thead>
+    </tr>
+    {% for object in object_list %}
+    <tbody>
+        <tr>
+            {% for key, value in object.items %}
+                <td>
+                    {{ key }}{{ value }}
+                </td>
+            {% endfor %}
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>

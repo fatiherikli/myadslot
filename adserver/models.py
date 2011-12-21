@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 from django.db import models
 from django.core.urlresolvers import reverse
-from adserver.utils import build_blank_ads
+from django.conf import settings
+from myads.adserver.utils import build_blank_ads
 from myads.adserver.utils import build_snippet
 
 ADSLOT_SIZE_CHOICES = (
@@ -89,8 +90,6 @@ class AdvertisementManager(models.Manager):
         now = datetime.now()
         return self.get_query_set().filter(start_date__lte=now, is_active=True).order_by("?") # random
 
-
-
 class Advertisement(models.Model):
     user = models.ForeignKey(User, verbose_name=_("User"))
     adslot = models.ForeignKey(AdSlot, verbose_name=_("Ad Slot"))
@@ -126,6 +125,10 @@ class Advertisement(models.Model):
     def get_end_date(self):
         return self.end_date or _("Infinite")
 
+    # stats
+    def get_last_visitors(self):
+        return self.visitor_set.all()[:30]
+
     def track_visitor(self, request):
         ip_address = request.META.get("REMOTE_ADDR")
         user_agent = request.META.get("HTTP_USER_AGENT")
@@ -141,7 +144,7 @@ class Advertisement(models.Model):
         self.save()
 
 class VisitorManager(models.Manager):
-    def active(self, timeout=10):
+    def active(self, timeout=settings.ADSERVER_ONLINE_TIMEOUT):
         now = datetime.now()
         tolerance = now - timedelta(minutes=timeout)
         return self.get_query_set().filter(last_visit_date__gte=tolerance)
@@ -156,9 +159,11 @@ class Visitor(models.Model):
 
     objects = VisitorManager()
 
+    class Meta:
+        ordering = ["-last_visit_date",]
+
     def save(self, **kwargs):
         super(Visitor, self).save(**kwargs)
-
 
     def __unicode__(self):
         return self.ip_address

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n datatags %}
+{% block heading %}
+    {% trans 'Advertisement Statistics' %}
+{% endblock %}
+{% block content %}
+
+    <ul class="breadcrumb">
+        <li><a href="{% url dashboard %}">{% trans 'My slots' %}</a>  <span class="divider">/</span></li>
+        <li><a href="{{ advertisement.adslot.get_absolute_url }}">{{ advertisement.adslot.title }}</a>  <span class="divider">/</span></li>
+        <li class="active"> {{ advertisement.title }} </li>
+    </ul>
+
+
+    <h3>{% trans 'Last 30 visits' %}</h3>
+
+    {% data_table advertisement.get_last_visitors "ip_address,user_agent,visit_count" %}
+
+{% endblock %}

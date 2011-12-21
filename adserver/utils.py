@@ -31,7 +31,7 @@ def build_blank_ads(slot):
         "size" : slot.sizes,
         "width" : (slot.get_width or 100) - 2, # -2 for inline borders
         "height" : (slot.get_height or 100) - 2, # -2 for inline borders
-        "margin_top" : (slot.get_height or 100) / 2 - 20, # for vertical align and -20px font-size
+        "margin_top" : (slot.get_height or 100) / 2 - 10, # for vertical align and -10px font-size
         "ads_text" : slot.sizes or "Ads"
     }
     return snippet
