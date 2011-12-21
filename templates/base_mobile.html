@@ -1,0 +1,17 @@
+
+{% block container %}
+      <div class="content">
+        <div class="page-header">
+          <h1>{% block heading %}Myadslot <span>!</span> {% endblock %}</h1>
+        </div>
+        <div class="row">
+
+          <div class="span14">
+           {% block content %}
+            <h3>content</h3>
+           {% endblock %}
+          </div>
+
+        </div>
+      </div>
+{% endblock %}
