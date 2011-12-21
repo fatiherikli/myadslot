@@ -9,17 +9,16 @@ from myads.auth.decorators import login_required
 from myads.adserver.utils import render_slot
 from django.core.urlresolvers import reverse
 
-
 def track(request, username, slot):
     user = get_object_or_404(User, username=username)
     slot = get_object_or_404(AdSlot, user=user, slot=slot)
     ads = slot.get_active_ads()
-    if not 'preview_mode' in request.GET:
+    if ads and not 'preview_mode' in request.GET:
         ads.track_visitor(request)
     return HttpResponse(render_slot(slot))
 
 
-@login_required()
+@login_required
 @render_template
 def dashboard(request, template="adserver/dashboard.html"):
     slots = AdSlot.objects.from_request(request)
@@ -28,7 +27,7 @@ def dashboard(request, template="adserver/dashboard.html"):
     }
     return template, ctx
 
-@login_required()
+@login_required
 @render_template
 def advertisements(request, slot, template="adserver/advertisements.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
@@ -37,14 +36,14 @@ def advertisements(request, slot, template="adserver/advertisements.html"):
     }
     return template, ctx
 
-@login_required()
+@login_required
 def delete_slot(request, slot):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     slot.delete()
     return HttpResponseRedirect(reverse('dashboard'))
 
 
-@login_required()
+@login_required
 @render_template
 def preview_slot(request, slot, template="adserver/preview_slot.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
@@ -53,7 +52,7 @@ def preview_slot(request, slot, template="adserver/preview_slot.html"):
     }
     return template, ctx
 
-@login_required()
+@login_required
 @render_template
 def get_slot_snippet(request, slot, template="adserver/get_slot_snippet.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
@@ -63,7 +62,7 @@ def get_slot_snippet(request, slot, template="adserver/get_slot_snippet.html"):
     return template, ctx
 
 
-@login_required()
+@login_required
 @render_template
 def add_advertisement(request, slot, template="adserver/add_advertisement.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
@@ -81,7 +80,7 @@ def add_advertisement(request, slot, template="adserver/add_advertisement.html")
     }
     return template, ctx
 
-@login_required()
+@login_required
 @render_template
 def edit_advertisement(request, slot, ads_id, template="adserver/edit_advertisement.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
