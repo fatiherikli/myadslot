@@ -4,6 +4,7 @@ from django.utils.translation import ugettext as _
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from adserver.helpers import detect_browser
 from myads.adserver.utils import build_blank_ads
 from myads.adserver.utils import build_snippet
 
@@ -168,6 +169,9 @@ class Visitor(models.Model):
     def __unicode__(self):
         return self.ip_address
 
-    def get_user_agent(self): # TODO: NOT IMPLEMENTED !
-        return self.user_agent[:40]
+    def get_user_agent(self):
+        browser = detect_browser(self.user_agent)
+        if not browser:
+            return _("Unknown")
+        return "%s (%s)" % (browser.get("name"), browser.get("version"))
     get_user_agent.short_description = _("Visitor Informations")

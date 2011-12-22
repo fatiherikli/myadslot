@@ -52,3 +52,4 @@ def render_slot(slot):
         "code" : escape_js(code)
     }
     return ads_template
+
