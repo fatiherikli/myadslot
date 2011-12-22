@@ -1,17 +1,17 @@
 <table class="zebra-striped bordered-table">
     <tr>
         <thead>
-        {% for field in fields %}
-            <th>{{ field.verbose_name }}</th>
+        {% for field in field_headers  %}
+            <th>{{ field }}</th>
         {% endfor %}
         </thead>
     </tr>
     {% for object in object_list %}
     <tbody>
         <tr>
-            {% for key, value in object.items %}
+            {% for field_data in object %}
                 <td>
-                    {{ key }}{{ value }}
+                    {{ field_data }}
                 </td>
             {% endfor %}
         </tr>

@@ -167,3 +167,7 @@ class Visitor(models.Model):
 
     def __unicode__(self):
         return self.ip_address
+
+    def get_user_agent(self): # TODO: NOT IMPLEMENTED !
+        return self.user_agent[:40]
+    get_user_agent.short_description = _("Visitor Informations")
