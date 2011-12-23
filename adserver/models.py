@@ -1,6 +1,7 @@
 import calendar
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
+from django.utils import simplejson
 from django.utils.translation import ugettext as _
 from django.db import models
 from django.core.urlresolvers import reverse
@@ -154,14 +155,7 @@ class VisitorManager(models.Manager):
 
     def last_month_visits(self):
         """
-        return dict for charts...
-
-        example:
-            {
-                "view_count" : [23,43,54],
-                "unique_visits" : [23,43,54],
-                "date" : ["12 dec","13 dec","13 dec"],
-            }
+        return stringify json for charts...
         """
         from django.db import connection
         cursor = connection.cursor()
@@ -174,16 +168,10 @@ class VisitorManager(models.Manager):
         GROUP BY date;
         """)
 
-        result_dict = {
-            "view_count" : [],
-            "unique_visits" : [],
-            "date" : []
-        }
+        result = []
         for view_count, unique_visits, date in  cursor.fetchall():
-            result_dict["date"].append(date)
-            result_dict["unique_visits"].append(unique_visits)
-            result_dict["view_count"].append(view_count)
-        return result_dict
+            result.append([date, view_count,  unique_visits])
+        return simplejson.dumps(result)
 
 
 class Visitor(models.Model):
