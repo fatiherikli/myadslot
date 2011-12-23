@@ -8,11 +8,5 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        fatih = User.objects.get(username="fatih")
-
-        slot = AdSlot(user=fatih, title="slot", slot="test", sizes="300x250")
-        slot.save()
-
-        ads = Advertisement(adslot=slot, title="test", user=fatih)
-        ads.save()
-        print ads.start_date
+        ads = Advertisement.objects.get(id=1)
+        print ads.visitor_set.last_month_visits()

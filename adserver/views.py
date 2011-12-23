@@ -83,7 +83,8 @@ def stats_advertisement(request, slot, ads_id, template="adserver/stats_advertis
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
     return template, {
-        "advertisement" : advertisement
+        "advertisement" : advertisement,
+        "last_month_visits" : advertisement.visitor_set.last_month_visits()
     }
 
 @login_required

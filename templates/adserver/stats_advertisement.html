@@ -3,6 +3,38 @@
 {% block heading %}
     {% trans 'Advertisement Statistics' %}
 {% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="{{ MEDIA_URL }}js/libs/stats/jquery.gvchart-1.0.1.min.js"></script>
+    <script type="text/javascript">
+        gvChartInit();
+
+        $(function () {
+            $('.stats_view_counts').gvChart({
+                chartType: 'AreaChart',
+                gvSettings: {
+                    vAxis: {title: 'Visits'},
+                    hAxis: {title: 'Days'},
+                    width: 800,
+                    height: 300,
+                }
+            });
+
+            $('.stats_unique_visits').gvChart({
+                chartType: 'AreaChart',
+                gvSettings: {
+                    vAxis: {title: 'Visits'},
+                    hAxis: {title: 'Days'},
+                    width: 800,
+                    height: 300,
+                }
+            });
+        })
+
+    </script>
+{% endblock %}
+
 {% block content %}
 
     <ul class="breadcrumb">
@@ -12,8 +44,52 @@
     </ul>
 
 
+    <table class="stats_view_counts">
+        <caption>Last 30 day view counts</caption>
+        <thead>
+        <tr>
+            <th></th>
+            {% for date in last_month_visits.date %}
+            <th>{{ date }}</th>
+            {% endfor %}
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>View Count</th>
+            {% for view_count in last_month_visits.view_count %}
+            <td>{{ view_count }}</td>
+            {% endfor %}
+        </tr>
+
+        </tbody>
+    </table>
+
+    <table class="stats_unique_visits">
+        <caption>Last 30 day unique visits</caption>
+        <thead>
+        <tr>
+            <th></th>
+            {% for date in last_month_visits.date %}
+                <th>{{ date }}</th>
+            {% endfor %}
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Unique Visits</th>
+            {% for unique_visits in last_month_visits.unique_visits %}
+                <td>{{ unique_visits }}</td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+
     <h3>{% trans 'Last 30 visits' %}</h3>
 
-    {% data_table advertisement.get_last_visitors "ip_address,get_user_agent,visit_count" %}
+    {% data_table advertisement.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date" %}
 
 {% endblock %}

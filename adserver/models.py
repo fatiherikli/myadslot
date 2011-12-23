@@ -1,3 +1,4 @@
+import calendar
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
@@ -145,10 +146,39 @@ class Advertisement(models.Model):
         self.save()
 
 class VisitorManager(models.Manager):
+
     def active(self, timeout=settings.ADSERVER_ONLINE_TIMEOUT):
         now = datetime.now()
         tolerance = now - timedelta(minutes=timeout)
         return self.get_query_set().filter(last_visit_date__gte=tolerance)
+
+    def last_month_visits(self):
+        """
+        return dict for charts...
+        """
+        from django.db import connection
+        cursor = connection.cursor()
+        cursor.execute("""
+        SELECT
+        Sum(adserver_visitor.visit_count) AS view_count,
+        Count(adserver_visitor.visit_count) AS unique_visits,
+        Date(adserver_visitor.last_visit_date) AS date
+        FROM adserver_visitor
+        GROUP BY date;
+        """)
+
+        result_dict = {
+            "view_count" : [],
+            "unique_visits" : [],
+            "date" : []
+        }
+        for view_count, unique_visits, date in  cursor.fetchall():
+            result_dict["date"].append(date)
+            result_dict["unique_visits"].append(unique_visits)
+            result_dict["view_count"].append(view_count)
+
+        return result_dict
+
 
 class Visitor(models.Model):
     advertisement = models.ForeignKey(Advertisement)
