@@ -155,6 +155,13 @@ class VisitorManager(models.Manager):
     def last_month_visits(self):
         """
         return dict for charts...
+
+        example:
+            {
+                "view_count" : [23,43,54],
+                "unique_visits" : [23,43,54],
+                "date" : ["12 dec","13 dec","13 dec"],
+            }
         """
         from django.db import connection
         cursor = connection.cursor()
@@ -176,7 +183,6 @@ class VisitorManager(models.Manager):
             result_dict["date"].append(date)
             result_dict["unique_visits"].append(unique_visits)
             result_dict["view_count"].append(view_count)
-
         return result_dict
 
 
