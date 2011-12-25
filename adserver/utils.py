@@ -1,3 +1,5 @@
+from decimal import Decimal
+import datetime
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils import simplejson
@@ -55,47 +57,57 @@ def render_slot(slot):
     return ads_template
 
 
-def advertisement_month_visits(advertisement_id):
+def jsonify(item):
+    """
+        type casting for decimal, datetime etc..
+    """
+    if isinstance(item, Decimal):
+        return int(item)
+    if isinstance(item, datetime.datetime):
+        return str(item)
+    return item
+
+
+def build_statistic_data(sql):
     """
         return stringify json for charts...
     """
     from django.db import connection
     cursor = connection.cursor()
-    cursor.execute("""
+    cursor.execute(sql)
+    result = []
+    for item in  cursor.fetchall():
+        result.append(map(jsonify, list(item))) # make list from tuple and jsonify list
+    return simplejson.dumps(result)
+
+
+def advertisement_month_visits(advertisement_id):
+    """
+    result example:
+        [["2011-12-18", 11, 2], ["2011-12-21", 2, 1], ["2011-12-25", 11, 1]]
+    """
+    return build_statistic_data("""
         SELECT
+        Date(adserver_visitor.last_visit_date) AS date,
         Sum(adserver_visitor.visit_count) AS view_count,
-        Count(adserver_visitor.visit_count) AS unique_visits,
-        Date(adserver_visitor.last_visit_date) AS date
+        Count(adserver_visitor.visit_count) AS unique_visits
         FROM adserver_visitor
         WHERE advertisement_id = %s
         GROUP BY date;
         """ % advertisement_id)
 
-    result = []
-    for view_count, unique_visits, date in  cursor.fetchall():
-        result.append([str(date), int(view_count), int(unique_visits)])
-    return simplejson.dumps(result)
-
-
-
 def slot_month_visits(slot_id):
     """
-        return stringify json for charts...
+    result example:
+        [["2011-12-18", 11, 2], ["2011-12-21", 2, 1], ["2011-12-25", 11, 1]]
     """
-    from django.db import connection
-    cursor = connection.cursor()
-    cursor.execute("""
+    return build_statistic_data("""
         SELECT
+        Date(adserver_visitor.last_visit_date) AS date,
         Sum(adserver_visitor.visit_count) AS view_count,
-        Count(adserver_visitor.visit_count) AS unique_visits,
-        Date(adserver_visitor.last_visit_date) AS date
+        Count(adserver_visitor.visit_count) AS unique_visits
         FROM adserver_visitor
         INNER JOIN  adserver_advertisement ON adserver_visitor.advertisement_id = adserver_advertisement.id
         WHERE adserver_advertisement.adslot_id = %s
         GROUP BY date;
         """ % slot_id)
-
-    result = []
-    for view_count, unique_visits, date in  cursor.fetchall():
-        result.append([str(date), int(view_count),  int(unique_visits)])
-    return simplejson.dumps(result)
