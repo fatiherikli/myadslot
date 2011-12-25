@@ -5,6 +5,9 @@ from django.core.urlresolvers import reverse
 from django.utils import simplejson
 
 def build_snippet(slot):
+    """
+    type(slot) => myads.adserver.models.AdSlot
+    """
     snippet = """
         <script type="text/javascript">
           (function() {
@@ -50,6 +53,9 @@ def escape_js(code):
 
 
 def render_slot(slot):
+    """
+    type(slot) => myads.adserver.models.AdSlot
+    """
     code = slot.get_ads_code()
     ads_template = """document.write('%(code)s');""" % {
         "code" : escape_js(code)

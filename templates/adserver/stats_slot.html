@@ -6,32 +6,16 @@
 
 {% block javascripts %}
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script defer src="{{ MEDIA_URL }}js/charts.js"></script>
     <script type="text/javascript">
         google.load("visualization", "1", {packages:["columnchart"]});
-        google.setOnLoadCallback(function () {
-
-            /*
-            *  Last 30 day view counts chart
-            * */
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Date');
-            data.addColumn('number', 'View Counts');
-            data.addColumn('number', 'Unique Visits');
-            data.addRows({{ last_month_visits|safe }});
-
-            var options = {
-                width: 800, height: 250,
-                title: 'Last 30 day visit statistics',
-                is3D : true,
-                vAxis: { title: 'Count' },
-                hAxis: { title: 'Time' }
-
-            };
-
-            var chart = new google.visualization.ColumnChart(document.getElementById('stats_view_counts'));
-            chart.draw(data, options);
+        $(function () {
+            $("#stats_view_counts").build_chart({
+                title : 'Last 30 day visit statistics',
+                columns : [['string', 'Date'], ['number','View Counts'], ['number', 'Unique Visits']],
+                rows : {{ last_month_visits|safe }}
+            })
         })
-
 
     </script>
 
