@@ -73,7 +73,7 @@ def advertisement_month_visits(advertisement_id):
 
     result = []
     for view_count, unique_visits, date in  cursor.fetchall():
-        result.append([date, view_count,  unique_visits])
+        result.append([str(date), view_count,  unique_visits])
     return simplejson.dumps(result)
 
 
@@ -97,5 +97,5 @@ def slot_month_visits(slot_id):
 
     result = []
     for view_count, unique_visits, date in  cursor.fetchall():
-        result.append([date, view_count,  unique_visits])
+        result.append([str(date), view_count,  unique_visits])
     return simplejson.dumps(result)
