@@ -44,7 +44,7 @@ def delete_slot(request, slot):
 
 @login_required
 @render_template
-def preview_slot(request, slot, template="adserver/preview_slot.html"):
+def preview_slot(request, slot, template="adserver/slot_preview.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     return template, {
         "slot" : slot
@@ -52,7 +52,7 @@ def preview_slot(request, slot, template="adserver/preview_slot.html"):
 
 @login_required
 @render_template
-def get_slot_snippet(request, slot, template="adserver/get_slot_snippet.html"):
+def get_slot_snippet(request, slot, template="adserver/slot_get_snippet.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     return template, {
         "slot" : slot
@@ -61,7 +61,7 @@ def get_slot_snippet(request, slot, template="adserver/get_slot_snippet.html"):
 
 @login_required
 @render_template
-def add_advertisement(request, slot, template="adserver/add_advertisement.html"):
+def add_advertisement(request, slot, template="adserver/advertisement_add.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     form = AddAdvertisementForm()
     if request.method == "POST":
@@ -80,7 +80,7 @@ def add_advertisement(request, slot, template="adserver/add_advertisement.html")
 
 @login_required
 @render_template
-def stats_advertisement(request, slot, ads_id, template="adserver/stats_advertisement.html"):
+def stats_advertisement(request, slot, ads_id, template="adserver/advertisement_stats.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
     return template, {
@@ -90,7 +90,7 @@ def stats_advertisement(request, slot, ads_id, template="adserver/stats_advertis
 
 @login_required
 @render_template
-def stats_slot(request, slot, template="adserver/stats_slot.html"):
+def stats_slot(request, slot, template="adserver/slot_stats.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     return template, {
         "slot" : slot,
@@ -99,7 +99,7 @@ def stats_slot(request, slot, template="adserver/stats_slot.html"):
 
 @login_required
 @render_template
-def edit_advertisement(request, slot, ads_id, template="adserver/edit_advertisement.html"):
+def edit_advertisement(request, slot, ads_id, template="adserver/advertisement_edit.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
     form = EditAdvertisementForm(instance=advertisement)
@@ -119,7 +119,7 @@ def edit_advertisement(request, slot, ads_id, template="adserver/edit_advertisem
 
 @login_required
 @render_template
-def add_slot(request, template="adserver/add_slot.html"):
+def add_slot(request, template="adserver/slot_add.html"):
     form = AdSlotForm()
     if request.method == "POST":
         form = AdSlotForm(request.POST)
@@ -134,7 +134,7 @@ def add_slot(request, template="adserver/add_slot.html"):
 
 @login_required
 @render_template
-def edit_slot(request, slot, template="adserver/edit_slot.html"):
+def edit_slot(request, slot, template="adserver/slot_edit.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     form = AdSlotForm(instance=slot)
     if request.method == "POST":

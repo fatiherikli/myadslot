@@ -9,7 +9,7 @@
 
     $.fn.build_chart = function (_settings) {
         var settings = $.extend({
-            // default selectors
+            // default options
             "width" : 800,
             "height" : 250,
             "title" : '',
