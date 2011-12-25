@@ -159,7 +159,7 @@ class VisitorManager(models.Manager):
 
 
 class Visitor(models.Model):
-    advertisement = models.ForeignKey(Advertisement)
+    advertisement = models.ForeignKey(Advertisement, verbose_name=_("Advertisement"))
     ip_address = models.IPAddressField(_("IP Address"))
     user_agent = models.CharField(_("Visitor Informations"), max_length=255)
     visit_count = models.IntegerField(_("View Count"), default=1)

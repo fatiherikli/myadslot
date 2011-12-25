@@ -7,12 +7,12 @@
 {% block javascripts %}
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
-        google.load("visualization", "1", {packages:["corechart", "charteditor"]});
+        google.load("visualization", "1", {packages:["columnchart"]});
         google.setOnLoadCallback(function () {
 
             /*
-            *  Last 30 day view counts chart
-            * */
+             *  Last 30 day view counts chart
+             * */
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Date');
             data.addColumn('number', 'View Counts');
@@ -20,14 +20,18 @@
             data.addRows({{ last_month_visits|safe }});
 
             var options = {
-                width: 750, height: 250,
-                title: 'Last 30 day visit statistics'
+                width: 800, height: 250,
+                title: 'Last 30 day visit statistics',
+                is3D : true,
+                vAxis: { title: 'Count' },
+                hAxis: { title: 'Time' }
 
             };
 
-            var chart = new google.visualization.LineChart(document.getElementById('stats_view_counts'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('stats_view_counts'));
             chart.draw(data, options);
         })
+
 
 
     </script>

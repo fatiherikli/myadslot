@@ -7,7 +7,7 @@
 {% block javascripts %}
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
-        google.load("visualization", "1", {packages:["corechart", "charteditor"]});
+        google.load("visualization", "1", {packages:["columnchart"]});
         google.setOnLoadCallback(function () {
 
             /*
@@ -20,12 +20,15 @@
             data.addRows({{ last_month_visits|safe }});
 
             var options = {
-                width: 750, height: 250,
-                title: 'Last 30 day visit statistics'
+                width: 800, height: 250,
+                title: 'Last 30 day visit statistics',
+                is3D : true,
+                vAxis: { title: 'Count' },
+                hAxis: { title: 'Time' }
 
             };
 
-            var chart = new google.visualization.LineChart(document.getElementById('stats_view_counts'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('stats_view_counts'));
             chart.draw(data, options);
         })
 
@@ -46,6 +49,6 @@
 
     <h3>{% trans 'Last 30 visits' %}</h3>
 
-    {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date" %}
+    {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date,advertisement" %}
 
 {% endblock %}
