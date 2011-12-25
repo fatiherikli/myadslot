@@ -18,6 +18,7 @@
     <p>
 
      <a class="btn success" href="{% url adserver_add_advertisement slot.slot %}">{% trans 'Add an advertisement' %}</a>
+     <a class="btn" href="{% url adserver_stats_slot slot.slot %}">{% trans 'Get slot statistics' %}</a>
         <a  class="btn " href="{% url adserver_get_snippet slot.slot %}">{% trans 'Get snippet for this slot' %}</a>
         <a  class="btn " href="{% url adserver_preview_slot slot.slot %}">{% trans 'Preview this slot' %}</a>
     </p>

@@ -4,8 +4,8 @@ from django.utils import translation
 
 # see http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_DOMAIN_PREFIX = {
-    "tr" : "TR_tr",
-    "en" : "EN_us"
+    "tr" : "tr",
+    "en" : "en"
 }
 
 class LocaleMiddleware(object):

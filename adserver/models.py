@@ -83,6 +83,9 @@ class AdSlot(models.Model):
         width, height = self.sizes.split("x")
         return int(height)
 
+    # stats
+    def get_last_visitors(self):
+        return Visitor.objects.filter(advertisement__adslot__id = self.id)
 
     def __unicode__(self):
         return self.title
@@ -153,25 +156,6 @@ class VisitorManager(models.Manager):
         tolerance = now - timedelta(minutes=timeout)
         return self.get_query_set().filter(last_visit_date__gte=tolerance)
 
-    def last_month_visits(self):
-        """
-        return stringify json for charts...
-        """
-        from django.db import connection
-        cursor = connection.cursor()
-        cursor.execute("""
-        SELECT
-        Sum(adserver_visitor.visit_count) AS view_count,
-        Count(adserver_visitor.visit_count) AS unique_visits,
-        Date(adserver_visitor.last_visit_date) AS date
-        FROM adserver_visitor
-        GROUP BY date;
-        """)
-
-        result = []
-        for view_count, unique_visits, date in  cursor.fetchall():
-            result.append([date, view_count,  unique_visits])
-        return simplejson.dumps(result)
 
 
 class Visitor(models.Model):

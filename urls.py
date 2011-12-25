@@ -1,7 +1,9 @@
 from django.conf.urls.defaults import *
+from django.template import add_to_builtins
 from django.contrib import admin
 from utils import here
 
+add_to_builtins('myads.adserver.templatetags.datatags')
 admin.autodiscover()
 
 urlpatterns = patterns('',

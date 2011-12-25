@@ -38,14 +38,14 @@
 
     <ul class="breadcrumb">
         <li><a href="{% url dashboard %}">{% trans 'My slots' %}</a>  <span class="divider">/</span></li>
-        <li><a href="{{ advertisement.adslot.get_absolute_url }}">{{ advertisement.adslot.title }}</a>  <span class="divider">/</span></li>
-        <li class="active"> {{ advertisement.title }} </li>
+        <li><a href="{{ slot.get_absolute_url }}">{{ slot.title }}</a>  <span class="divider">/</span></li>
+        <li class="active"> {{ slot.title }} </li>
     </ul>
 
     <div id="stats_view_counts"></div>
 
     <h3>{% trans 'Last 30 visits' %}</h3>
 
-    {% data_table advertisement.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date" %}
+    {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date" %}
 
 {% endblock %}

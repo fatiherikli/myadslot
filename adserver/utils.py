@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
+from django.utils import simplejson
 
 def build_snippet(slot):
     snippet = """
@@ -53,3 +54,48 @@ def render_slot(slot):
     }
     return ads_template
 
+
+def advertisement_month_visits(advertisement_id):
+    """
+        return stringify json for charts...
+    """
+    from django.db import connection
+    cursor = connection.cursor()
+    cursor.execute("""
+        SELECT
+        Sum(adserver_visitor.visit_count) AS view_count,
+        Count(adserver_visitor.visit_count) AS unique_visits,
+        Date(adserver_visitor.last_visit_date) AS date
+        FROM adserver_visitor
+        WHERE advertisement_id = %s
+        GROUP BY date;
+        """ % advertisement_id)
+
+    result = []
+    for view_count, unique_visits, date in  cursor.fetchall():
+        result.append([date, view_count,  unique_visits])
+    return simplejson.dumps(result)
+
+
+
+def slot_month_visits(slot_id):
+    """
+        return stringify json for charts...
+    """
+    from django.db import connection
+    cursor = connection.cursor()
+    cursor.execute("""
+        SELECT
+        Sum(adserver_visitor.visit_count) AS view_count,
+        Count(adserver_visitor.visit_count) AS unique_visits,
+        Date(adserver_visitor.last_visit_date) AS date
+        FROM adserver_visitor
+        INNER JOIN  adserver_advertisement ON adserver_visitor.advertisement_id = adserver_advertisement.id
+        WHERE adserver_advertisement.adslot_id = %s
+        GROUP BY date;
+        """ % slot_id)
+
+    result = []
+    for view_count, unique_visits, date in  cursor.fetchall():
+        result.append([date, view_count,  unique_visits])
+    return simplejson.dumps(result)
