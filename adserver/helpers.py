@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext as _
 import re
 
 #see http://andreynikishaev.livejournal.com/78451.html
@@ -76,4 +77,6 @@ def detect_browser(user_agent):
                     _browser["version"] = m.group(1)
             break
 
-    return _browser
+    if not _browser:
+        return _("Unknown")
+    return "%s (%s)" % (_browser.get("name"), _browser.get("version"))

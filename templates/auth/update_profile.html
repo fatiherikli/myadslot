@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block heading %}
+    {% trans 'My Profile' %}
+{% endblock %}
+
+{% block content %}
+    {% if form.is_valid %}
+    <div class="alert-message success">{% trans 'Your profile successfully update.' %}</div>
+        <a class="btn" href="{% url dashboard %}">{% trans 'Dashboard' %}</a>
+    {% else %}
+    <form action="" method="post">
+        {% csrf_token %}
+         {{ form.as_div }}
+        <div class="actions">
+            <input type="submit" class="btn primary" value="{% trans "Update my profile" %}">
+        </div>
+    </form>
+    {% endif %}
+{% endblock %}

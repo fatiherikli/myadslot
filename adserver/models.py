@@ -178,8 +178,6 @@ class Visitor(models.Model):
         return self.ip_address
 
     def get_user_agent(self):
-        browser = detect_browser(self.user_agent)
-        if not browser:
-            return _("Unknown")
-        return "%s (%s)" % (browser.get("name"), browser.get("version"))
+        return detect_browser(self.user_agent)
+
     get_user_agent.short_description = _("Visitor Informations")

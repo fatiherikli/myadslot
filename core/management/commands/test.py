@@ -1,12 +1,14 @@
+from pprint import pprint
 from django.contrib.auth.models import User
 from django.core.management import call_command
 from django.core.management.base import BaseCommand, CommandError
-from adserver.models import AdSlot, Advertisement
+from django.db.models.aggregates import Count
+from adserver.models import AdSlot, Advertisement, Visitor
+from adserver.utils import build_statistic_data, stats_browser
 
 
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        ads = Advertisement.objects.get(id=1)
-        print ads.visitor_set.last_month_visits()
+        print stats_browser(user_id=1)

@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-{% load i18n datatags %}
+{% load i18n %}
+
 {% block heading %}
-    {% trans 'Advertisement Statistics' %}
+    {% trans 'Overall Statistics' %}
 {% endblock %}
 
 {% block javascripts %}
@@ -10,11 +11,20 @@
     <script type="text/javascript">
         google.load("visualization", "1", {packages:["columnchart"]});
         $(function () {
+            $("#browser_stats").build_chart({
+                type : "pie",
+                title : '{% trans 'Browser statistics' %}',
+                chart_data: {{ browser_stats|safe }}
+            })
+
             $("#stats_view_counts").build_chart({
+                type : "line",
                 title : '{% trans 'Last 30 day visit statistics' %}',
                 chart_data: {{ last_month_visits|safe }}
             })
         })
+
+
 
     </script>
 
@@ -22,16 +32,11 @@
 
 {% block content %}
 
-    <ul class="breadcrumb">
-        <li><a href="{% url dashboard %}">{% trans 'My slots' %}</a>  <span class="divider">/</span></li>
-        <li><a href="{{ advertisement.adslot.get_absolute_url }}">{{ advertisement.adslot.title }}</a>  <span class="divider">/</span></li>
-        <li class="active"> {{ advertisement.title }} </li>
-    </ul>
+    <h3>{% trans 'Visitor Statistics' %}</h3>
 
     <div id="stats_view_counts"></div>
+    <h3>{% trans 'Browser Statistics' %}</h3>
+    <div id="browser_stats"></div>
 
-    <h3>{% trans 'Last 30 visits' %}</h3>
-
-    {% data_table advertisement.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date" %}
 
 {% endblock %}

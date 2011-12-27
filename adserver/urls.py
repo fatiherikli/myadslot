@@ -13,6 +13,7 @@ urlpatterns = patterns('myads.adserver.views',
     url(r'^(?P<slot>.*)/get_snippet$', 'get_slot_snippet', name='adserver_get_snippet'),
     url(r'^(?P<slot>.*)/preview$', 'preview_slot', name='adserver_preview_slot'),
 
+
     # tracking ads
     url(r'^(?P<username>.*)/(?P<slot>.*).js$', 'track', name='adserver_track_js'),
 

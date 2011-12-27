@@ -39,7 +39,6 @@
                 <li><a href="{% url auth_login %}">{% trans 'Login' %}</a></li>
                 {% else %}
                 <li><a href="{% url dashboard %}">{% trans 'Dashboard' %}</a></li>
-                <li><a href="#">{% trans 'Adserver Stats' %}</a></li>
                 {% endif %}
             </ul>
             {% if user.is_anonymous %}
@@ -54,8 +53,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle">{{ user }}</a>
               <ul class="dropdown-menu">
-                 <li><a href="#">{% trans 'Change Password' %}</a></li>
-                 <li><a href="#">{% trans 'My Profile' %}</a></li>
+                 <li><a href="{% url auth_change_password %}">{% trans 'Change Password' %}</a></li>
+                 <li><a href="{% url auth_update_profile %}">{% trans 'My Profile' %}</a></li>
                 <li class="divider"></li>
                 <li><a href="{% url auth_logout %}">{% trans 'Logout' %}</a></li>
 

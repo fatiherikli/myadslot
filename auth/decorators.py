@@ -1,5 +1,4 @@
 from django.contrib.auth.decorators import  REDIRECT_FIELD_NAME, user_passes_test
-from django.core.urlresolvers import reverse
 
 def login_required(function=None, redirect_field_name=REDIRECT_FIELD_NAME):
     """
@@ -14,3 +13,4 @@ def login_required(function=None, redirect_field_name=REDIRECT_FIELD_NAME):
     if function:
         return actual_decorator(function)
     return actual_decorator
+

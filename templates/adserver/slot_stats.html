@@ -12,8 +12,7 @@
         $(function () {
             $("#stats_view_counts").build_chart({
                 title : '{% trans 'Last 30 day visit statistics' %}',
-                columns : [['string', '{% trans 'Date' %}'], ['number','{% trans 'View Counts' %}'], ['number', '{% trans 'Unique Visits' %}']],
-                rows : {{ last_month_visits|safe }}
+                chart_data: {{ last_month_visits|safe }}
             })
         })
 
@@ -27,11 +26,13 @@
         <li><a href="{{ slot.get_absolute_url }}">{{ slot.title }}</a>  <span class="divider">/</span></li>
         <li class="active"> {{ slot.title }} </li>
     </ul>
-
     <div id="stats_view_counts"></div>
+
 
     <h3>{% trans 'Last 30 visits' %}</h3>
 
-    {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date,advertisement" %}
+   {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date,advertisement" %}
+
+
 
 {% endblock %}

@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User
+from django.db.models.aggregates import Count
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementForm
 from adserver.models import Advertisement, Visitor
-from adserver.utils import advertisement_month_visits, slot_month_visits
+from adserver.utils import advertisement_month_visits, slot_month_visits, stats_browser, adserver_month_visits
 from core.decorators import render_template
 from myads.adserver.models import AdSlot
 from myads.auth.decorators import login_required
@@ -26,6 +27,7 @@ def dashboard(request, template="adserver/dashboard.html"):
     return template, {
         "slots" : slots
     }
+
 
 @login_required
 @render_template
@@ -94,7 +96,8 @@ def stats_slot(request, slot, template="adserver/slot_stats.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     return template, {
         "slot" : slot,
-        "last_month_visits" :  slot_month_visits(slot.id)
+        "last_month_visits" :  slot_month_visits(slot.id),
+        "browser_stats" : stats_browser(slot.id),
     }
 
 @login_required
