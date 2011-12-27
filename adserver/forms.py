@@ -1,7 +1,7 @@
 from django import forms
 from core.forms import CustomForm
 from myads.adserver.models import AdSlot, Advertisement
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 class AdSlotForm(forms.ModelForm, CustomForm):
     def clean_slot(self):

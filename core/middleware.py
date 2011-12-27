@@ -4,8 +4,8 @@ from django.utils import translation
 
 # see http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_DOMAIN_PREFIX = {
-    "tr" : "tr",
-    "en" : "en"
+    "tr" : "TR_tr",
+    "en" : "EN_us"
 }
 
 class LocaleMiddleware(object):
@@ -29,7 +29,11 @@ class LocaleMiddleware(object):
 #            request.LANGUAGE_CODE = LANGUAGE_DOMAIN_PREFIX[translation.get_language_from_request(request)]
 
     def process_response(self, request, response):
+        #raise Exception(translation.get_language())
+
         patch_vary_headers(response, ('Accept-Language',))
+
+
         if 'Content-Language' not in response:
             response['Content-Language'] = translation.get_language()
         translation.deactivate()

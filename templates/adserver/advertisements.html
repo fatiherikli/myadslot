@@ -44,7 +44,7 @@
                     {% with advertisement.view_count as count  %}
                     <td>{% blocktrans%}{{ count }} Views{% endblocktrans %}</td>
                     {% endwith %}
-                    <td><a href="{% url adserver_stats_advertisement advertisement.adslot.slot advertisement.id %}">Stats</a></td>
+                    <td><a href="{% url adserver_stats_advertisement advertisement.adslot.slot advertisement.id %}">{% trans 'Stats' %}</a></td>
                 </tr>
             {% endfor %}
             </tbody>

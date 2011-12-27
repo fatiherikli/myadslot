@@ -11,8 +11,8 @@
         google.load("visualization", "1", {packages:["columnchart"]});
         $(function () {
             $("#stats_view_counts").build_chart({
-                title : 'Last 30 day visit statistics',
-                columns : [['string', 'Date'], ['number','View Counts'], ['number', 'Unique Visits']],
+                title : '{% trans 'Last 30 day visit statistics' %}',
+                columns : [['string', '{% trans 'Date' %}'], ['number','{% trans 'View Counts' %}'], ['number', '{% trans 'Unique Visits' %}']],
                 rows : {{ last_month_visits|safe }}
             })
         })
