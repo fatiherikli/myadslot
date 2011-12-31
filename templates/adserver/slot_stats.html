@@ -8,12 +8,32 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script defer src="{{ MEDIA_URL }}js/charts.js"></script>
     <script type="text/javascript">
-        google.load("visualization", "1", {packages:["columnchart"]});
+        google.load("visualization", "1", {packages:["columnchart","gauge"]});
         $(function () {
             $("#stats_view_counts").build_chart({
                 title : '{% trans 'Last 30 day visit statistics' %}',
                 chart_data: {{ last_month_visits|safe }}
-            })
+            });
+
+            $("#stats_hours").build_chart({
+                type : "bar",
+                is3D : false,
+                title : '{% trans 'Last 30 day hours' %}',
+                chart_data: {{ last_month_hours|safe }}
+            });
+
+            $("#browser_stats").build_chart({
+                type : "pie",
+                title : '{% trans 'Browsers' %}',
+                chart_data: {{ browser_stats|safe }}
+            });
+
+            $("#advertisement_chart").build_chart({
+                type : "bar",
+                is3D : false,
+                title : '{% trans 'Advertisements' %}',
+                chart_data: {{ slot_advertisements|safe }}
+            });
         })
 
     </script>
@@ -26,12 +46,43 @@
         <li><a href="{{ slot.get_absolute_url }}">{{ slot.title }}</a>  <span class="divider">/</span></li>
         <li class="active"> {{ slot.title }} </li>
     </ul>
-    <div id="stats_view_counts"></div>
 
 
-    <h3>{% trans 'Last 30 visits' %}</h3>
+    <ul class="tabs" data-tabs="tabs">
+        <li class="active"><a href="#tab_last_visits">{% trans 'Last 30 Visits' %}</a></li>
+        <li class=""><a href="#tab_last_graph">{% trans 'Chart of Monthly Visitors' %}</a></li>
+        <li class=""><a href="#tab_stats_hours">{% trans 'Chart of Hours' %}</a></li>
+        <li class=""><a href="#tab_browser_stats">{% trans 'Chart of Browsers' %}</a></li>
+        <li class=""><a href="#tab_advertisement_chart">{% trans 'Chart of Advertisements' %}</a></li>
 
-   {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date,advertisement" %}
+    </ul>
+
+
+    <div id="tab-content" class="tab-content">
+        <div class="active tab-pane" id="tab_last_visits">
+            {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date,advertisement" %}
+        </div>
+
+        <div class="tab-pane" id="tab_last_graph">
+            <div id="stats_view_counts"></div>
+        </div>
+
+        <div class="tab-pane" id="tab_stats_hours">
+            <div id="stats_hours"></div>
+        </div>
+        <div class="tab-pane" id="tab_browser_stats">
+            <div id="browser_stats"></div>
+        </div>
+
+        <div class="tab-pane" id="tab_advertisement_chart">
+        <div id="advertisement_chart"></div>
+    </div>
+    </div>
+
+
+
+
+
 
 
 

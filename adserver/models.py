@@ -1,6 +1,7 @@
 import calendar
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
+from django.db.models.aggregates import Max
 from django.utils import simplejson
 from django.utils.translation import ugettext_lazy as _
 from django.db import models

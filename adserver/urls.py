@@ -9,7 +9,7 @@ urlpatterns = patterns('myads.adserver.views',
     url(r'^(?P<slot>.*)/$', 'advertisements', name='adserver_ads'),
     url(r'^(?P<slot>.*)/add$', 'add_advertisement', name='adserver_add_advertisement'),
     url(r'^(?P<slot>.*)/(?P<ads_id>\d+)/edit$', 'edit_advertisement', name='adserver_edit_advertisement'),
-    url(r'^(?P<slot>.*)/(?P<ads_id>\d+)/stats', 'stats_advertisement', name='adserver_stats_advertisement'),
+    url(r'^(?P<slot>.*)/(?P<ads_id>\d+)/visitors', 'advertisement_visitors', name='adserver_advertisement_visitors'),
     url(r'^(?P<slot>.*)/get_snippet$', 'get_slot_snippet', name='adserver_get_snippet'),
     url(r'^(?P<slot>.*)/preview$', 'preview_slot', name='adserver_preview_slot'),
 

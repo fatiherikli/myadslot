@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n datatags pagination_tags %}
+{% block heading %}
+    {% trans 'Visitors' %}
+{% endblock %}
+
+
+{% block content %}
+
+    <ul class="breadcrumb">
+        <li><a href="{% url dashboard %}">{% trans 'My slots' %}</a>  <span class="divider">/</span></li>
+        <li><a href="{{ advertisement.adslot.get_absolute_url }}">{{ advertisement.adslot.title }}</a>  <span class="divider">/</span></li>
+        <li class="active"> {{ advertisement.title }} </li>
+    </ul>
+
+    <h3>{% trans 'Advertisement Visitors' %}</h3>
+
+    {% autopaginate last_visitors 30 %}
+    {% data_table last_visitors "ip_address,get_user_agent,visit_count,last_visit_date" %}
+    {% paginate %}
+
+{% endblock %}

@@ -32,7 +32,9 @@
                 "column" : google.visualization.ColumnChart,
                 "line" : google.visualization.LineChart,
                 "area" : google.visualization.AreaChart,
-                "pie" : google.visualization.PieChart
+                "pie" : google.visualization.PieChart,
+                "gauge" : google.visualization.Gauge,
+                "bar" : google.visualization.BarChart
             }
             return new chart_type[settings.type](dom_element)
         }
@@ -51,6 +53,7 @@
             hAxis: { title: settings.h_axis }
 
         };
+
 
         this.each(function () {
             var chart = prepare_chart(this);

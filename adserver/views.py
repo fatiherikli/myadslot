@@ -1,15 +1,15 @@
 from django.contrib.auth.models import User
-from django.db.models.aggregates import Count
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementForm
-from adserver.models import Advertisement, Visitor
-from adserver.utils import advertisement_month_visits, slot_month_visits, stats_browser, adserver_month_visits
+from adserver.models import Advertisement
+from adserver.stats import advertisement_month_visits, slot_month_visits, stats_browser, stats_slot_advertisements, slot_month_hours
 from core.decorators import render_template
 from myads.adserver.models import AdSlot
 from myads.auth.decorators import login_required
 from myads.adserver.utils import render_slot
-from django.core.urlresolvers import reverse
+
 
 def track(request, username, slot):
     user = get_object_or_404(User, username=username)
@@ -82,12 +82,13 @@ def add_advertisement(request, slot, template="adserver/advertisement_add.html")
 
 @login_required
 @render_template
-def stats_advertisement(request, slot, ads_id, template="adserver/advertisement_stats.html"):
+def advertisement_visitors(request, slot, ads_id, template="adserver/advertisement_visitors.html"):
     slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
     advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
+    visitors = advertisement.visitor_set.all()
     return template, {
         "advertisement" : advertisement,
-        "last_month_visits" : advertisement_month_visits(advertisement.id)
+        "last_visitors" : visitors
     }
 
 @login_required
@@ -97,7 +98,9 @@ def stats_slot(request, slot, template="adserver/slot_stats.html"):
     return template, {
         "slot" : slot,
         "last_month_visits" :  slot_month_visits(slot.id),
+        "last_month_hours" :  slot_month_hours(slot.id),
         "browser_stats" : stats_browser(slot.id),
+        "slot_advertisements" : stats_slot_advertisements(slot.id),
     }
 
 @login_required

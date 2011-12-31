@@ -14,10 +14,10 @@ MANAGERS = ADMINS
 if DEVELOPMENT:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'data',                      # Or path to database file if using sqlite3.
-            'USER': '',                      # Not used with sqlite3.
-            'PASSWORD': '',                  # Not used with sqlite3.
+            'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'myadslot',                      # Or path to database file if using sqlite3.
+            'USER': 'root',                      # Not used with sqlite3.
+            'PASSWORD': 'fthrkl',                  # Not used with sqlite3.
             'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
         }
@@ -102,6 +102,7 @@ MIDDLEWARE_CLASSES = (
     'myads.core.middleware.LocaleMiddleware',
     'myads.core.middleware.MobileDomainMiddleware',
     'myads.core.middleware.MobileDetectionMiddleware',
+    'pagination.middleware.PaginationMiddleware'
 )
 
 ROOT_URLCONF = 'myads.urls'
@@ -116,8 +117,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
 
-    # south migration
     'south',
+    'pagination',
 
     # myads applications
     'myads.core',
