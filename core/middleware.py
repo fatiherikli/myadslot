@@ -1,6 +1,8 @@
 import re
 from django.utils.cache import patch_vary_headers
 from django.utils import translation
+from django.conf import settings
+from core.utils import reset_translation_cache
 
 # see http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_DOMAIN_PREFIX = {
@@ -18,6 +20,8 @@ class LocaleMiddleware(object):
     """
 
     def process_request(self, request):
+        if settings.DEVELOPMENT:
+            reset_translation_cache()
         domain_prefix = request.META.get("HTTP_HOST","").split(".")[0]
         if domain_prefix in LANGUAGE_DOMAIN_PREFIX:
             translation.activate(LANGUAGE_DOMAIN_PREFIX[domain_prefix])

@@ -1,153 +1,204 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-27 01:34+0200\n"
+"POT-Creation-Date: 2012-01-01 01:22+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\adserver\forms.py:13
+#: .\adserver\forms.py:14
 msgid "This slot already exists."
 msgstr "Bu slot zaten kullanımda."
 
-#: .\adserver\models.py:42 .\adserver\models.py:100
+#: .\adserver\helpers.py:81
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: .\adserver\models.py:40 .\adserver\models.py:98 .\adserver\models.py:189
 msgid "User"
 msgstr "Kullanıcı"
 
-#: .\adserver\models.py:43 .\adserver\models.py:102
+#: .\adserver\models.py:41 .\adserver\models.py:100
 #: .\templates\adserver\advertisements.html.py:30
 #: .\templates\adserver\dashboard.html.py:18
 msgid "Title"
 msgstr "Başlık"
 
-#: .\adserver\models.py:43
+#: .\adserver\models.py:41
 msgid "For example My Banners"
 msgstr "Örneğin Oyun Öncesi Reklamlarım"
 
-#: .\adserver\models.py:44 .\templates\adserver\dashboard.html.py:19
+#: .\adserver\models.py:42 .\adserver\models.py:190
+#: .\templates\adserver\dashboard.html.py:19
 msgid "Slot"
 msgstr "Reklam Slotu"
 
-#: .\adserver\models.py:44
+#: .\adserver\models.py:42
 msgid "For example my-banners, top-banner"
 msgstr "Örneğin oyun-oncesi-reklamlarim"
 
-#: .\adserver\models.py:45 .\templates\adserver\dashboard.html.py:20
+#: .\adserver\models.py:43 .\templates\adserver\dashboard.html.py:20
 msgid "Sizes"
 msgstr "Reklam Boyutları"
 
-#: .\adserver\models.py:46
+#: .\adserver\models.py:44
 msgid "This field is optional"
 msgstr "Bu alan opsiyoneldir."
 
-#: .\adserver\models.py:101
+#: .\adserver\models.py:99
 msgid "Ad Slot"
 msgstr "Reklam Slotu"
 
-#: .\adserver\models.py:102
+#: .\adserver\models.py:100
 msgid "For example My Adfoo Ads"
 msgstr "Örneğin Adsense Reklamlarım"
 
-#: .\adserver\models.py:103
+#: .\adserver\models.py:101
 msgid "Active"
 msgstr "Aktif"
 
-#: .\adserver\models.py:103
+#: .\adserver\models.py:101
 msgid "Is active or inactive"
 msgstr "Reklamın yayın durumu."
 
-#: .\adserver\models.py:104 .\templates\adserver\advertisements.html.py:32
+#: .\adserver\models.py:102 .\templates\adserver\advertisements.html.py:32
 msgid "Start Date"
 msgstr "Başlangıç Tarihi"
 
-#: .\adserver\models.py:104
+#: .\adserver\models.py:102
 msgid "The ad start date"
 msgstr "Reklamın gösteriminin başlangıç tarihi"
 
-#: .\adserver\models.py:105 .\templates\adserver\advertisements.html.py:33
+#: .\adserver\models.py:103 .\templates\adserver\advertisements.html.py:33
 msgid "Finish Date"
 msgstr "Bitiş Tarihi"
 
-#: .\adserver\models.py:106
+#: .\adserver\models.py:104
 msgid "The ad end date, if it is blank ads is infinite."
 msgstr ""
 "Reklamın gösteriminin sona erdiği tarih. Eğer boş bırakırsanız reklamı pasif "
 "yapmadıkça sonsuza kadar görüntülenir."
 
-#: .\adserver\models.py:107 .\adserver\models.py:165
+#: .\adserver\models.py:105 .\adserver\models.py:163
 #: .\templates\adserver\advertisements.html.py:34
 msgid "View Count"
 msgstr "Gösterim sayısı"
 
-#: .\adserver\models.py:107
+#: .\adserver\models.py:105
 msgid "Total ad impressions"
 msgstr "Toplam reklam gösterimi"
 
-#: .\adserver\models.py:109
+#: .\adserver\models.py:107
 msgid "Ads Code"
 msgstr "Reklam Kodu"
 
-#: .\adserver\models.py:129
+#: .\adserver\models.py:127
 msgid "Published"
 msgstr "Yayında"
 
-#: .\adserver\models.py:129
+#: .\adserver\models.py:127
 msgid "Not Published"
 msgstr "Yayında Değil"
 
-#: .\adserver\models.py:132
+#: .\adserver\models.py:130
 msgid "Infinite"
 msgstr "Sonsuz"
 
-#: .\adserver\models.py:162
+#: .\adserver\models.py:160 .\adserver\stats.py:93
 msgid "Advertisement"
 msgstr "Reklam"
 
-#: .\adserver\models.py:163
+#: .\adserver\models.py:161
 msgid "IP Address"
 msgstr "Ip adresi"
 
-#: .\adserver\models.py:164 .\adserver\models.py:185
+#: .\adserver\models.py:162 .\adserver\models.py:181
 msgid "Visitor Informations"
 msgstr "Tarayıcı bilgileri"
 
-#: .\adserver\models.py:166
+#: .\adserver\models.py:164
 msgid "Visited Page Url"
 msgstr "Ziyaret edilen sayfa"
 
-#: .\adserver\models.py:167
+#: .\adserver\models.py:165
 msgid "Last Visit Date"
 msgstr "Son ziyaret tarihi"
 
-#: .\adserver\models.py:183
-msgid "Unknown"
-msgstr "Bilinmiyor"
+#: .\adserver\models.py:191 .\templates\auth\inbox.html.py:14
+#: .\templates\auth\message_read.html.py:20
+msgid "Name"
+msgstr "Ad ve Soyad"
 
-#: .\auth\forms.py:9 .\auth\forms.py:40 .\templates\base_desktop.html.py:48
+#: .\adserver\models.py:192 .\templates\auth\inbox.html.py:15
+#: .\templates\auth\message_read.html.py:25
+msgid "Email"
+msgstr "Email"
+
+#: .\adserver\models.py:193 .\templates\auth\message_read.html.py:31
+msgid "Telephone"
+msgstr "Telefon"
+
+#: .\adserver\models.py:194 .\templates\auth\message_read.html.py:5
+#: .\templates\auth\message_read.html.py:42
+msgid "Message"
+msgstr "Mesaj"
+
+#: .\adserver\models.py:197 .\adserver\stats.py:29 .\adserver\stats.py:49
+#: .\templates\auth\inbox.html.py:16 .\templates\auth\message_read.html.py:36
+msgid "Date"
+msgstr "Tarih"
+
+#: .\adserver\models.py:198
+msgid "Ip Address"
+msgstr "Ip adresi"
+
+#: .\adserver\stats.py:30 .\adserver\stats.py:50 .\adserver\stats.py:72
+#: .\adserver\stats.py:94
+msgid "View Counts"
+msgstr "Gösterim sayısı"
+
+#: .\adserver\stats.py:31 .\adserver\stats.py:51 .\adserver\stats.py:73
+#: .\adserver\stats.py:95
+msgid "Unique Visits"
+msgstr "Tekil Ziyaretçiler"
+
+#: .\adserver\stats.py:71
+msgid "Hour"
+msgstr "Saat"
+
+#: .\adserver\stats.py:112
+msgid "User Agent"
+msgstr "Tarayıcı"
+
+#: .\adserver\stats.py:113
+msgid "Count"
+msgstr "Gösterim sayısı"
+
+#: .\auth\forms.py:23 .\auth\forms.py:54 .\templates\base_desktop.html.py:54
 msgid "Username"
 msgstr "Kullanıcı Adı"
 
-#: .\auth\forms.py:10
+#: .\auth\forms.py:24
 msgid "First Name"
 msgstr "İsim"
 
-#: .\auth\forms.py:11
+#: .\auth\forms.py:25
 msgid "Last Name"
 msgstr "Soyisim"
 
-#: .\auth\forms.py:13 .\auth\forms.py:41 .\templates\base_desktop.html.py:49
+#: .\auth\forms.py:27 .\auth\forms.py:55 .\templates\base_desktop.html.py:55
 msgid "Password"
 msgstr "Şifre"
 
-#: .\auth\forms.py:24
+#: .\auth\forms.py:38
 msgid "This email is already in use"
 msgstr "Bu email adresi zaten kullanılmakta."
 
-#: .\auth\forms.py:58
+#: .\auth\forms.py:72
 msgid "Username or Password is incorrect."
 msgstr "Kullanıcı adı veya Şifre hatalı."
 
-#: .\auth\forms.py:61
+#: .\auth\forms.py:75
 msgid "Your membership is not active."
 msgstr "Üyeliğiniz aktif değildir."
 
@@ -155,125 +206,152 @@ msgstr "Üyeliğiniz aktif değildir."
 msgid "You got an error!"
 msgstr "Bir hata oluştu."
 
-#: .\templates\base_desktop.html.py:37
+#: .\templates\base_desktop.html.py:39
 msgid "Home"
 msgstr "Anasayfa"
 
-#: .\templates\base_desktop.html.py:38
+#: .\templates\base_desktop.html.py:40
 msgid "Plans & Pricing"
 msgstr "Paketler & Ücretlendirme"
 
-#: .\templates\base_desktop.html.py:39 .\templates\base_desktop.html.py:50
+#: .\templates\base_desktop.html.py:41 .\templates\base_desktop.html.py:56
 #: .\templates\auth\complete.html.py:12 .\templates\auth\login.html.py:5
 #: .\templates\auth\login.html.py:18 .\templates\mobile\index.html.py:7
 msgid "Login"
 msgstr "Giriş"
 
-#: .\templates\base_desktop.html.py:41
+#: .\templates\base_desktop.html.py:43
 #: .\templates\adserver\dashboard.html.py:5
+#: .\templates\auth\change_password.html.py:11
+#: .\templates\auth\update_profile.html.py:11
 msgid "Dashboard"
 msgstr "Kontrol Panelim"
 
-#: .\templates\base_desktop.html.py:42
-msgid "Adserver Stats"
-msgstr "İstatistikler"
+#: .\templates\base_desktop.html.py:44 .\templates\auth\inbox.html.py:5
+#: .\templates\auth\message_read.html.py:11
+msgid "Inbox"
+msgstr "Mesaj Kutum"
 
-#: .\templates\base_desktop.html.py:57
+#: .\templates\base_desktop.html.py:63
+#: .\templates\auth\change_password.html.py:5
+#: .\templates\auth\change_password.html.py:17
 msgid "Change Password"
 msgstr "Şifremi Değiştir"
 
-#: .\templates\base_desktop.html.py:58
+#: .\templates\base_desktop.html.py:64
+#: .\templates\auth\update_profile.html.py:5
 msgid "My Profile"
 msgstr "Profilim"
 
-#: .\templates\base_desktop.html.py:60
+#: .\templates\base_desktop.html.py:66
 msgid "Logout"
 msgstr "Çıkış"
 
-#: .\templates\base_desktop.html.py:91
+#: .\templates\base_desktop.html.py:97
 msgid "All rights reserved."
 msgstr "Her hakkı saklıdır."
 
-#: .\templates\base_desktop.html.py:103
+#: .\templates\base_desktop.html.py:108
 msgid "Are you sure ?"
 msgstr "Emin misiniz ?"
 
-#: .\templates\base_desktop.html.py:109
+#: .\templates\base_desktop.html.py:114
+#: .\templates\adserver\advertisement_add.html.py:22
+#: .\templates\adserver\advertisement_edit.html.py:18
+#: .\templates\adserver\slot_add.html.py:26
 msgid "Cancel"
 msgstr "İptal"
 
-#: .\templates\base_desktop.html.py:110 .\templates\pricing.html.py:42
+#: .\templates\base_desktop.html.py:115 .\templates\pricing.html.py:42
 #: .\templates\pricing.html.py:43
 msgid "Yes"
 msgstr "Evet"
 
 #: .\templates\index.html.py:9
+msgid "Your private ad manager !"
+msgstr "Size özel reklam yöneticisi !"
+
+#: .\templates\index.html.py:10
 msgid ""
 "MyAdSlot web service helps you manage your advertisements from a single user "
-"friendly interface.\n"
-"            MyAdSlot maintains all of your advertisement accounts.  In other "
-"words, your private advertising manager."
+"friendly interface. MyAdSlot maintains all of your advertisement accounts. "
+"In other words, your private ad manager... "
 msgstr ""
 "MyAdSlot internet reklamlarınızı tek bir yerden yönetmenizi sağlayan bir "
-"servistir.Sizi reklam yayıncısı olarak aldığınız reklamları yayınlamak için "
+"servistir. Sizi reklam yayıncısı olarak aldığınız reklamları yayınlamak için "
 "uğraştığınız rutin işlerten kurtarır. Diğer bir deyişle size özel bir reklam "
 "yöneticisi uygulamasıdır."
 
 #: .\templates\index.html.py:15
-msgid "Signup for free"
-msgstr "Ücretsiz olarak başla"
-
-#: .\templates\index.html.py:16
-msgid "or View plans & pricing"
-msgstr "ya da Paketleri incele"
-
-#: .\templates\index.html.py:24
 msgid "All the ads in one place !"
 msgstr "Tüm reklamlar tek bir yerde !"
 
-#: .\templates\index.html.py:26
-msgid "Enable or disable any one of your advertisements."
-msgstr "İstediğiniz reklamı pasif ya da aktif yapın."
+#: .\templates\index.html.py:17
+msgid ""
+"Enable or disable any one of your advertisements. Choose start date or end "
+"date for your advertisements. Analyze your advertisements with simplistic "
+"and clean user interface. All for free !"
+msgstr ""
+"İstediğiniz reklamı pasif ya da aktif yapın. \n"
+" Gösterime başlanacak tarihini ve bitiş tarihini belirleyin. Reklamlarınızın "
+"analizini yapın. Sade ve kullanışlı kullanıcı arayüzüyle birlikte hepsi "
+"ücretsiz..."
 
-#: .\templates\index.html.py:27
-msgid "Choose start date or end date for your advertisements."
-msgstr "Gösterime başlanacak tarihini ve bitiş tarihini belirleyin."
+#: .\templates\index.html.py:21
+msgid "Sign Up for Free"
+msgstr "Ücretsiz olarak başla"
 
-#: .\templates\index.html.py:28
-msgid "Analyze your advertisements."
-msgstr "Reklamlarınızın analizini yapın."
+#: .\templates\index.html.py:22
+msgid "100% FREE !"
+msgstr "100% ÜCRETSİZ"
+
+#: .\templates\index.html.py:23
+msgid "for up to 10 slots"
+msgstr "10 slota kadar"
 
 #: .\templates\index.html.py:29
-msgid "With simplistic and clean user interface."
-msgstr "Sade ve kullanışlı kullanıcı arayüzüyle birlikte..."
+msgid "Analyze, maintain, sell your ads !"
+msgstr "Reklamlarınızı tek bir yerden yönetin"
 
-#: .\templates\index.html.py:30
-msgid "All for free !"
-msgstr "Hepsi ücretsiz !"
-
-#: .\templates\index.html.py:32
-msgid "View details"
-msgstr "Detaylar"
+#: .\templates\index.html.py:35
+msgid "SELLING ADS"
+msgstr "REKLAMVEREN BULUN"
 
 #: .\templates\index.html.py:37
-msgid "What they say about MyAdSlot"
-msgstr "MyAdSlot hakkında ne dediler"
-
-#: .\templates\index.html.py:39
 msgid ""
-"If you have too many sites and if you are interested in internet advertising "
-"you should try it."
+"If your ad slot is empty, visitors can contact you from your web site. This "
+"dialog completely between you and your visitors. No credit card or anything."
 msgstr ""
-"Eğer çok fazla web siteniz varsa ve internet reklamcılığıyla uğraşıyorsanız "
-"kesinlikle denemelisiniz."
+"Eğer yayınlanacak henüz bir reklamınız yoksa, ziyaretçileriniz sizinle web "
+"siteniz üzerinden iletişime geçebilir. Bu diyalog tamamen sizinle "
+"ziyaretçiniz arasında olur."
 
-#: .\templates\index.html.py:44
+#: .\templates\index.html.py:41
+msgid "MAINTENANCE"
+msgstr "YÖNETİN"
+
+#: .\templates\index.html.py:43
 msgid ""
-"MyAdSlot is useful for manage internet advertisements. Thank you very much "
-"myadslot.com :)"
+"Enable or disable any one of your advertisements. Choose start date or end "
+"date for your advertisements. Analyze your advertisements with simplistic "
+"and clean user interface."
 msgstr ""
-"MyAdSlot reklam yönetimi için gerçekten çok kullanışlı. Çok teşekkürler "
-"myadslot.com :)"
+"İstediğiniz reklamı pasif ya da aktif yapın. \n"
+" Gösterime başlanacak tarihini ve bitiş tarihini belirleyin. Reklamlarınızın "
+"analizini yapın. Sade ve kullanışlı kullanıcı arayüzüyle birlikte hepsi "
+"ücretsiz..."
+
+#: .\templates\index.html.py:47
+msgid "ANALYZE"
+msgstr "ANALİZ YAPIN"
+
+#: .\templates\index.html.py:49
+msgid ""
+"Analyze your ads daily or monthly. Watch your visitors in real time. See "
+"visitor informations, visited pages, ip addresses."
+msgstr ""
+"Reklamlarınızın günlük veya aylık olarak analizini yapın. Gerçek zamanlı "
+"olarak kullanıcıları, gezdiği sayfaları izleyin."
 
 #: .\templates\pricing.html.py:5
 msgid "Select which plan is right for you"
@@ -335,11 +413,11 @@ msgstr "Hesap Oluştur"
 
 #: .\templates\adserver\advertisement_add.html.py:10
 #: .\templates\adserver\advertisement_edit.html.py:9
-#: .\templates\adserver\advertisement_stats.html.py:27
+#: .\templates\adserver\advertisement_visitors.html.py:11
 #: .\templates\adserver\advertisements.html.py:12
 #: .\templates\adserver\slot_get_snippet.html.py:7
-#: .\templates\adserver\slot_preview.html.py:6
-#: .\templates\adserver\slot_stats.html.py:26
+#: .\templates\adserver\slot_preview.html.py:10
+#: .\templates\adserver\slot_stats.html.py:45
 msgid "My slots"
 msgstr "Slotlarım"
 
@@ -358,36 +436,17 @@ msgstr "Kaydet"
 msgid "Edit Advertisement"
 msgstr "Reklamı Düzenle"
 
-#: .\templates\adserver\advertisement_stats.html.py:4
-msgid "Advertisement Statistics"
-msgstr "Reklam İstatistikleri"
+#: .\templates\adserver\advertisement_visitors.html.py:4
+#: .\templates\adserver\advertisements.html.py:47
+msgid "Visitors"
+msgstr ""
 
-#: .\templates\adserver\advertisement_stats.html.py:14
-#: .\templates\adserver\slot_stats.html.py:14
-msgid "Last 30 day visit statistics"
-msgstr "Son 30 günün istatistiği"
-
-#: .\templates\adserver\advertisement_stats.html.py:15
-#: .\templates\adserver\slot_stats.html.py:15
-msgid "Date"
-msgstr "Tarih"
-
-#: .\templates\adserver\advertisement_stats.html.py:15
-#: .\templates\adserver\slot_stats.html.py:15
-msgid "View Counts"
-msgstr "Gösterim sayısı"
-
-#: .\templates\adserver\advertisement_stats.html.py:15
-#: .\templates\adserver\slot_stats.html.py:15
-msgid "Unique Visits"
-msgstr "Tekil Ziyaretçiler"
-
-#: .\templates\adserver\advertisement_stats.html.py:34
-#: .\templates\adserver\slot_stats.html.py:33
-msgid "Last 30 visits"
-msgstr "Son 30 tekil ziyaretçi"
+#: .\templates\adserver\advertisement_visitors.html.py:16
+msgid "Advertisement Visitors"
+msgstr "Reklam Ziyaretçileri"
 
 #: .\templates\adserver\advertisements.html.py:5
+#: .\templates\adserver\slot_stats.html.py:34
 msgid "Advertisements"
 msgstr "Reklamlar"
 
@@ -412,13 +471,13 @@ msgstr "Yayın Durumu"
 msgid "%(count)s Views"
 msgstr "%(count)s Gösterim"
 
-#: .\templates\adserver\advertisements.html.py:47
-msgid "Stats"
-msgstr "İstatistikler"
-
 #: .\templates\adserver\advertisements.html.py:53
 msgid "Not added any advertisement..."
 msgstr "Bu slota her hangi bir reklam eklenmemiş."
+
+#: .\templates\adserver\blank_ads.html.py:8
+msgid "click here for information."
+msgstr "kontrol panelim"
 
 #: .\templates\adserver\dashboard.html.py:5
 msgid "Everything is under control !"
@@ -443,7 +502,8 @@ msgstr ""
 "Seçtiğiniz slot ve altındaki reklamlar silinecektir, silmek istediğinizden "
 "emin misiniz ?"
 
-#: .\templates\adserver\dashboard.html.py:32
+#: .\templates\adserver\dashboard.html.py:32 .\templates\auth\inbox.html.py:27
+#: .\templates\auth\message_read.html.py:49
 msgid "Delete !"
 msgstr "Sil"
 
@@ -451,6 +511,23 @@ msgstr "Sil"
 #: .\templates\mobile\adserver\dashboard.html.py:14
 msgid "Not added any slot..."
 msgstr "Henüz hiç bir slot eklememişsiniz."
+
+#: .\templates\adserver\information_form.html.py:4
+msgid "Contact the Publisher"
+msgstr "Yayıncı ile iletişime geçin"
+
+#: .\templates\adserver\information_form.html.py:8
+msgid "Congratulations. Your message was successfully sent."
+msgstr "Tebrikler. Mesajınız başarıyla gönderildi."
+
+#: .\templates\adserver\information_form.html.py:9
+#: .\templates\adserver\information_form.html.py:18
+msgid "Close"
+msgstr ""
+
+#: .\templates\adserver\information_form.html.py:17
+msgid "Send"
+msgstr ""
 
 #: .\templates\adserver\slot_add.html.py:6
 msgid "Add a slot"
@@ -480,17 +557,75 @@ msgstr "Slot Kodu"
 msgid "Get Slot Snippet"
 msgstr "Slotun Reklam Kodu"
 
-#: .\templates\adserver\slot_preview.html.py:8
+#: .\templates\adserver\slot_preview.html.py:5
+#: .\templates\adserver\slot_preview.html.py:12
 msgid "Preview"
 msgstr "Önizleme"
 
-#: .\templates\adserver\slot_preview.html.py:11
+#: .\templates\adserver\slot_preview.html.py:15
 msgid "Slot Preview"
 msgstr "Slot Önizleme"
 
 #: .\templates\adserver\slot_stats.html.py:4
 msgid "Ad Slot Statistics"
 msgstr "Reklam Slotu İstatistikleri"
+
+#: .\templates\adserver\slot_stats.html.py:14
+#: .\templates\adserver\stats.html.py:22
+msgid "Last 30 day visit statistics"
+msgstr "Son 30 günün istatistiği"
+
+#: .\templates\adserver\slot_stats.html.py:21
+msgid "Last 30 day hours"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:27
+msgid "Browsers"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:52
+msgid "Last 30 Visits"
+msgstr "Son 30 tekil ziyaretçi"
+
+#: .\templates\adserver\slot_stats.html.py:53
+msgid "Chart of Monthly Visitors"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:54
+msgid "Chart of Hours"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:55
+msgid "Chart of Browsers"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:56
+msgid "Chart of Advertisements"
+msgstr "Reklam Grafikleri"
+
+#: .\templates\adserver\slot_stats.html.py:64
+msgid "No data"
+msgstr ""
+
+#: .\templates\adserver\stats.html.py:5
+msgid "Overall Statistics"
+msgstr "Genel İstatistikler"
+
+#: .\templates\adserver\stats.html.py:16
+msgid "Browser statistics"
+msgstr "Tarayıcı İstatistikleri"
+
+#: .\templates\adserver\stats.html.py:35
+msgid "Visitor Statistics"
+msgstr "Ziyaretçi İstatistikleri"
+
+#: .\templates\adserver\stats.html.py:38
+msgid "Browser Statistics"
+msgstr "Tarayıcı İstatistikleri"
+
+#: .\templates\auth\change_password.html.py:10
+msgid "Your password successfully changed."
+msgstr ""
 
 #: .\templates\auth\complete.html.py:4 .\templates\auth\register.html.py:5
 msgid "Registration"
@@ -500,9 +635,30 @@ msgstr "Kayıt"
 msgid "Registration is completed."
 msgstr "Kayıt işlemi başarıyla gerçekleştirildi."
 
+#: .\templates\auth\inbox.html.py:27 .\templates\auth\message_read.html.py:49
+#: .\templates\auth\message_read.html.py:50
+msgid "This message will be removed, are you sure?"
+msgstr "Seçtiğiniz mesaj silinecektir, silmek istediğinizden emin misiniz ?"
+
+#: .\templates\auth\inbox.html.py:34
+msgid "No message..."
+msgstr ""
+
+#: .\templates\auth\message_read.html.py:50
+msgid "Mark as Unread"
+msgstr ""
+
 #: .\templates\auth\register.html.py:13
 msgid "Create an account"
 msgstr "Hesap oluştur"
+
+#: .\templates\auth\update_profile.html.py:10
+msgid "Your profile successfully update."
+msgstr ""
+
+#: .\templates\auth\update_profile.html.py:17
+msgid "Update my profile"
+msgstr ""
 
 #: .\templates\mobile\index.html.py:10
 msgid "click here for dashboard"
@@ -511,3 +667,47 @@ msgstr "kontrol panelim"
 #: .\templates\mobile\index.html.py:11
 msgid "logout"
 msgstr "Çıkış"
+
+#~ msgid "Adserver Stats"
+#~ msgstr "İstatistikler"
+
+#~ msgid "or View plans & pricing"
+#~ msgstr "ya da Paketleri incele"
+
+#~ msgid "Enable or disable any one of your advertisements."
+#~ msgstr "İstediğiniz reklamı pasif ya da aktif yapın."
+
+#~ msgid "Choose start date or end date for your advertisements."
+#~ msgstr "Gösterime başlanacak tarihini ve bitiş tarihini belirleyin."
+
+#~ msgid "Analyze your advertisements."
+#~ msgstr "Reklamlarınızın analizini yapın."
+
+#~ msgid "With simplistic and clean user interface."
+#~ msgstr "Sade ve kullanışlı kullanıcı arayüzüyle birlikte..."
+
+#~ msgid "All for free !"
+#~ msgstr "Hepsi ücretsiz !"
+
+#~ msgid "View details"
+#~ msgstr "Detaylar"
+
+#~ msgid "What they say about MyAdSlot"
+#~ msgstr "MyAdSlot hakkında ne dediler"
+
+#~ msgid ""
+#~ "If you have too many sites and if you are interested in internet "
+#~ "advertising you should try it."
+#~ msgstr ""
+#~ "Eğer çok fazla web siteniz varsa ve internet reklamcılığıyla "
+#~ "uğraşıyorsanız kesinlikle denemelisiniz."
+
+#~ msgid ""
+#~ "MyAdSlot is useful for manage internet advertisements. Thank you very "
+#~ "much myadslot.com :)"
+#~ msgstr ""
+#~ "MyAdSlot reklam yönetimi için gerçekten çok kullanışlı. Çok teşekkürler "
+#~ "myadslot.com :)"
+
+#~ msgid "Stats"
+#~ msgstr "İstatistikler"

@@ -7,20 +7,14 @@
     <div class="content">
     <div class="hero-unit">
         <h1>{% trans 'Your private ad manager !' %}</h1>
-        <p>{% blocktrans %}MyAdSlot web service helps you manage your advertisements from a single user friendly interface.
-            MyAdSlot maintains all of your advertisement accounts. In other words, your private ad manager... {% endblocktrans %}</p>
+        <p>{% blocktrans %}MyAdSlot web service helps you manage your advertisements from a single user friendly interface. MyAdSlot maintains all of your advertisement accounts. In other words, your private ad manager... {% endblocktrans %}</p>
 
     </div>
         <div class="row">
             <div class="span10">
                 <h2>{%  trans 'All the ads in one place !' %}</h2>
                 <p class="features">
-                    {% blocktrans %}
-                        Enable or disable any one of your advertisements.
-                        Choose start date or end date for your advertisements.
-                        Analyze your advertisements with simplistic and clean user interface.
-                        All for free !
-                    {% endblocktrans %}
+                    {% blocktrans %}Enable or disable any one of your advertisements. Choose start date or end date for your advertisements. Analyze your advertisements with simplistic and clean user interface. All for free !{% endblocktrans %}
                 </p>
             </div>
             <div class="span4 click4action">
@@ -38,91 +32,29 @@
 
         <div class="row">
             <div class="column span5">
-                <h2>SELLING ADS</h2>
+                <h2>{% trans 'SELLING ADS' %}</h2>
                 <p>
-                    {% blocktrans %}
-                        if your ad slot is empty, visitors can contact you from your web site.
-                        This dialog completely between you and your visitors. No credit card or anything.
-                    {% endblocktrans %}
+                    {% blocktrans %}If your ad slot is empty, visitors can contact you from your web site. This dialog completely between you and your visitors. No credit card or anything.{% endblocktrans %}
                 </p>
             </div>
             <div class="column span5">
-                <h2>MAINTENANCE</h2>
+                <h2>{% trans 'MAINTENANCE' %}</h2>
                 <p>
-                    {% blocktrans %}
-                        Enable or disable any one of your advertisements.
-                        Choose start date or end date for your advertisements.
-                        Analyze your advertisements with simplistic and clean user interface.
-
-                    {% endblocktrans %}
+                    {% blocktrans %}Enable or disable any one of your advertisements. Choose start date or end date for your advertisements. Analyze your advertisements with simplistic and clean user interface.{% endblocktrans %}
                 </p>
             </div>
             <div class="column span4">
-                <h2>ANALYZE</h2>
+                <h2>{% trans 'ANALYZE' %}</h2>
                 <p>
-                    {% blocktrans %}
-                        Analyze your ads daily or monthly.
-                        Watch your visitors in real time. See visitor informations, visited pages, ip addresses.
-                    {% endblocktrans %}
+                    {% blocktrans %}Analyze your ads daily or monthly. Watch your visitors in real time. See visitor informations, visited pages, ip addresses.{% endblocktrans %}
                 </p>
 
             </div>
 
         </div>
 
-          
+
 
 
     </div>
 {% endblock %}
-
-
-
-{% comment %}
-
- <ul class="media-grid">
-            <li>
-                <a href="#">
-                    <img class="thumbnail" src="{{ MEDIA_URL }}img/screenshot/contact-the-publisher.jpg" width="150" alt="">
-                </a>
-            </li>
-
-
-        </ul>
-
-
-   <!--
-
-           <a href="{% url auth_pricing %}" class="btn default large">{% trans 'or View plans & pricing' %}</a>
--->
-
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="span7">
-
-            <ul>
-                <li>{% trans 'Enable or disable any one of your advertisements.' %}</li>
-                <li>{% trans 'Choose start date or end date for your advertisements.' %}</li>
-                <li>{% trans 'Analyze your advertisements.' %}</li>
-                <li>{% trans 'With simplistic and clean user interface.' %}</li>
-                 <li>{% trans 'All for free !' %}</li>
-            </ul>
-            <p><a class="btn" href="{% url auth_pricing %}">{% trans 'View details' %} &raquo;</a></p>
-        </div>
-
-
-        <div class="span7">
-            <h3>{% trans 'What they say about MyAdSlot' %}</h3>
-            <blockquote>
-                <p>{%  blocktrans %}If you have too many sites and if you are interested in internet advertising you should try it.{% endblocktrans %}</p>
-                <small>Ramazan Erikli</small>
-            </blockquote>
-
-            <blockquote>
-                <p>{% blocktrans %}MyAdSlot is useful for manage internet advertisements. Thank you very much myadslot.com :){% endblocktrans %}</p>
-                <small>Yaşar İçli</small>
-            </blockquote>
-        </div>
-
-    </div>
-{% endcomment %}
