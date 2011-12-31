@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block heading %}
+    {% trans 'Message' %}
+{% endblock %}
+
+{% block content %}
+
+    <ul class="breadcrumb">
+        <li><a href="{% url auth_inbox %}">{% trans 'Inbox' %}</a>  <span class="divider">/</span></li>
+        <li>Message</li>
+    </ul>
+
+    <table class="zebra-striped ">
+
+        <tbody>
+
+        <tr>
+            <th width="40">{% trans 'Name' %}</th>
+            <td>{{ message.name }}</td>
+        </tr>
+
+        <tr>
+            <th>{% trans 'Email' %}</th>
+            <td>{{ message.email }}</td>
+        </tr>
+
+
+        <tr>
+            <th>{% trans 'Telephone' %}</th>
+            <td>{{ message.telephone }}</td>
+        </tr>
+
+        <tr>
+            <th>{% trans 'Date' %}</th>
+            <td>{{ message.date }}</td>
+        </tr>
+
+
+        <tr>
+            <th>{% trans 'Message' %}</th>
+            <td>{{ message.message }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <a style="margin-top:-5px; margin-bottom:-5px;" class="btn error confirm" title="{% trans 'This message will be removed, are you sure?' %}"  href="{% url auth_inbox_action "delete" message.id %}">{% trans 'Delete !' %}</a>
+    <a  class="btn " title="{% trans 'This message will be removed, are you sure?' %}"  href="{% url auth_inbox_action "mark_as_read" message.id %}">{% trans 'Mark as Unread' %}</a>
+
+
+{% endblock %}

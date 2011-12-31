@@ -22,11 +22,13 @@
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/custom.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
     <!-- end CSS-->
+    <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Arvo|Signika:300' rel='stylesheet' type='text/css'>
     <script src="{{ MEDIA_URL }}js/libs/modernizr-2.0.6.min.js"></script>
 
 </head>
 
-<body>
+<body class="{% block body_class %}{% endblock %}">
 
 <div class="topbar">
     <div class="fill">
@@ -39,6 +41,11 @@
                 <li><a href="{% url auth_login %}">{% trans 'Login' %}</a></li>
                 {% else %}
                 <li><a href="{% url dashboard %}">{% trans 'Dashboard' %}</a></li>
+                <li><a href="{% url auth_inbox %}">{% trans 'Inbox' %}
+                {% if request.user.message_set.unread.count %}
+                <strong style='color:white'>({{ request.user.message_set.unread.count }})</strong>
+                {% endif %}
+                </a></li>
                 {% endif %}
             </ul>
             {% if user.is_anonymous %}
@@ -66,8 +73,6 @@
     </div>
 </div>
 
-
-
     <div class="container">
 {% block container %}
       <div class="content">
@@ -87,10 +92,11 @@
 {% endblock %}
 <!-- confirm modal content -->
 
-      <footer><p> <small>  MyAdSlot &copy; 2011 - {% trans 'All rights reserved.' %}</small></p>
 
-
+      <footer>
+      <p> <small>  MyAdSlot &copy; 2011 - {% trans 'All rights reserved.' %}</small></p>
       </footer>
+
 
     </div> <!-- /container -->
 

@@ -1,0 +1,23 @@
+{% extends 'base_popup.html' %}
+{% load i18n %}
+{% block heading %}
+    {% trans 'Contact the Publisher' %}
+{% endblock %}
+{% block content %}
+    {% if form.is_valid %}
+        <div class="alert-message success">{% trans 'Congratulations. Your message was successfully sent.' %}</div>
+        <a href="javascript:window.close()" class="btn">{% trans 'Close' %}</a>
+    {% else %}
+        <form action="" method="post" class="">
+            {% csrf_token %}
+            <fieldset>
+                {{ form.as_div }}
+            </fieldset>
+            <div class="actions">
+                <input type="submit" class="btn primary" value="{% trans "Send" %}">&nbsp;
+                <a href="javascript:window.close()" class="btn">{% trans 'Close' %}</a>
+            </div>
+
+        </form>
+    {% endif %}
+{% endblock %}

@@ -60,7 +60,12 @@
 
     <div id="tab-content" class="tab-content">
         <div class="active tab-pane" id="tab_last_visits">
-            {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date,advertisement" %}
+            {% if not slot.get_last_visitors %}
+                {% trans 'No data' %}
+            {% else %}
+                {% data_table slot.get_last_visitors "ip_address,get_user_agent,visit_count,last_visit_date,advertisement" %}
+            {% endif %}
+
         </div>
 
         <div class="tab-pane" id="tab_last_graph">

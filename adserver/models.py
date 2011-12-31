@@ -1,8 +1,5 @@
-import calendar
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
-from django.db.models.aggregates import Max
-from django.utils import simplejson
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.core.urlresolvers import reverse
@@ -182,3 +179,22 @@ class Visitor(models.Model):
         return detect_browser(self.user_agent)
 
     get_user_agent.short_description = _("Visitor Informations")
+
+
+class MessageManager(models.Manager):
+    def unread(self):
+        return self.filter(read=False)
+
+class Message(models.Model):
+    user = models.ForeignKey(User, verbose_name=_("User"))
+    adslot = models.ForeignKey(AdSlot, verbose_name=_("Slot"), blank=True, null=True)
+    name = models.CharField(_("Name"), max_length=100)
+    email = models.EmailField(_("Email"))
+    telephone = models.CharField(_("Telephone"), max_length=75)
+    message = models.TextField(_("Message"))
+    read = models.BooleanField(default=False)
+    # logging
+    date = models.DateTimeField(_("Date"), auto_now=True, auto_now_add=True)
+    ip_address = models.IPAddressField(_("Ip Address"))
+
+    object = MessageManager()

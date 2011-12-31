@@ -1,0 +1,11 @@
+{% load i18n %}
+<div style='width:{{ width }}px; height:{{ height }}px; text-align:center; background:whitesmoke; border:1px solid #dedede;'>
+    <div style='margin-top:{{ margin_top }}px;'>
+        <span style='font-size:40px;'>{{ slot.sizes|default:"Advertisement" }}</span>
+        <br />
+        <a href="{% url adserver_information_message slot.user.username slot.slot %}"
+                onclick="window.open(this.href, 'information', 'width=600,height=500');return false;">
+            {% trans 'click here for information.' %}
+        </a>
+    </div>
+</div>

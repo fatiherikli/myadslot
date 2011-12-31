@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
+{% block heading %}
+    {% trans 'Preview' %}
+{% endblock %}
+
 {% block content %}
     <ul class="breadcrumb">
         <li><a href="{% url dashboard %}">{% trans 'My slots' %}</a>  <span class="divider">/</span></li>

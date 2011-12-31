@@ -2,7 +2,7 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('myads.adserver.views',
     url(r'^$', 'dashboard', name='dashboard'),
-    url(r'^add-slot', 'add_slot', name='adserver_add_slot'),
+    url(r'^add-slot$', 'add_slot', name='adserver_add_slot'),
     url(r'^(?P<slot>.*)/delete', 'delete_slot', name='adserver_delete_slot'),
     url(r'^(?P<slot>.*)/edit-slot', 'edit_slot', name='adserver_edit_slot'),
     url(r'^(?P<slot>.*)/statistics', 'stats_slot', name='adserver_stats_slot'),
@@ -16,6 +16,7 @@ urlpatterns = patterns('myads.adserver.views',
 
     # tracking ads
     url(r'^(?P<username>.*)/(?P<slot>.*).js$', 'track', name='adserver_track_js'),
+    url(r'^(?P<username>.*)/(?P<slot>.*)/information$', 'information_message', name='adserver_information_message'),
 
 )
 

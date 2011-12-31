@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
+from django.template.loader import render_to_string
 
 def build_snippet(slot):
     """
@@ -13,7 +14,6 @@ def build_snippet(slot):
             var adserver_js = protocol + '%(domain)s%(adserver_track_js)s';
             document.write('<scr' + 'ipt type="text/javascript" src="' + adserver_js + '"></scr' + 'ipt>');
           })();
-
         </script>
         """ % {
         "domain" : getattr(settings, 'ADSERVER_DOMAIN'),
@@ -26,18 +26,14 @@ def build_blank_ads(slot):
     """
     type(slot) => myads.adserver.models.AdSlot
     """
-    snippet = """
-        <div style='width:%(width)spx; height:%(height)spx; text-align:center; background:whitesmoke; border:1px solid #dedede;'>
-        <div style='font-size:40px; margin-top:%(margin_top)spx;'>%(ads_text)s</div>
-        </div>
-        """ % {
-        "size" : slot.sizes,
+    ctx = {
         "width" : (slot.get_width or 100) - 2, # -2 for inline borders
         "height" : (slot.get_height or 100) - 2, # -2 for inline borders
         "margin_top" : (slot.get_height or 100) / 2 - 10, # for vertical align and -10px font-size
-        "ads_text" : slot.sizes or "Ads"
+        "slot" : slot,
+        #"information_link" : reverse()
     }
-    return snippet
+    return render_to_string("adserver/blank_ads.html", ctx)
 
 def escape_js(code):
     import re

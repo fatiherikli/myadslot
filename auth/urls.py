@@ -8,6 +8,9 @@ urlpatterns = patterns('',
     url(r'^complete/', 'myads.auth.views.complete', name='auth_complete'),
     url(r'^change-password/', 'myads.auth.views.change_password', name='auth_change_password'),
     url(r'^my-profile/', 'myads.auth.views.update_profile', name='auth_update_profile'),
+    url(r'^inbox/$', 'myads.auth.views.inbox', name='auth_inbox'),
+    url(r'^inbox/read/(?P<message_id>\d+)', 'myads.auth.views.read', name='auth_inbox_read'),
+    url(r'^inbox/action/(?P<action>.*)/(?P<message_id>\d+)', 'myads.auth.views.inbox_action', name='auth_inbox_action'),
 
     # pricing urls
     url(r'^plans-and-pricing/', direct_to_template, {'template':'pricing.html'}, name='auth_pricing',),

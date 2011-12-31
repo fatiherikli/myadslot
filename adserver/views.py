@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
-from adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementForm
+from adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementForm, InformationForm
 from adserver.models import Advertisement
 from adserver.stats import advertisement_month_visits, slot_month_visits, stats_browser, stats_slot_advertisements, slot_month_hours
 from core.decorators import render_template
@@ -20,6 +20,25 @@ def track(request, username, slot):
     return HttpResponse(render_slot(slot))
 
 
+
+@render_template
+def information_message(request, username, slot, template="adserver/information_form.html"):
+    user = get_object_or_404(User, username=username)
+    slot = get_object_or_404(AdSlot, user=user, slot=slot)
+    form = InformationForm()
+    if request.method == "POST":
+        form = InformationForm(request.POST)
+        if form.is_valid():
+            form.instance.user = user
+            form.instance.adslot = slot
+            form.instance.ip_address = request.META.get("REMOTE_ADDR")
+            form.save()
+    return template, {
+        "form" : form,
+        "is_popup" : True
+    }
+
+
 @login_required
 @render_template
 def dashboard(request, template="adserver/dashboard.html"):
@@ -27,7 +46,7 @@ def dashboard(request, template="adserver/dashboard.html"):
     return template, {
         "slots" : slots
     }
-
+ 
 
 @login_required
 @render_template
