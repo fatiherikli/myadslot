@@ -308,7 +308,7 @@ msgid ""
 msgstr ""
 "MyAdSlot internet reklamlarınızı tek bir yerden yönetmenizi sağlayan bir "
 "servistir. Sizi reklam yayıncısı olarak aldığınız reklamları yayınlamak için "
-"uğraştığınız rutin işlerten kurtarır. Diğer bir deyişle size özel bir reklam "
+"uğraştığınız rutin işlerden kurtarır. Diğer bir deyişle size özel bir reklam "
 "yöneticisi uygulamasıdır."
 
 #: .\templates\index.html.py:15
@@ -432,7 +432,7 @@ msgid "No"
 msgstr "Hayır"
 
 #: .\templates\pricing.html.py:43
-msgid "ADVENCED"
+msgid "ADVANCED"
 msgstr "GELİŞMİŞ"
 
 #: .\templates\pricing.html.py:48 .\templates\pricing.html.py:49
@@ -501,7 +501,7 @@ msgid "%(count)s Views"
 msgstr "%(count)s Gösterim"
 
 #: .\templates\adserver\advertisements.html.py:53
-msgid "Not added any advertisement..."
+msgid "You didn't add any advertisement..."
 msgstr "Bu slota her hangi bir reklam eklenmemiş."
 
 #: .\templates\adserver\blank_ads.html.py:8
@@ -653,7 +653,7 @@ msgid "Browser Statistics"
 msgstr "Tarayıcı İstatistikleri"
 
 #: .\templates\auth\change_password.html.py:10
-msgid "Your password successfully changed."
+msgid "Your password is successfully changed."
 msgstr "Şifreniz başarıyla değiştirildi."
 
 #: .\templates\auth\complete.html.py:4 .\templates\auth\register.html.py:5
@@ -661,7 +661,7 @@ msgid "Registration"
 msgstr "Kayıt"
 
 #: .\templates\auth\complete.html.py:9
-msgid "Registration is completed."
+msgid "Registration is complete."
 msgstr "Kayıt işlemi başarıyla gerçekleştirildi."
 
 #: .\templates\auth\inbox.html.py:27 .\templates\auth\message_read.html.py:49
@@ -682,7 +682,7 @@ msgid "Create an account"
 msgstr "Hesap oluştur"
 
 #: .\templates\auth\update_profile.html.py:10
-msgid "Your profile successfully update."
+msgid "Your profile has been successfully updated."
 msgstr "Profiliniz başarıyla güncellendi"
 
 #: .\templates\auth\update_profile.html.py:17
