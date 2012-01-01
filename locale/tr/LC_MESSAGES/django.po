@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-01 01:22+0200\n"
+"POT-Creation-Date: 2012-01-01 04:20+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -206,29 +206,30 @@ msgstr "Üyeliğiniz aktif değildir."
 msgid "You got an error!"
 msgstr "Bir hata oluştu."
 
-#: .\templates\base_desktop.html.py:39
+#: .\templates\base_desktop.html.py:39 .\templates\footer.html.py:11
 msgid "Home"
 msgstr "Anasayfa"
 
-#: .\templates\base_desktop.html.py:40
+#: .\templates\base_desktop.html.py:40 .\templates\footer.html.py:12
 msgid "Plans & Pricing"
 msgstr "Paketler & Ücretlendirme"
 
 #: .\templates\base_desktop.html.py:41 .\templates\base_desktop.html.py:56
-#: .\templates\auth\complete.html.py:12 .\templates\auth\login.html.py:5
-#: .\templates\auth\login.html.py:18 .\templates\mobile\index.html.py:7
+#: .\templates\footer.html.py:13 .\templates\auth\complete.html.py:12
+#: .\templates\auth\login.html.py:5 .\templates\auth\login.html.py:18
+#: .\templates\mobile\index.html.py:7
 msgid "Login"
 msgstr "Giriş"
 
-#: .\templates\base_desktop.html.py:43
+#: .\templates\base_desktop.html.py:43 .\templates\footer.html.py:15
 #: .\templates\adserver\dashboard.html.py:5
 #: .\templates\auth\change_password.html.py:11
 #: .\templates\auth\update_profile.html.py:11
 msgid "Dashboard"
 msgstr "Kontrol Panelim"
 
-#: .\templates\base_desktop.html.py:44 .\templates\auth\inbox.html.py:5
-#: .\templates\auth\message_read.html.py:11
+#: .\templates\base_desktop.html.py:44 .\templates\footer.html.py:16
+#: .\templates\auth\inbox.html.py:5 .\templates\auth\message_read.html.py:11
 msgid "Inbox"
 msgstr "Mesaj Kutum"
 
@@ -247,25 +248,53 @@ msgstr "Profilim"
 msgid "Logout"
 msgstr "Çıkış"
 
-#: .\templates\base_desktop.html.py:97
-msgid "All rights reserved."
-msgstr "Her hakkı saklıdır."
-
-#: .\templates\base_desktop.html.py:108
+#: .\templates\base_desktop.html.py:106
 msgid "Are you sure ?"
 msgstr "Emin misiniz ?"
 
-#: .\templates\base_desktop.html.py:114
+#: .\templates\base_desktop.html.py:112
 #: .\templates\adserver\advertisement_add.html.py:22
 #: .\templates\adserver\advertisement_edit.html.py:18
 #: .\templates\adserver\slot_add.html.py:26
 msgid "Cancel"
 msgstr "İptal"
 
-#: .\templates\base_desktop.html.py:115 .\templates\pricing.html.py:42
+#: .\templates\base_desktop.html.py:113 .\templates\pricing.html.py:42
 #: .\templates\pricing.html.py:43
 msgid "Yes"
 msgstr "Evet"
+
+#: .\templates\footer.html.py:8
+msgid "My Account"
+msgstr "Hesabınız"
+
+#: .\templates\footer.html.py:25
+msgid "Set Language"
+msgstr "Dil Seçiminiz"
+
+#: .\templates\footer.html.py:28
+msgid "English"
+msgstr "İngilizce"
+
+#: .\templates\footer.html.py:31
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: .\templates\footer.html.py:38
+msgid "Contact"
+msgstr "İletişim"
+
+#: .\templates\footer.html.py:41
+msgid "Feedback"
+msgstr "Öneri/Hata"
+
+#: .\templates\footer.html.py:44
+msgid "Contact Us"
+msgstr "İletişime Geçin"
+
+#: .\templates\footer.html.py:50
+msgid "All rights reserved."
+msgstr "Her hakkı saklıdır."
 
 #: .\templates\index.html.py:9
 msgid "Your private ad manager !"
@@ -439,7 +468,7 @@ msgstr "Reklamı Düzenle"
 #: .\templates\adserver\advertisement_visitors.html.py:4
 #: .\templates\adserver\advertisements.html.py:47
 msgid "Visitors"
-msgstr ""
+msgstr "Ziyaretçiler"
 
 #: .\templates\adserver\advertisement_visitors.html.py:16
 msgid "Advertisement Visitors"
@@ -523,11 +552,11 @@ msgstr "Tebrikler. Mesajınız başarıyla gönderildi."
 #: .\templates\adserver\information_form.html.py:9
 #: .\templates\adserver\information_form.html.py:18
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #: .\templates\adserver\information_form.html.py:17
 msgid "Send"
-msgstr ""
+msgstr "Gönder"
 
 #: .\templates\adserver\slot_add.html.py:6
 msgid "Add a slot"
@@ -577,11 +606,11 @@ msgstr "Son 30 günün istatistiği"
 
 #: .\templates\adserver\slot_stats.html.py:21
 msgid "Last 30 day hours"
-msgstr ""
+msgstr "Ziyaret saatleri"
 
 #: .\templates\adserver\slot_stats.html.py:27
 msgid "Browsers"
-msgstr ""
+msgstr "Tarayıcılar"
 
 #: .\templates\adserver\slot_stats.html.py:52
 msgid "Last 30 Visits"
@@ -589,15 +618,15 @@ msgstr "Son 30 tekil ziyaretçi"
 
 #: .\templates\adserver\slot_stats.html.py:53
 msgid "Chart of Monthly Visitors"
-msgstr ""
+msgstr "Aylık Ziyaretçiler"
 
 #: .\templates\adserver\slot_stats.html.py:54
 msgid "Chart of Hours"
-msgstr ""
+msgstr "Ziyaret Saatleri"
 
 #: .\templates\adserver\slot_stats.html.py:55
 msgid "Chart of Browsers"
-msgstr ""
+msgstr "Tarayıcı Grafikleri"
 
 #: .\templates\adserver\slot_stats.html.py:56
 msgid "Chart of Advertisements"
@@ -605,7 +634,7 @@ msgstr "Reklam Grafikleri"
 
 #: .\templates\adserver\slot_stats.html.py:64
 msgid "No data"
-msgstr ""
+msgstr "Veri yok"
 
 #: .\templates\adserver\stats.html.py:5
 msgid "Overall Statistics"
@@ -625,7 +654,7 @@ msgstr "Tarayıcı İstatistikleri"
 
 #: .\templates\auth\change_password.html.py:10
 msgid "Your password successfully changed."
-msgstr ""
+msgstr "Şifreniz başarıyla değiştirildi."
 
 #: .\templates\auth\complete.html.py:4 .\templates\auth\register.html.py:5
 msgid "Registration"
@@ -642,11 +671,11 @@ msgstr "Seçtiğiniz mesaj silinecektir, silmek istediğinizden emin misiniz ?"
 
 #: .\templates\auth\inbox.html.py:34
 msgid "No message..."
-msgstr ""
+msgstr "Mesaj kutunuz boş."
 
 #: .\templates\auth\message_read.html.py:50
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Okundu olarak işaretle"
 
 #: .\templates\auth\register.html.py:13
 msgid "Create an account"
@@ -654,11 +683,11 @@ msgstr "Hesap oluştur"
 
 #: .\templates\auth\update_profile.html.py:10
 msgid "Your profile successfully update."
-msgstr ""
+msgstr "Profiliniz başarıyla güncellendi"
 
 #: .\templates\auth\update_profile.html.py:17
 msgid "Update my profile"
-msgstr ""
+msgstr "Profil Güncelle"
 
 #: .\templates\mobile\index.html.py:10
 msgid "click here for dashboard"
