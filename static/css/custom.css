@@ -3,7 +3,6 @@ html, body {
     background-color: #eee;
 }
 body {
-    padding-top: 40px;
     font-family: 'Droid Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .container > footer p {
@@ -130,17 +129,14 @@ body {
 }
 
 
-
 .column h2 {
     font-family:'Arvo';
     margin: 10px 0;
     font-size:18px;
  }
 
-footer {
-    background: #252525;
-    border-top: none;
-}
+
+/* footer */
 
 footer h4 {
     color: #999;
@@ -151,3 +147,29 @@ footer a, footer a:visited, footer a:hover {
 }
 
 footer a:hover {text-decoration:underline}
+
+footer {
+    background: #252525;
+    border-top: none;
+    height:100px;
+    width:100%;
+
+    position:absolute;
+    bottom:0;
+
+ }
+
+html,body {
+    height: 100%;
+}
+
+#wrap {
+    min-height:100%;
+    position:relative;
+}
+#container-wrap {
+    padding-bottom:134px;	/* Height of the footer */
+
+}
+
+.content {margin-top:40px;}

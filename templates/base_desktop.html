@@ -30,7 +30,9 @@
 
 <body class="{% block body_class %}{% endblock %}">
 
-<div class="topbar">
+    <div id="wrap">
+    <div id="container-wrap">
+    <div class="topbar">
     <div class="fill">
         <div class="container">
             <a class="brand" href="/">My Ad Slots</a>
@@ -94,9 +96,11 @@
 
 
     </div> <!-- /container -->
+    </div> <!-- /container-wrap -->
 
-   a {% include 'footer.html' %}
 
+     {% include 'footer.html' %}
+    </div> <!-- /wrap -->
 
 
     <!-a- confirmation plugin -->
