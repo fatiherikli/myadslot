@@ -7,7 +7,7 @@
 
 {% block content %}
     {% if form.is_valid %}
-    <div class="alert-message success">{% trans 'Your profile successfully update.' %}</div>
+    <div class="alert-message success">{% trans 'Your profile has been successfully updated.' %}</div>
         <a class="btn" href="{% url dashboard %}">{% trans 'Dashboard' %}</a>
     {% else %}
     <form action="" method="post">
