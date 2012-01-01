@@ -93,12 +93,10 @@
 <!-- confirm modal content -->
 
 
-      <footer>
-      <p> <small>  MyAdSlot &copy; 2011 - {% trans 'All rights reserved.' %}</small></p>
-      </footer>
-
-
     </div> <!-- /container -->
+
+    {% include 'footer.html' %}
+
 
 
     <!-- confirmation plugin -->
@@ -135,6 +133,8 @@
 {% block javascripts %}
 {% endblock %}
 
+
+
 <!-- end scripts-->
 
 <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
@@ -143,6 +143,28 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
   <![endif]-->
+
+<!-- userrules feedback widget -->
+<script type="text/javascript">
+	var _usrp = {
+		type: "button",
+		company: "myadslot",
+		host: "myadslot.userrules.com",
+		mode: "advanced",
+		sso: {},
+		getVisitorId: function() {return "";},
+		getAdditionalParams: function() {return "";},
+		placement: "left",
+		color: ["#32312E", "#62615E"]
+	};
+
+	(function(D) {
+		var _usr = D.createElement("script"), s = D.getElementsByTagName("script")[0];
+		_usr.type = "text/javascript"; _usr.async = true;
+		_usr.src = ("https:" == D.location.protocol ? "https" : "http" ) + "://dtkm4pd19nw6z.cloudfront.net/js/userrules/9a41a826e957127b4e5bfc7d140e45c4/feedback.canary.js";
+		s.parentNode.insertBefore(_usr, s);
+	})(document);
+</script>
 
 </body>
 </html>

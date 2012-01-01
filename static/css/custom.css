@@ -68,7 +68,7 @@ body {
 
 .brand {
     background: url("../img/myadslot-logo-white.png") center center no-repeat;
-    width:100px;
+    width:120px;
 
     text-indent: -999px;
 }
@@ -91,7 +91,7 @@ body {
     line-height: 40px;
 }
 .hero-unit p {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 200;
     line-height: 27px;
     width:350px;
@@ -136,3 +136,18 @@ body {
     margin: 10px 0;
     font-size:18px;
  }
+
+footer {
+    background: #252525;
+    border-top: none;
+}
+
+footer h4 {
+    color: #999;
+}
+
+footer a, footer a:visited, footer a:hover {
+    color: white;
+}
+
+footer a:hover {text-decoration:underline}

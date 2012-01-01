@@ -1,0 +1,56 @@
+{% load i18n %}
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <h4>{% trans 'My Account' %}</h4>
+                <ul class="unstyled">
+                    {% if user.is_anonymous %}
+                        <li><a href="/">{% trans 'Home' %}</a></li>
+                        <li><a href="{% url auth_pricing %}">{% trans 'Plans & Pricing' %}</a></li>
+                        <li><a href="{% url auth_login %}">{% trans 'Login' %}</a></li>
+                    {% else %}
+                        <li><a href="{% url dashboard %}">{% trans 'Dashboard' %}</a></li>
+                        <li><a href="{% url auth_inbox %}">{% trans 'Inbox' %}
+                            {% if request.user.message_set.unread.count %}
+                                <strong style='color:white'>({{ request.user.message_set.unread.count }})</strong>
+                            {% endif %}
+                        </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="span3">
+                <h4>{% trans 'Set Language' %}</h4>
+                <ul class="unstyled">
+                    <li>
+                        <a href="http://en.myadslot.com">{% trans 'English' %}</a>
+                    </li>
+                    <li>
+                        <a href="http://tr.myadslot.com">{% trans 'Turkish' %}</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="span3">
+                <h4>Contact</h4>
+                <ul class="unstyled">
+                    <li>
+                        <a href="javascript: void(0);" onclick="USR.Main.show(); return false;">{% trans 'Feedback' %}</a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@myadslot.com">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="span5" style="text-align: right">
+                <p> <br /><br /><br /> <br />
+                    MyAdSlot &copy; 2011 - 2012 &nbsp; {% trans 'All rights reserved.' %}
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
