@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-01 23:48+0200\n"
+"POT-Creation-Date: 2012-01-01 23:51+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -501,8 +501,8 @@ msgid "%(count)s Views"
 msgstr "%(count)s Gösterim"
 
 #: .\templates\adserver\advertisements.html.py:53
-msgid "You didn"
-msgstr ""
+msgid "You didn't add any advertisement..."
+msgstr "Bu slota her hangi bir reklam eklenmemiş."
 
 #: .\templates\adserver\blank_ads.html.py:8
 msgid "click here for information."
@@ -696,9 +696,6 @@ msgstr "kontrol panelim"
 #: .\templates\mobile\index.html.py:11
 msgid "logout"
 msgstr "Çıkış"
-
-#~ msgid "You didn't add any advertisement..."
-#~ msgstr "Bu slota her hangi bir reklam eklenmemiş."
 
 #~ msgid "Adserver Stats"
 #~ msgstr "İstatistikler"
