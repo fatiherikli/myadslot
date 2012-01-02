@@ -20,7 +20,12 @@
             <tbody>
             {% for message in inbox %}
                 <tr>
-                    <td><a href="{% url auth_inbox_read message.id %}">{{ message.name }}</a></td>
+                    <td>
+                        <a href="{% url auth_inbox_read message.id %}">{{ message.name }}</a>
+                        {% if not message.read %}
+                            &nbsp;<span class="label success">{% trans 'NEW' %}</span>
+                        {% endif %}
+                    </td>
                     <td>{{ message.email }}</td>
                     <td>{{ message.date }}</td>
                     <td width="200">

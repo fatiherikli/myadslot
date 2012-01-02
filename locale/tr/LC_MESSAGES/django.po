@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-02 03:02+0200\n"
+"POT-Creation-Date: 2012-01-02 03:22+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -531,7 +531,7 @@ msgstr ""
 "Seçtiğiniz slot ve altındaki reklamlar silinecektir, silmek istediğinizden "
 "emin misiniz ?"
 
-#: .\templates\adserver\dashboard.html.py:32 .\templates\auth\inbox.html.py:27
+#: .\templates\adserver\dashboard.html.py:32 .\templates\auth\inbox.html.py:32
 #: .\templates\auth\message_read.html.py:49
 msgid "Delete !"
 msgstr "Sil"
@@ -668,12 +668,16 @@ msgstr "Kayıt"
 msgid "Registration is complete."
 msgstr "Kayıt işlemi başarıyla gerçekleştirildi."
 
-#: .\templates\auth\inbox.html.py:27 .\templates\auth\message_read.html.py:49
+#: .\templates\auth\inbox.html.py:26
+msgid "NEW"
+msgstr "YENİ"
+
+#: .\templates\auth\inbox.html.py:32 .\templates\auth\message_read.html.py:49
 #: .\templates\auth\message_read.html.py:50
 msgid "This message will be removed, are you sure?"
 msgstr "Seçtiğiniz mesaj silinecektir, silmek istediğinizden emin misiniz ?"
 
-#: .\templates\auth\inbox.html.py:34
+#: .\templates\auth\inbox.html.py:39
 msgid "No message..."
 msgstr "Mesaj kutunuz boş."
 
