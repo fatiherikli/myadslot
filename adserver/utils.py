@@ -27,10 +27,10 @@ def build_blank_ads(slot):
     type(slot) => myads.adserver.models.AdSlot
     """
     ctx = {
-        "width" : (slot.get_width or 100) - 2, # -2 for inline borders
-        "height" : (slot.get_height or 100) - 2, # -2 for inline borders
-        "margin_top" : (slot.get_height or 100) / 2 - 10, # for vertical align and -10px font-size
+        "width" : (slot.get_width or 100),
+        "height" : (slot.get_height or 100),
         "slot" : slot,
+        "adserver" : settings.ADSERVER_DOMAIN
         #"information_link" : reverse()
     }
     return render_to_string("adserver/blank_ads.html", ctx)
