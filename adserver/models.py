@@ -41,7 +41,7 @@ class AdSlot(models.Model):
     title = models.CharField(_("Title"), max_length=100, help_text=_("For example My Banners"))
     slot = models.SlugField(_("Slot"), max_length=100, help_text=_("For example my-banners, top-banner"))
     sizes = models.CharField(_("Sizes"), max_length=25, choices=ADSLOT_SIZE_CHOICES, blank=True, null=True,
-                                help_text=_("This field is optional"))
+                                help_text=_("IAB standard ad sizes"))
 
     objects = AdSlotManager()
 

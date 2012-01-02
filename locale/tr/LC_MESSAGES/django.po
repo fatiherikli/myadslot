@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-01 23:51+0200\n"
+"POT-Creation-Date: 2012-01-02 03:02+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -42,8 +42,8 @@ msgid "Sizes"
 msgstr "Reklam Boyutları"
 
 #: .\adserver\models.py:44
-msgid "This field is optional"
-msgstr "Bu alan opsiyoneldir."
+msgid "IAB standard ad sizes"
+msgstr "IAB banner standartları"
 
 #: .\adserver\models.py:99
 msgid "Ad Slot"
@@ -174,7 +174,7 @@ msgstr "Tarayıcı"
 msgid "Count"
 msgstr "Gösterim sayısı"
 
-#: .\auth\forms.py:23 .\auth\forms.py:54 .\templates\base_desktop.html.py:54
+#: .\auth\forms.py:23 .\auth\forms.py:54 .\templates\base_desktop.html.py:56
 msgid "Username"
 msgstr "Kullanıcı Adı"
 
@@ -186,7 +186,7 @@ msgstr "İsim"
 msgid "Last Name"
 msgstr "Soyisim"
 
-#: .\auth\forms.py:27 .\auth\forms.py:55 .\templates\base_desktop.html.py:55
+#: .\auth\forms.py:27 .\auth\forms.py:55 .\templates\base_desktop.html.py:57
 msgid "Password"
 msgstr "Şifre"
 
@@ -206,60 +206,60 @@ msgstr "Üyeliğiniz aktif değildir."
 msgid "You got an error!"
 msgstr "Bir hata oluştu."
 
-#: .\templates\base_desktop.html.py:39 .\templates\footer.html.py:11
+#: .\templates\base_desktop.html.py:41 .\templates\footer.html.py:11
 msgid "Home"
 msgstr "Anasayfa"
 
-#: .\templates\base_desktop.html.py:40 .\templates\footer.html.py:12
+#: .\templates\base_desktop.html.py:42 .\templates\footer.html.py:12
 msgid "Plans & Pricing"
 msgstr "Paketler & Ücretlendirme"
 
-#: .\templates\base_desktop.html.py:41 .\templates\base_desktop.html.py:56
+#: .\templates\base_desktop.html.py:43 .\templates\base_desktop.html.py:58
 #: .\templates\footer.html.py:13 .\templates\auth\complete.html.py:12
 #: .\templates\auth\login.html.py:5 .\templates\auth\login.html.py:18
 #: .\templates\mobile\index.html.py:7
 msgid "Login"
 msgstr "Giriş"
 
-#: .\templates\base_desktop.html.py:43 .\templates\footer.html.py:15
+#: .\templates\base_desktop.html.py:45 .\templates\footer.html.py:15
 #: .\templates\adserver\dashboard.html.py:5
 #: .\templates\auth\change_password.html.py:11
 #: .\templates\auth\update_profile.html.py:11
 msgid "Dashboard"
 msgstr "Kontrol Panelim"
 
-#: .\templates\base_desktop.html.py:44 .\templates\footer.html.py:16
+#: .\templates\base_desktop.html.py:46 .\templates\footer.html.py:16
 #: .\templates\auth\inbox.html.py:5 .\templates\auth\message_read.html.py:11
 msgid "Inbox"
 msgstr "Mesaj Kutum"
 
-#: .\templates\base_desktop.html.py:63
+#: .\templates\base_desktop.html.py:65
 #: .\templates\auth\change_password.html.py:5
 #: .\templates\auth\change_password.html.py:17
 msgid "Change Password"
 msgstr "Şifremi Değiştir"
 
-#: .\templates\base_desktop.html.py:64
+#: .\templates\base_desktop.html.py:66
 #: .\templates\auth\update_profile.html.py:5
 msgid "My Profile"
 msgstr "Profilim"
 
-#: .\templates\base_desktop.html.py:66
+#: .\templates\base_desktop.html.py:68
 msgid "Logout"
 msgstr "Çıkış"
 
-#: .\templates\base_desktop.html.py:106
+#: .\templates\base_desktop.html.py:110
 msgid "Are you sure ?"
 msgstr "Emin misiniz ?"
 
-#: .\templates\base_desktop.html.py:112
+#: .\templates\base_desktop.html.py:116
 #: .\templates\adserver\advertisement_add.html.py:22
 #: .\templates\adserver\advertisement_edit.html.py:18
-#: .\templates\adserver\slot_add.html.py:26
+#: .\templates\adserver\slot_add.html.py:35
 msgid "Cancel"
 msgstr "İptal"
 
-#: .\templates\base_desktop.html.py:113 .\templates\pricing.html.py:42
+#: .\templates\base_desktop.html.py:117 .\templates\pricing.html.py:42
 #: .\templates\pricing.html.py:43
 msgid "Yes"
 msgstr "Evet"
@@ -457,7 +457,7 @@ msgstr "Bir reklam ekle"
 
 #: .\templates\adserver\advertisement_add.html.py:21
 #: .\templates\adserver\advertisement_edit.html.py:18
-#: .\templates\adserver\slot_add.html.py:26
+#: .\templates\adserver\slot_add.html.py:35
 msgid "Save"
 msgstr "Kaydet"
 
@@ -573,6 +573,10 @@ msgstr "Slotunuz için kullanacağınız kod;"
 #: .\templates\adserver\slot_add.html.py:17
 msgid "Back to my slots"
 msgstr "Slotlarıma geri dön"
+
+#: .\templates\adserver\slot_add.html.py:27
+msgid "See:"
+msgstr "Bknz: "
 
 #: .\templates\adserver\slot_edit.html.py:6
 msgid "Edit slot"
@@ -696,6 +700,9 @@ msgstr "kontrol panelim"
 #: .\templates\mobile\index.html.py:11
 msgid "logout"
 msgstr "Çıkış"
+
+#~ msgid "This field is optional"
+#~ msgstr "Bu alan opsiyoneldir."
 
 #~ msgid "Adserver Stats"
 #~ msgstr "İstatistikler"
