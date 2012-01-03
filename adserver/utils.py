@@ -36,10 +36,10 @@ def build_blank_ads(slot):
     return render_to_string("adserver/blank_ads.html", ctx)
 
 def escape_js(code):
-    import re
-    pattern = re.compile(re.escape("script"), re.IGNORECASE)
-    _code = re.sub(pattern,"scr' + 'ipt", code)
-    return _code.\
+#    import re
+#    pattern = re.compile(re.escape("<script"), re.IGNORECASE)
+#    _code = re.sub(pattern,"<scr' + 'ipt", code)
+    return code.\
     replace("'","\\'").\
     replace("\n","\\n").\
     replace("\r","\\r")
