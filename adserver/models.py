@@ -52,7 +52,6 @@ class AdSlot(models.Model):
         return reverse('adserver_ads', args=[self.slot, ])
 
     def get_active_ads(self):
-        now = datetime.now()
         queryset = self.advertisement_set.active()
         if queryset:
             return queryset[0]
