@@ -117,7 +117,7 @@ class Advertisement(models.Model):
         super(Advertisement, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('adserver_edit_advertisement', args=[self.adslot.slot, self.id])
+        return reverse('adserver_edit_advertisement', args=[self.id])
 
     def get_start_date(self):
         return self.start_date

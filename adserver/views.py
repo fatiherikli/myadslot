@@ -144,6 +144,14 @@ def edit_advertisement(request, slot, ads_id, template="adserver/advertisement_e
 
 @login_required
 @render_template
+def delete_advertisement(request, slot, ads_id):
+    slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
+    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
+    advertisement.delete()
+    return HttpResponseRedirect(slot.get_absolute_url())
+
+@login_required
+@render_template
 def add_slot(request, template="adserver/slot_add.html"):
     form = AdSlotForm()
     if request.method == "POST":

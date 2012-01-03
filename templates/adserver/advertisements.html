@@ -32,6 +32,7 @@
                     <th>{% trans 'Start Date' %}</th>
                     <th>{% trans 'Finish Date' %}</th>
                     <th colspan="2">{% trans 'View Count' %}</th>
+                    <th colspan="2"></th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +45,9 @@
                     {% with advertisement.view_count as count  %}
                     <td>{% blocktrans%}{{ count }} Views{% endblocktrans %}</td>
                     {% endwith %}
-                    <td><a href="{% url adserver_advertisement_visitors advertisement.adslot.slot advertisement.id %}">{% trans 'Visitors' %}</a></td>
+                    <td><a href="{% url adserver_advertisement_visitors advertisement.id %}">{% trans 'Visitors' %}</a></td>
+                    <td><a style="margin-top:-5px; margin-bottom:-5px;" class="btn default confirm" title="{% trans 'This advertisement will be removed, are you sure?' %}"  href="{% url adserver_delete_advertisement advertisement.id %}">{% trans 'Delete !' %}</a></td>
+</td>
                 </tr>
             {% endfor %}
             </tbody>
