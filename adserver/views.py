@@ -124,9 +124,9 @@ def stats_slot(request, slot, template="adserver/slot_stats.html"):
 
 @login_required
 @render_template
-def edit_advertisement(request, slot, ads_id, template="adserver/advertisement_edit.html"):
-    slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
-    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
+def edit_advertisement(request, ads_id, template="adserver/advertisement_edit.html"):    
+    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot__user=request.user)
+    slot = advertisement.adslot
     form = EditAdvertisementForm(instance=advertisement)
     if request.method == "POST":
         form = EditAdvertisementForm(request.POST, instance=advertisement)
@@ -144,9 +144,9 @@ def edit_advertisement(request, slot, ads_id, template="adserver/advertisement_e
 
 @login_required
 @render_template
-def delete_advertisement(request, slot, ads_id):
-    slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
-    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
+def delete_advertisement(request, ads_id):
+    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot__user=request.user)
+    slot = advertisement.adslot
     advertisement.delete()
     return HttpResponseRedirect(slot.get_absolute_url())
 

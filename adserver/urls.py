@@ -10,10 +10,11 @@ urlpatterns = patterns('myads.adserver.views',
     url(r'^slot/(?P<slot>.*)/statistics', 'stats_slot', name='adserver_stats_slot'),
     url(r'^slot/(?P<slot>.*)/get_snippet$', 'get_slot_snippet', name='adserver_get_snippet'),
     url(r'^slot/(?P<slot>.*)/preview$', 'preview_slot', name='adserver_preview_slot'),
+    url(r'^slot/(?P<slot>.*)/advertisements$', 'advertisements', name='adserver_ads'),
+
 
 
     # advertisements
-    url(r'^advertisement/(?P<slot>.*)/$', 'advertisements', name='adserver_ads'),
     url(r'^advertisement/(?P<slot>.*)/add$', 'add_advertisement', name='adserver_add_advertisement'),
     url(r'^advertisement/(?P<ads_id>\d+)/delete$', 'delete_advertisement', name='adserver_delete_advertisement'),
     url(r'^advertisement/(?P<ads_id>\d+)/edit$', 'edit_advertisement', name='adserver_edit_advertisement'),
