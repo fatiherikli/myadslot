@@ -1,7 +1,7 @@
 {% load i18n %}
-<div style='width:{{ width }}px; height:{{ height }}px; text-align:center; background:whitesmoke; display:table; '>
+<div class="myadslot" style='width:{{ width }}px; height:{{ height }}px; text-align:center; background:whitesmoke; display:table; '>
     <div style='vertical-align: middle; display: table-cell; border:1px solid #dedede; '>
-        <span style='font-size:40px;'>{{ slot.sizes|default:"Advertisement" }}</span>
+        <span style='font-size:40px; font-family:georgia;'>{{ slot.sizes|default:"Advertisement" }}</span>
         <br />
         <a href="//{{ adserver }}{% url adserver_information_message slot.user.username slot.slot %}"
                 onclick="window.open(this.href, 'information', 'width=600,height=500');return false;">
