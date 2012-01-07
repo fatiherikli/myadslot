@@ -188,11 +188,12 @@ footer a:hover {text-decoration:underline}
 footer {
     background: #252525;
     border-top: none;
-    height:100px;
+    height:110px;
     width:100%;
 
     position:absolute;
     bottom:0;
+	
 
  }
 
