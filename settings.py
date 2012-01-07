@@ -81,6 +81,12 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
@@ -117,9 +123,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
 
+	# dependencies
     'south',
     'pagination',
-
+	'compressor', 
+	
     # myads applications
     'myads.core',
     'myads.adserver',
@@ -132,3 +140,12 @@ else:
     ADSERVER_DOMAIN = "myadslot.com"
 
 ADSERVER_ONLINE_TIMEOUT = 10
+
+
+# django compressor settins
+COMPRESS_ENABLED = True
+
+COMPRESS_ROOT = here('static')
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.SlimItFilter', ]
+COMPRESS_CSS_FILTERS = ['compressor.filters.yui.YUICSSFilter', ]
+COMPRESS_YUI_BINARY = here('static/yuicompressor-2.4.7.jar')

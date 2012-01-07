@@ -1,3 +1,40 @@
+/* fonts */
+@media screen {
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Droid Sans Bold'), local('DroidSans-Bold'), url('http://themes.googleusercontent.com/static/fonts/droidsans/v3/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff') format('woff');
+}
+}
+
+@media screen {
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Sans'), local('DroidSans'), url('http://themes.googleusercontent.com/static/fonts/droidsans/v3/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff') format('woff');
+}
+}
+
+
+@media screen {
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Arvo'), url('http://themes.googleusercontent.com/static/fonts/arvo/v5/WJ6D195CfbTRlIs49IbkFw.woff') format('woff');
+}
+}
+@media screen {
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Signika-Light'), url('http://themes.googleusercontent.com/static/fonts/signika/v2/koFYE26bhT88HgRA8f4vbRsxEYwM7FgeyaSgU71cLG0.woff') format('woff');
+}
+}
+
 /* Override some defaults */
 html, body {
     background-color: #eee;
@@ -66,7 +103,7 @@ body {
 }
 
 .brand {
-    background: url("../img/myadslot-logo-white.png") center center no-repeat;
+    background: url("/static/img/myadslot-logo-white.png") center center no-repeat;
     width:120px;
 
     text-indent: -999px;
@@ -77,7 +114,7 @@ body {
 }
 
 .hero-unit {
-    background: #f5f5f5 url("../img/myadslot-landing-page.png") center right no-repeat;
+    background: #f5f5f5 url("/static/img/myadslot-landing-page.png") center right no-repeat;
     padding: 60px 60px 60px 30px;
 }
 
@@ -173,4 +210,3 @@ html,body {
 }
 
 .content {margin-top:40px;}
-

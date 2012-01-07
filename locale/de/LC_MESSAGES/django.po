@@ -1,0 +1,701 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-03 23:14+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: .\adserver\forms.py:14
+msgid "This slot already exists."
+msgstr ""
+
+#: .\adserver\helpers.py:81
+msgid "Unknown"
+msgstr ""
+
+#: .\adserver\models.py:40 .\adserver\models.py:97 .\adserver\models.py:188
+msgid "User"
+msgstr ""
+
+#: .\adserver\models.py:41 .\adserver\models.py:99
+#: .\templates\adserver\advertisements.html.py:30
+#: .\templates\adserver\dashboard.html.py:18
+msgid "Title"
+msgstr ""
+
+#: .\adserver\models.py:41
+msgid "For example My Banners"
+msgstr ""
+
+#: .\adserver\models.py:42 .\adserver\models.py:189
+#: .\templates\adserver\dashboard.html.py:19
+msgid "Slot"
+msgstr ""
+
+#: .\adserver\models.py:42
+msgid "For example my-banners, top-banner"
+msgstr ""
+
+#: .\adserver\models.py:43 .\templates\adserver\dashboard.html.py:20
+msgid "Sizes"
+msgstr ""
+
+#: .\adserver\models.py:44
+msgid "IAB standard ad sizes"
+msgstr ""
+
+#: .\adserver\models.py:98
+msgid "Ad Slot"
+msgstr ""
+
+#: .\adserver\models.py:99
+msgid "For example My Adfoo Ads"
+msgstr ""
+
+#: .\adserver\models.py:100
+msgid "Active"
+msgstr ""
+
+#: .\adserver\models.py:100
+msgid "Is active or inactive"
+msgstr ""
+
+#: .\adserver\models.py:101 .\templates\adserver\advertisements.html.py:32
+msgid "Start Date"
+msgstr ""
+
+#: .\adserver\models.py:101
+msgid "The ad start date"
+msgstr ""
+
+#: .\adserver\models.py:102 .\templates\adserver\advertisements.html.py:33
+msgid "Finish Date"
+msgstr ""
+
+#: .\adserver\models.py:103
+msgid "The ad end date, if it is blank ads is infinite."
+msgstr ""
+
+#: .\adserver\models.py:104 .\adserver\models.py:162
+#: .\templates\adserver\advertisements.html.py:34
+msgid "View Count"
+msgstr ""
+
+#: .\adserver\models.py:104
+msgid "Total ad impressions"
+msgstr ""
+
+#: .\adserver\models.py:106
+msgid "Ads Code"
+msgstr ""
+
+#: .\adserver\models.py:126
+msgid "Published"
+msgstr ""
+
+#: .\adserver\models.py:126
+msgid "Not Published"
+msgstr ""
+
+#: .\adserver\models.py:129
+msgid "Infinite"
+msgstr ""
+
+#: .\adserver\models.py:159 .\adserver\stats.py:93
+msgid "Advertisement"
+msgstr ""
+
+#: .\adserver\models.py:160
+msgid "IP Address"
+msgstr ""
+
+#: .\adserver\models.py:161 .\adserver\models.py:180
+msgid "Visitor Informations"
+msgstr ""
+
+#: .\adserver\models.py:163
+msgid "Visited Page Url"
+msgstr ""
+
+#: .\adserver\models.py:164
+msgid "Last Visit Date"
+msgstr ""
+
+#: .\adserver\models.py:190 .\templates\auth\inbox.html.py:14
+#: .\templates\auth\message_read.html.py:20
+msgid "Name"
+msgstr ""
+
+#: .\adserver\models.py:191 .\templates\auth\inbox.html.py:15
+#: .\templates\auth\message_read.html.py:25
+msgid "Email"
+msgstr ""
+
+#: .\adserver\models.py:192 .\templates\auth\message_read.html.py:31
+msgid "Telephone"
+msgstr ""
+
+#: .\adserver\models.py:193 .\templates\auth\message_read.html.py:5
+#: .\templates\auth\message_read.html.py:42
+msgid "Message"
+msgstr ""
+
+#: .\adserver\models.py:196 .\adserver\stats.py:29 .\adserver\stats.py:49
+#: .\templates\auth\inbox.html.py:16 .\templates\auth\message_read.html.py:36
+msgid "Date"
+msgstr ""
+
+#: .\adserver\models.py:197
+msgid "Ip Address"
+msgstr ""
+
+#: .\adserver\stats.py:30 .\adserver\stats.py:50 .\adserver\stats.py:72
+#: .\adserver\stats.py:94
+msgid "View Counts"
+msgstr ""
+
+#: .\adserver\stats.py:31 .\adserver\stats.py:51 .\adserver\stats.py:73
+#: .\adserver\stats.py:95
+msgid "Unique Visits"
+msgstr ""
+
+#: .\adserver\stats.py:71
+msgid "Hour"
+msgstr ""
+
+#: .\adserver\stats.py:112
+msgid "User Agent"
+msgstr ""
+
+#: .\adserver\stats.py:113
+msgid "Count"
+msgstr ""
+
+#: .\auth\forms.py:23 .\auth\forms.py:54 .\templates\base_desktop.html.py:56
+msgid "Username"
+msgstr ""
+
+#: .\auth\forms.py:24
+msgid "First Name"
+msgstr ""
+
+#: .\auth\forms.py:25
+msgid "Last Name"
+msgstr ""
+
+#: .\auth\forms.py:27 .\auth\forms.py:55 .\templates\base_desktop.html.py:57
+msgid "Password"
+msgstr ""
+
+#: .\auth\forms.py:38
+msgid "This email is already in use"
+msgstr ""
+
+#: .\auth\forms.py:72
+msgid "Username or Password is incorrect."
+msgstr ""
+
+#: .\auth\forms.py:75
+msgid "Your membership is not active."
+msgstr ""
+
+#: .\core\forms.py:22
+msgid "You got an error!"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:41 .\templates\footer.html.py:11
+msgid "Home"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:42 .\templates\footer.html.py:12
+msgid "Plans & Pricing"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:43 .\templates\base_desktop.html.py:58
+#: .\templates\footer.html.py:13 .\templates\auth\complete.html.py:12
+#: .\templates\auth\login.html.py:5 .\templates\auth\login.html.py:18
+#: .\templates\mobile\index.html.py:7
+msgid "Login"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:45 .\templates\footer.html.py:15
+#: .\templates\adserver\dashboard.html.py:5
+#: .\templates\auth\change_password.html.py:11
+#: .\templates\auth\update_profile.html.py:11
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:46 .\templates\footer.html.py:16
+#: .\templates\auth\inbox.html.py:5 .\templates\auth\message_read.html.py:11
+msgid "Inbox"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:65
+#: .\templates\auth\change_password.html.py:5
+#: .\templates\auth\change_password.html.py:17
+msgid "Change Password"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:66
+#: .\templates\auth\update_profile.html.py:5
+msgid "My Profile"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:68
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:110
+msgid "Are you sure ?"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:116
+#: .\templates\adserver\advertisement_add.html.py:22
+#: .\templates\adserver\advertisement_edit.html.py:18
+#: .\templates\adserver\slot_add.html.py:35
+msgid "Cancel"
+msgstr ""
+
+#: .\templates\base_desktop.html.py:117 .\templates\pricing.html.py:42
+#: .\templates\pricing.html.py:43
+msgid "Yes"
+msgstr ""
+
+#: .\templates\footer.html.py:8
+msgid "My Account"
+msgstr ""
+
+#: .\templates\footer.html.py:25
+msgid "Set Language"
+msgstr ""
+
+#: .\templates\footer.html.py:28
+msgid "English"
+msgstr ""
+
+#: .\templates\footer.html.py:31
+msgid "Turkish"
+msgstr ""
+
+#: .\templates\footer.html.py:38
+msgid "Contact"
+msgstr ""
+
+#: .\templates\footer.html.py:41
+msgid "Feedback"
+msgstr ""
+
+#: .\templates\footer.html.py:44
+msgid "Contact Us"
+msgstr ""
+
+#: .\templates\footer.html.py:50
+msgid "All rights reserved."
+msgstr ""
+
+#: .\templates\index.html.py:9
+msgid "Your private ad manager !"
+msgstr ""
+
+#: .\templates\index.html.py:10
+msgid ""
+"MyAdSlot web service helps you manage your advertisements from a single user "
+"friendly interface. MyAdSlot maintains all of your advertisement accounts. "
+"In other words, your private ad manager... "
+msgstr ""
+
+#: .\templates\index.html.py:15
+msgid "All the ads in one place !"
+msgstr ""
+
+#: .\templates\index.html.py:17
+msgid ""
+"Enable or disable any one of your advertisements. Choose start date or end "
+"date for your advertisements. Analyze your advertisements with simplistic "
+"and clean user interface. All for free !"
+msgstr ""
+
+#: .\templates\index.html.py:21
+msgid "Sign Up for Free"
+msgstr ""
+
+#: .\templates\index.html.py:22
+msgid "100% FREE !"
+msgstr ""
+
+#: .\templates\index.html.py:23
+msgid "for up to 10 slots"
+msgstr ""
+
+#: .\templates\index.html.py:29
+msgid "Analyze, maintain, sell your ads !"
+msgstr ""
+
+#: .\templates\index.html.py:35
+msgid "SELLING ADS"
+msgstr ""
+
+#: .\templates\index.html.py:37
+msgid ""
+"If your ad slot is empty, visitors can contact you from your web site. This "
+"dialog completely between you and your visitors. No credit card or anything."
+msgstr ""
+
+#: .\templates\index.html.py:41
+msgid "MAINTENANCE"
+msgstr ""
+
+#: .\templates\index.html.py:43
+msgid ""
+"Enable or disable any one of your advertisements. Choose start date or end "
+"date for your advertisements. Analyze your advertisements with simplistic "
+"and clean user interface."
+msgstr ""
+
+#: .\templates\index.html.py:47
+msgid "ANALYZE"
+msgstr ""
+
+#: .\templates\index.html.py:49
+msgid ""
+"Analyze your ads daily or monthly. Watch your visitors in real time. See "
+"visitor informations, visited pages, ip addresses."
+msgstr ""
+
+#: .\templates\pricing.html.py:5
+msgid "Select which plan is right for you"
+msgstr ""
+
+#: .\templates\pricing.html.py:13
+msgid "Free plan"
+msgstr ""
+
+#: .\templates\pricing.html.py:14
+msgid "Business plan"
+msgstr ""
+
+#: .\templates\pricing.html.py:15
+msgid "Advanced plan"
+msgstr ""
+
+#: .\templates\pricing.html.py:19
+msgid "Pricing"
+msgstr ""
+
+#: .\templates\pricing.html.py:20
+msgid "Free !"
+msgstr ""
+
+#: .\templates\pricing.html.py:21 .\templates\pricing.html.py:22
+msgid "Month"
+msgstr ""
+
+#: .\templates\pricing.html.py:26
+msgid "Slot Limit"
+msgstr ""
+
+#: .\templates\pricing.html.py:29 .\templates\pricing.html.py:35
+#: .\templates\pricing.html.py:36
+msgid "Unlimited !"
+msgstr ""
+
+#: .\templates\pricing.html.py:33
+msgid "Ads Limit"
+msgstr ""
+
+#: .\templates\pricing.html.py:40
+msgid "Statics"
+msgstr ""
+
+#: .\templates\pricing.html.py:41
+msgid "No"
+msgstr ""
+
+#: .\templates\pricing.html.py:43
+msgid "ADVANCED"
+msgstr ""
+
+#: .\templates\pricing.html.py:48 .\templates\pricing.html.py:49
+#: .\templates\pricing.html.py:50
+msgid "Signup"
+msgstr ""
+
+#: .\templates\adserver\advertisement_add.html.py:10
+#: .\templates\adserver\advertisement_edit.html.py:9
+#: .\templates\adserver\advertisement_visitors.html.py:11
+#: .\templates\adserver\advertisements.html.py:12
+#: .\templates\adserver\slot_get_snippet.html.py:7
+#: .\templates\adserver\slot_preview.html.py:10
+#: .\templates\adserver\slot_stats.html.py:45
+msgid "My slots"
+msgstr ""
+
+#: .\templates\adserver\advertisement_add.html.py:12
+#: .\templates\adserver\advertisements.html.py:20
+msgid "Add an advertisement"
+msgstr ""
+
+#: .\templates\adserver\advertisement_add.html.py:21
+#: .\templates\adserver\advertisement_edit.html.py:18
+#: .\templates\adserver\slot_add.html.py:35
+msgid "Save"
+msgstr ""
+
+#: .\templates\adserver\advertisement_edit.html.py:4
+msgid "Edit Advertisement"
+msgstr ""
+
+#: .\templates\adserver\advertisement_visitors.html.py:4
+#: .\templates\adserver\advertisements.html.py:48
+msgid "Visitors"
+msgstr ""
+
+#: .\templates\adserver\advertisement_visitors.html.py:16
+msgid "Advertisement Visitors"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:5
+#: .\templates\adserver\slot_stats.html.py:34
+msgid "Advertisements"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:21
+msgid "Get slot statistics"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:22
+msgid "Get snippet for this slot"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:23
+msgid "Preview this slot"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:31
+msgid "Publish State"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:46
+#, python-format
+msgid "%(count)s Views"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:49
+msgid "This advertisement will be removed, are you sure?"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:49
+#: .\templates\adserver\dashboard.html.py:32 .\templates\auth\inbox.html.py:32
+#: .\templates\auth\message_read.html.py:49
+msgid "Delete !"
+msgstr ""
+
+#: .\templates\adserver\advertisements.html.py:56
+msgid "You didn't add any advertisement..."
+msgstr ""
+
+#: .\templates\adserver\blank_ads.html.py:8
+msgid "click here for information."
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:5
+msgid "Everything is under control !"
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:11
+#: .\templates\mobile\adserver\dashboard.html.py:4
+msgid "New Slot"
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:29
+msgid "Undefined"
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:31
+msgid "Edit"
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:32
+msgid "This slot will be removed, are you sure?"
+msgstr ""
+
+#: .\templates\adserver\dashboard.html.py:39
+#: .\templates\mobile\adserver\dashboard.html.py:14
+msgid "Not added any slot..."
+msgstr ""
+
+#: .\templates\adserver\information_form.html.py:4
+msgid "Contact the Publisher"
+msgstr ""
+
+#: .\templates\adserver\information_form.html.py:8
+msgid "Congratulations. Your message was successfully sent."
+msgstr ""
+
+#: .\templates\adserver\information_form.html.py:9
+#: .\templates\adserver\information_form.html.py:18
+msgid "Close"
+msgstr ""
+
+#: .\templates\adserver\information_form.html.py:17
+msgid "Send"
+msgstr ""
+
+#: .\templates\adserver\slot_add.html.py:6
+msgid "Add a slot"
+msgstr ""
+
+#: .\templates\adserver\slot_add.html.py:12
+msgid "Congratulations. Slot was saved successfully."
+msgstr ""
+
+#: .\templates\adserver\slot_add.html.py:14
+msgid "Code snippet for added item"
+msgstr ""
+
+#: .\templates\adserver\slot_add.html.py:17
+msgid "Back to my slots"
+msgstr ""
+
+#: .\templates\adserver\slot_add.html.py:27
+msgid "See:"
+msgstr ""
+
+#: .\templates\adserver\slot_edit.html.py:6
+msgid "Edit slot"
+msgstr ""
+
+#: .\templates\adserver\slot_get_snippet.html.py:9
+msgid "Get Snippet"
+msgstr ""
+
+#: .\templates\adserver\slot_get_snippet.html.py:11
+msgid "Get Slot Snippet"
+msgstr ""
+
+#: .\templates\adserver\slot_preview.html.py:5
+#: .\templates\adserver\slot_preview.html.py:12
+msgid "Preview"
+msgstr ""
+
+#: .\templates\adserver\slot_preview.html.py:15
+msgid "Slot Preview"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:4
+msgid "Ad Slot Statistics"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:14
+#: .\templates\adserver\stats.html.py:22
+msgid "Last 30 day visit statistics"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:21
+msgid "Last 30 day hours"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:27
+msgid "Browsers"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:52
+msgid "Last 30 Visits"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:53
+msgid "Chart of Monthly Visitors"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:54
+msgid "Chart of Hours"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:55
+msgid "Chart of Browsers"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:56
+msgid "Chart of Advertisements"
+msgstr ""
+
+#: .\templates\adserver\slot_stats.html.py:64
+msgid "No data"
+msgstr ""
+
+#: .\templates\adserver\stats.html.py:5
+msgid "Overall Statistics"
+msgstr ""
+
+#: .\templates\adserver\stats.html.py:16
+msgid "Browser statistics"
+msgstr ""
+
+#: .\templates\adserver\stats.html.py:35
+msgid "Visitor Statistics"
+msgstr ""
+
+#: .\templates\adserver\stats.html.py:38
+msgid "Browser Statistics"
+msgstr ""
+
+#: .\templates\auth\change_password.html.py:10
+msgid "Your password is successfully changed."
+msgstr ""
+
+#: .\templates\auth\complete.html.py:4 .\templates\auth\register.html.py:5
+msgid "Registration"
+msgstr ""
+
+#: .\templates\auth\complete.html.py:9
+msgid "Registration is complete."
+msgstr ""
+
+#: .\templates\auth\inbox.html.py:26
+msgid "NEW"
+msgstr ""
+
+#: .\templates\auth\inbox.html.py:32 .\templates\auth\message_read.html.py:49
+#: .\templates\auth\message_read.html.py:50
+msgid "This message will be removed, are you sure?"
+msgstr ""
+
+#: .\templates\auth\inbox.html.py:39
+msgid "No message..."
+msgstr ""
+
+#: .\templates\auth\message_read.html.py:50
+msgid "Mark as Unread"
+msgstr ""
+
+#: .\templates\auth\register.html.py:13
+msgid "Create an account"
+msgstr ""
+
+#: .\templates\auth\update_profile.html.py:10
+msgid "Your profile has been successfully updated."
+msgstr ""
+
+#: .\templates\auth\update_profile.html.py:17
+msgid "Update my profile"
+msgstr ""
+
+#: .\templates\mobile\index.html.py:10
+msgid "click here for dashboard"
+msgstr ""
+
+#: .\templates\mobile\index.html.py:11
+msgid "logout"
+msgstr ""
