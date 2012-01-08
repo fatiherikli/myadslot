@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-02 03:22+0200\n"
+"POT-Creation-Date: 2012-01-09 01:41+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -14,11 +14,11 @@ msgstr "Bu slot zaten kullanımda."
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: .\adserver\models.py:40 .\adserver\models.py:98 .\adserver\models.py:189
+#: .\adserver\models.py:40 .\adserver\models.py:97 .\adserver\models.py:188
 msgid "User"
 msgstr "Kullanıcı"
 
-#: .\adserver\models.py:41 .\adserver\models.py:100
+#: .\adserver\models.py:41 .\adserver\models.py:99
 #: .\templates\adserver\advertisements.html.py:30
 #: .\templates\adserver\dashboard.html.py:18
 msgid "Title"
@@ -28,7 +28,7 @@ msgstr "Başlık"
 msgid "For example My Banners"
 msgstr "Örneğin Oyun Öncesi Reklamlarım"
 
-#: .\adserver\models.py:42 .\adserver\models.py:190
+#: .\adserver\models.py:42 .\adserver\models.py:189
 #: .\templates\adserver\dashboard.html.py:19
 msgid "Slot"
 msgstr "Reklam Slotu"
@@ -45,110 +45,110 @@ msgstr "Reklam Boyutları"
 msgid "IAB standard ad sizes"
 msgstr "IAB banner standartları"
 
-#: .\adserver\models.py:99
+#: .\adserver\models.py:98
 msgid "Ad Slot"
 msgstr "Reklam Slotu"
 
-#: .\adserver\models.py:100
+#: .\adserver\models.py:99
 msgid "For example My Adfoo Ads"
 msgstr "Örneğin Adsense Reklamlarım"
 
-#: .\adserver\models.py:101
+#: .\adserver\models.py:100
 msgid "Active"
 msgstr "Aktif"
 
-#: .\adserver\models.py:101
+#: .\adserver\models.py:100
 msgid "Is active or inactive"
 msgstr "Reklamın yayın durumu."
 
-#: .\adserver\models.py:102 .\templates\adserver\advertisements.html.py:32
+#: .\adserver\models.py:101 .\templates\adserver\advertisements.html.py:32
 msgid "Start Date"
 msgstr "Başlangıç Tarihi"
 
-#: .\adserver\models.py:102
+#: .\adserver\models.py:101
 msgid "The ad start date"
 msgstr "Reklamın gösteriminin başlangıç tarihi"
 
-#: .\adserver\models.py:103 .\templates\adserver\advertisements.html.py:33
+#: .\adserver\models.py:102 .\templates\adserver\advertisements.html.py:33
 msgid "Finish Date"
 msgstr "Bitiş Tarihi"
 
-#: .\adserver\models.py:104
+#: .\adserver\models.py:103
 msgid "The ad end date, if it is blank ads is infinite."
 msgstr ""
 "Reklamın gösteriminin sona erdiği tarih. Eğer boş bırakırsanız reklamı pasif "
 "yapmadıkça sonsuza kadar görüntülenir."
 
-#: .\adserver\models.py:105 .\adserver\models.py:163
+#: .\adserver\models.py:104 .\adserver\models.py:162
 #: .\templates\adserver\advertisements.html.py:34
 msgid "View Count"
 msgstr "Gösterim sayısı"
 
-#: .\adserver\models.py:105
+#: .\adserver\models.py:104
 msgid "Total ad impressions"
 msgstr "Toplam reklam gösterimi"
 
-#: .\adserver\models.py:107
+#: .\adserver\models.py:106
 msgid "Ads Code"
 msgstr "Reklam Kodu"
 
-#: .\adserver\models.py:127
+#: .\adserver\models.py:126
 msgid "Published"
 msgstr "Yayında"
 
-#: .\adserver\models.py:127
+#: .\adserver\models.py:126
 msgid "Not Published"
 msgstr "Yayında Değil"
 
-#: .\adserver\models.py:130
+#: .\adserver\models.py:129
 msgid "Infinite"
 msgstr "Sonsuz"
 
-#: .\adserver\models.py:160 .\adserver\stats.py:93
+#: .\adserver\models.py:159 .\adserver\stats.py:93
 msgid "Advertisement"
 msgstr "Reklam"
 
-#: .\adserver\models.py:161
+#: .\adserver\models.py:160
 msgid "IP Address"
 msgstr "Ip adresi"
 
-#: .\adserver\models.py:162 .\adserver\models.py:181
+#: .\adserver\models.py:161 .\adserver\models.py:180
 msgid "Visitor Informations"
 msgstr "Tarayıcı bilgileri"
 
-#: .\adserver\models.py:164
+#: .\adserver\models.py:163
 msgid "Visited Page Url"
 msgstr "Ziyaret edilen sayfa"
 
-#: .\adserver\models.py:165
+#: .\adserver\models.py:164
 msgid "Last Visit Date"
 msgstr "Son ziyaret tarihi"
 
-#: .\adserver\models.py:191 .\templates\auth\inbox.html.py:14
+#: .\adserver\models.py:190 .\templates\auth\inbox.html.py:14
 #: .\templates\auth\message_read.html.py:20
 msgid "Name"
 msgstr "Ad ve Soyad"
 
-#: .\adserver\models.py:192 .\templates\auth\inbox.html.py:15
+#: .\adserver\models.py:191 .\templates\auth\inbox.html.py:15
 #: .\templates\auth\message_read.html.py:25
 msgid "Email"
 msgstr "Email"
 
-#: .\adserver\models.py:193 .\templates\auth\message_read.html.py:31
+#: .\adserver\models.py:192 .\templates\auth\message_read.html.py:31
 msgid "Telephone"
 msgstr "Telefon"
 
-#: .\adserver\models.py:194 .\templates\auth\message_read.html.py:5
+#: .\adserver\models.py:193 .\templates\auth\message_read.html.py:5
 #: .\templates\auth\message_read.html.py:42
 msgid "Message"
 msgstr "Mesaj"
 
-#: .\adserver\models.py:197 .\adserver\stats.py:29 .\adserver\stats.py:49
+#: .\adserver\models.py:196 .\adserver\stats.py:29 .\adserver\stats.py:49
 #: .\templates\auth\inbox.html.py:16 .\templates\auth\message_read.html.py:36
 msgid "Date"
 msgstr "Tarih"
 
-#: .\adserver\models.py:198
+#: .\adserver\models.py:197
 msgid "Ip Address"
 msgstr "Ip adresi"
 
@@ -205,6 +205,14 @@ msgstr "Üyeliğiniz aktif değildir."
 #: .\core\forms.py:22
 msgid "You got an error!"
 msgstr "Bir hata oluştu."
+
+#: .\templates\base_desktop.html.py:12
+msgid "Your private advertising manager !"
+msgstr "Size özel reklam yöneticisi !"
+
+#: .\templates\base_desktop.html.py:13 .\templates\index.html.py:15
+msgid "All the ads in one place !"
+msgstr "Tüm internet reklamlarınız tek bir yerde !"
 
 #: .\templates\base_desktop.html.py:41 .\templates\footer.html.py:11
 msgid "Home"
@@ -310,10 +318,6 @@ msgstr ""
 "servistir. Sizi reklam yayıncısı olarak aldığınız reklamları yayınlamak için "
 "uğraştığınız rutin işlerden kurtarır. Diğer bir deyişle size özel bir reklam "
 "yöneticisi uygulamasıdır."
-
-#: .\templates\index.html.py:15
-msgid "All the ads in one place !"
-msgstr "Tüm reklamlar tek bir yerde !"
 
 #: .\templates\index.html.py:17
 msgid ""
@@ -466,7 +470,7 @@ msgid "Edit Advertisement"
 msgstr "Reklamı Düzenle"
 
 #: .\templates\adserver\advertisement_visitors.html.py:4
-#: .\templates\adserver\advertisements.html.py:47
+#: .\templates\adserver\advertisements.html.py:48
 msgid "Visitors"
 msgstr "Ziyaretçiler"
 
@@ -495,12 +499,24 @@ msgstr "Slotu görüntüle"
 msgid "Publish State"
 msgstr "Yayın Durumu"
 
-#: .\templates\adserver\advertisements.html.py:45
+#: .\templates\adserver\advertisements.html.py:46
 #, python-format
 msgid "%(count)s Views"
 msgstr "%(count)s Gösterim"
 
-#: .\templates\adserver\advertisements.html.py:53
+#: .\templates\adserver\advertisements.html.py:49
+msgid "This advertisement will be removed, are you sure?"
+msgstr ""
+"Seçtiğiniz reklamlar silinecektir, devam etmek istediğinizden "
+"emin misiniz ?"
+
+#: .\templates\adserver\advertisements.html.py:49
+#: .\templates\adserver\dashboard.html.py:32 .\templates\auth\inbox.html.py:32
+#: .\templates\auth\message_read.html.py:49
+msgid "Delete !"
+msgstr "Sil"
+
+#: .\templates\adserver\advertisements.html.py:56
 msgid "You didn't add any advertisement..."
 msgstr "Bu slota her hangi bir reklam eklenmemiş."
 
@@ -530,11 +546,6 @@ msgid "This slot will be removed, are you sure?"
 msgstr ""
 "Seçtiğiniz slot ve altındaki reklamlar silinecektir, silmek istediğinizden "
 "emin misiniz ?"
-
-#: .\templates\adserver\dashboard.html.py:32 .\templates\auth\inbox.html.py:32
-#: .\templates\auth\message_read.html.py:49
-msgid "Delete !"
-msgstr "Sil"
 
 #: .\templates\adserver\dashboard.html.py:39
 #: .\templates\mobile\adserver\dashboard.html.py:14
