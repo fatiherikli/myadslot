@@ -23,5 +23,9 @@ urlpatterns = patterns('myads.adserver.views',
     url(r'^(?P<username>.*)/(?P<slot>.*).js$', 'track', name='adserver_track_js'),
     url(r'^(?P<username>.*)/(?P<slot>.*)/information$', 'information_message', name='adserver_information_message'),
 
+
+    # api and ajax requests
+    url(r'^api/total_impression$', 'total_impression', name='adserver_total_impression'),
+
 )
 

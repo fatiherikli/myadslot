@@ -1,15 +1,20 @@
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from django.db.models.aggregates import Sum
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
-from adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementForm, InformationForm
-from adserver.models import Advertisement
-from adserver.stats import advertisement_month_visits, slot_month_visits, stats_browser, stats_slot_advertisements, slot_month_hours
-from core.decorators import render_template
+from myads.adserver.forms import AdSlotForm, AddAdvertisementForm, EditAdvertisementForm, InformationForm
+from myads.adserver.models import Advertisement
+from myads.adserver.stats import slot_month_visits, stats_browser, stats_slot_advertisements, slot_month_hours
+from myads.core.decorators import render_template
+from myads.core.views import JsonResponse
 from myads.adserver.models import AdSlot
 from myads.auth.decorators import login_required
 from myads.adserver.utils import render_slot
 
+def total_impression(request):
+    impression = Advertisement.objects.aggregate(Sum("view_count"))["view_count__sum"]
+    return JsonResponse(impression)
 
 def track(request, username, slot):
     user = get_object_or_404(User, username=username)
@@ -18,7 +23,6 @@ def track(request, username, slot):
     if ads and not 'preview_mode' in request.GET:
         ads.track_visitor(request)
     return HttpResponse(render_slot(slot))
-
 
 
 @render_template
@@ -179,4 +183,3 @@ def edit_slot(request, slot, template="adserver/slot_edit.html"):
     return template, {
         "form" : form
     }
-
