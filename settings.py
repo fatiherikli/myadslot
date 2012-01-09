@@ -140,7 +140,8 @@ else:
     ADSERVER_DOMAIN = "myadslot.com"
 
 ADSERVER_ONLINE_TIMEOUT = 10
-
+NONLOCALE_DOMAINS = ["myadslot.com", "www.myadslot.com"]
+LOCALE_DOMAIN = "//%s.myadslot.com/"
 
 # django compressor settins
 COMPRESS_ENABLED = True
