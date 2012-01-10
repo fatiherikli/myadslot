@@ -105,9 +105,8 @@ def add_advertisement(request, slot, template="adserver/advertisement_add.html")
 
 @login_required
 @render_template
-def advertisement_visitors(request, slot, ads_id, template="adserver/advertisement_visitors.html"):
-    slot = get_object_or_404(AdSlot, user=request.user, slot=slot)
-    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot=slot)
+def advertisement_visitors(request, ads_id, template="adserver/advertisement_visitors.html"):
+    advertisement = get_object_or_404(Advertisement, id=ads_id, adslot__user=request.user)
     visitors = advertisement.visitor_set.all()
     return template, {
         "advertisement" : advertisement,

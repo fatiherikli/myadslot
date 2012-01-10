@@ -11,7 +11,8 @@ def build_snippet(slot):
           (function() {
             /* %(slot_title)s */
             var protocol = ('https:' == document.location.protocol ? 'https://ssl' : 'http://')
-            var adserver_js = protocol + '%(domain)s%(adserver_track_js)s';
+            var nocache = Math.random()
+            var adserver_js = protocol + '%(domain)s%(adserver_track_js)s?nocache=' + nocache.toString();
             document.write('<scr' + 'ipt type="text/javascript" src="' + adserver_js + '"></scr' + 'ipt>');
           })();
         </script>
