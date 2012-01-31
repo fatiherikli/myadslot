@@ -82,7 +82,7 @@ class AdSlot(models.Model):
 
     # stats
     def get_last_visitors(self):
-        return Visitor.objects.filter(advertisement__adslot__id = self.id)
+        return Visitor.objects.filter(advertisement__adslot__id = self.id)[:30]
 
     def __unicode__(self):
         return self.title

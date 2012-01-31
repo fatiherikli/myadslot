@@ -125,11 +125,12 @@ def stats_browser(slot_id):
     from django.db import connection
     cursor = connection.cursor()
     cursor.execute(sql)
-    result = []
-    for user_agent, count in  cursor.fetchall():
-        result.append([detect_browser(user_agent), jsonify(count)])
+    result = {}
+    for user_agent, count in  cursor.fetchall():        
+        normalize_browser = detect_browser(user_agent)
+        result[normalize_browser] = result.get(normalize_browser, 0) + 1
 
     return simplejson.dumps({
-        "rows" : result,
+        "rows" : result.items(),
         "columns" : list(columns)
     })

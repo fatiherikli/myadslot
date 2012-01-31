@@ -1,5 +1,5 @@
 from django.contrib import admin
-from adserver.models import AdSlot, Advertisement, Visitor
+from adserver.models import AdSlot, Advertisement, Visitor, Message
 
 
 class AdvertisementAdmin(admin.ModelAdmin):
@@ -11,5 +11,6 @@ class VisitorAdmin(admin.ModelAdmin):
 
 admin.site.register(Advertisement, AdvertisementAdmin)
 admin.site.register(Visitor, VisitorAdmin)
+admin.site.register(Message)
 admin.site.register(AdSlot)
 

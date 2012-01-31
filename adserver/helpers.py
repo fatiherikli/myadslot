@@ -79,4 +79,5 @@ def detect_browser(user_agent):
 
     if not _browser:
         return _("Unknown")
-    return "%s (%s)" % (_browser.get("name"), _browser.get("version"))
+    #return "%s (%s)" % (_browser.get("name"), _browser.get("version"))
+    return _browser.get("name")
