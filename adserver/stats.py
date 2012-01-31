@@ -74,15 +74,16 @@ def slot_month_hours(slot_id):
         )
     return build_statistic_data("""
         SELECT
-        CONCAT(hour(adserver_visitor.last_visit_date),':00') AS date,
+        CONCAT( hour(adserver_visitor.last_visit_date) + 
+                IF(MOD(hour(adserver_visitor.last_visit_date),2) > 0 ,1 ,0) ,':00~') AS date,
         Sum(adserver_visitor.visit_count) AS view_count,
         Count(adserver_visitor.visit_count) AS unique_visits
         FROM adserver_visitor
         INNER JOIN  adserver_advertisement ON adserver_visitor.advertisement_id = adserver_advertisement.id
         WHERE adserver_advertisement.adslot_id = %s
-        GROUP BY date;
+        GROUP BY date
+        order by hour(adserver_visitor.last_visit_date);
         """ % slot_id, columns)
-
 
 def stats_slot_advertisements(slot_id):
     """
